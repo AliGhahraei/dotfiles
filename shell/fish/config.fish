@@ -3,7 +3,7 @@ if test -e ~/.profile
 end
 
 function fish_greeting 
-    set_color green
+    set_color brmagenta
     echo Welcome to the afterlife. 
     set_color normal
 end
