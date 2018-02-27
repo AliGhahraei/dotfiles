@@ -1,9 +1,24 @@
+###########
+# EXPORTS #
+###########
+
+# Work
+export PYTHONPATH=~/spectrum-net:$PYTHONPATH
+
+# Mac
+export __CF_USER_TEXT_ENCODING='0x0:0x0'
+
+# Misc.
 export VISUAL="nvim"
 export TERM="xterm-256color"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export __CF_USER_TEXT_ENCODING=""
 
-export PYTHONPATH=~/spectrum-net:$PYTHONPATH
+
+###########
+# ALIASES #
+###########
 
 # Work
 alias cw='cd ~/Documents/spectrum-net'

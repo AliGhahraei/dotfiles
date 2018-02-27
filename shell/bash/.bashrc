@@ -6,4 +6,4 @@
 
 export PS1="\[\e[1;32m\]\[\e[4m\]\u\[\e[m\]\[\e[1;31m\]|\[\e[m\]\[\e[1;33m\]\[\e[m\]\[\e[1;36m\]\W\[\e[m\]\[\e[1;31m\]\$\[\e[m\] "
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.config/fzf/fzf.bash ] && source ~/.config/fzf/fzf.bash 
