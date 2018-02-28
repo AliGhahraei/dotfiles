@@ -29,13 +29,8 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
-# Inthe.AM Server
-taskd.certificate=~/.config/taskwarrior/private.certificate.pem
-taskd.key=~/.config/taskwarrior/private.key.pem
-taskd.ca=~/.config/taskwarrior/ca.cert.pem
-taskd.server=taskwarrior.inthe.am:53589
-taskd.credentials=inthe_am/aligf94/cefb87f5-6ebb-40ae-b847-3444d3ece033
-taskd.trust=ignore hostname
+# Server credentials
+include ~/.task/server-config/server-credentials
 
 # Miscelaneous
 urgency.user.tag.habit.coefficient=-100000
