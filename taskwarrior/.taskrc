@@ -39,6 +39,5 @@ taskd.trust=ignore hostname
 
 # Miscelaneous
 urgency.user.tag.habit.coefficient=-100000
-urgency.uda.priority.L.coefficient=-1000000
-urgency.uda.priority.Z.coefficient=-10000000
-uda.priority.values=H,M,,L,Z
+urgency.user.tag.improve.coefficient=-1000000
+uda.priority.values=H,M,,L
