@@ -50,6 +50,7 @@ alias mnt="sudo mount /dev/sdb1 /mnt"
 alias umnt="sudo umount /mnt"
 
 # Misc.
+alias maintenance='~/g/scripts/maintenance/maintenance.sh'
 alias md='mkdir'
 alias n='nvim'
 alias pretty="python -m json.tool"
