@@ -3,7 +3,8 @@
 ###########
 
 # Work
-export PYTHONPATH=~/spectrum-net:$PYTHONPATH
+export SPECTRUM="$HOME/g/spectrum-net"
+export PYTHONPATH="$SPECTRUM:$PYTHONPATH"
 
 # Mac
 export __CF_USER_TEXT_ENCODING='0x0:0x0'
@@ -21,7 +22,7 @@ export __CF_USER_TEXT_ENCODING=""
 ###########
 
 # Work
-alias cw='cd ~/Documents/spectrum-net'
+alias cw='cd $SPECTRUM'
 
 # Linux
 alias po='systemctl poweroff'
