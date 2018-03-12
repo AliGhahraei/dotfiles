@@ -92,6 +92,9 @@
 (use-package yaml-mode
   :mode "\\.yml\\'")
 
+(use-package toml-mode
+  :mode "\\.toml\\'")
+
 (use-package neotree
   :bind ("C-c n" . neotree-project-dir)
   :config

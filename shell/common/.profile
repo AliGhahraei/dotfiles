@@ -5,8 +5,10 @@
 # Work
 export SPECTRUM="$HOME/g/spectrum-net"
 export PYTHONPATH="$SPECTRUM:$PYTHONPATH"
+export KPI="0.0.0.0:8232/v1/kpi/kpi_data/kpis"
 
 # Mac
+# Prevent stupid macOS from storing yet another useless file in my $HOME
 export __CF_USER_TEXT_ENCODING='0x0:0x0'
 
 # Misc.
@@ -22,7 +24,8 @@ export __CF_USER_TEXT_ENCODING=""
 ###########
 
 # Work
-alias cw='cd $SPECTRUM'
+alias cw="cd $SPECTRUM"
+alias cr="cd $HOME/Documents/work/requests"
 
 # Linux
 alias po='systemctl poweroff'
@@ -41,7 +44,13 @@ alias ga='git add'
 alias gl='git log'
 alias gd='git diff'
 
-# ls con colores
+#Rest
+alias pack='json2msgpack'
+alias dpack='msgpack2json -d'
+alias h='http'
+alias hp='http-prompt'
+
+# Colorful ls
 alias ls='ls -GF'
 alias l='ls'
 alias la='ls -a'
@@ -50,11 +59,13 @@ alias la='ls -a'
 alias mnt="sudo mount /dev/sdb1 /mnt"
 alias umnt="sudo umount /mnt"
 
+# Python
+alias python='python3'
+alias pip='pip3'
+
 # Misc.
-alias maintenance='~/g/scripts/maintenance/maintenance.sh'
+alias maintenance="$HOME/g/scripts/maintenance/maintenance.sh"
 alias md='mkdir'
 alias n='nvim'
 alias pretty="python -m json.tool"
-alias python='python3'
-alias pip='pip3'
 alias f='fuck'

@@ -19,7 +19,7 @@
  '(minimap-hide-fringes t)
  '(package-selected-packages
    (quote
-	(yaml-mode kaolin-themes kaolin-theme elixir-mode aggressive-indent company-web web-mode tide company racer rust-playground jedi multi-term irony magit nodejs-repl neotree minimap circe helm haskell-mode scala-mode realgud flycheck rainbow-delimiters gruvbox-theme smart-mode-line-powerline-theme smart-mode-line projectile req-package))))
+	(toml-mode yaml-mode kaolin-themes kaolin-theme elixir-mode aggressive-indent company-web web-mode tide company racer rust-playground jedi multi-term irony magit nodejs-repl neotree minimap circe helm haskell-mode scala-mode realgud flycheck rainbow-delimiters gruvbox-theme smart-mode-line-powerline-theme smart-mode-line projectile req-package))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

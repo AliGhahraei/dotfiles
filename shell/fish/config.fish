@@ -8,6 +8,11 @@ function fish_greeting
     set_color normal
 end
 
+function pack
+    set filename $argv[1]
+    echo $filename
+end
+
 function cd
     builtin cd $argv
     ls
