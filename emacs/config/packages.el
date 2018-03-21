@@ -48,13 +48,13 @@
   (defvar sml/theme 'powerline)
   (sml/setup))
 
-(use-package gruvbox-theme
-  :config
-  (load-theme 'gruvbox))
-
-;; (use-package kaolin-themes
+;; (use-package gruvbox-theme
 ;;   :config
-;;   (load-theme 'kaolin-eclipse))
+;;   (load-theme 'gruvbox))
+
+(use-package kaolin-themes
+  :config
+  (load-theme 'kaolin-eclipse))
 
 ;;; Not hooking to prog-mode because of the scratch buffer (wouldn't be lazy)
 (use-package flycheck

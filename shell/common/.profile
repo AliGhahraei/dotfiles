@@ -17,6 +17,8 @@ export TERM="xterm-256color"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export __CF_USER_TEXT_ENCODING=""
+# Pelican needs dis
+export PY='python3'
 
 
 ###########
@@ -45,8 +47,8 @@ alias gl='git log'
 alias gd='git diff'
 
 #Rest
-alias pack='json2msgpack'
 alias dpack='msgpack2json -d'
+alias pack='json2msgpack -i'
 alias h='http'
 alias hp='http-prompt'
 
