@@ -1,5 +1,5 @@
-if test -e ~/.profile
-    source ~/.profile > /dev/null
+if test -e $HOME/.profile
+    source $HOME/.profile
 end
 
 function fish_greeting 

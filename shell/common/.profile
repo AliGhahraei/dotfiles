@@ -47,8 +47,8 @@ alias gl='git log'
 alias gd='git diff'
 
 #Rest
+alias ipack='json2msgpack -i'
 alias dpack='msgpack2json -d'
-alias pack='json2msgpack -i'
 alias h='http'
 alias hp='http-prompt'
 
