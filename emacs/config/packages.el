@@ -83,6 +83,11 @@
   :init
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns x))
+	(exec-path-from-shell-initialize)))
+
 (use-package diminish)
 
 ;;;;;;;;;;;;;;;;;;;;
@@ -94,6 +99,13 @@
 
 (use-package toml-mode
   :mode "\\.toml\\'")
+
+(use-package markdown-mode
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+		 ("\\.md\\'" . markdown-mode)
+		 ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-open-command "multimarkdown"))
 
 (use-package neotree
   :bind ("C-c n" . neotree-project-dir)
@@ -198,40 +210,6 @@
 														  (rust-playground-rm)
 														  (delete-window))))
   (setq rust-playground-confirm-deletion nil))
-
-(use-package multi-term
-  :init
-  (defun term-toggle()
-	(interactive)
-	(multi-term-dedicated-toggle)
-	(other-window 1))
-  :bind (("C-;" . term-toggle)
-		 ("C-c t" . multi-term))
-  :config
-  (setq multi-term-program "/bin/bash")
-  (setq term-unbind-key-list (quote ("C-z" "C-x" "C-c" "C-h" "C-y" "<ESC>" "C-<" "C-b")))
-  (setq term-bind-key-alist
-   (quote
-	(("C-c C-c" . term-interrupt-subjob)
-	 ("C-c C-e" . term-send-esc)
-	 ("C-p" . previous-line)
-	 ("C-n" . next-line)
-	 ("C-s" . isearch-forward)
-	 ("C-m" . term-send-return)
-	 ("C-y" . term-paste)
-	 ("M-f" . term-send-forward-word)
-	 ("M-b" . term-send-backward-word)
-	 ("M-o" . term-send-backspace)
-	 ("M-p" . term-send-up)
-	 ("M-n" . term-send-down)
-	 ("M-M" . term-send-forward-kill-word)
-	 ("M-N" . term-send-backward-kill-word)
-	 ("<C-backspace>" . term-send-backward-kill-word)
-	 ("C-r" . term-send-reverse-search-history)
-	 ("M-r" . isearch-backward)
-	 ("M-d" . term-send-delete-word)
-	 ("M-," . term-send-raw)
-	 ("M-." . comint-dynamic-complete)))))
 
 (use-package realgud
   :bind (("C-." . load-pdb)
