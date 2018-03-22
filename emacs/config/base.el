@@ -16,7 +16,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p); Un sucio truco para que el prompt sea solo y/n
 
 (setq browse-url-browser-function 'browse-url-generic)
-(defvar browse-url-generic-program "chromium"); chrome default
+(defvar browse-url-generic-program "firefox")
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer); Mata a ESTE buffer
 (global-set-key (kbd "C-x M-k") 'kill-buffer); Mata a un buffer

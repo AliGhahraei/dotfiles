@@ -134,10 +134,10 @@
 (use-package web-mode
   :mode ("\\.html\\'" "\\.blade.php\\'"))
 
-(use-package company-web
-  :after (company web-mode)
-  :config
-  (company-web-html))
+;; (use-package company-web
+;;   :after (company web-mode)
+;;   :config
+;;   (company-web-html))
 
 (use-package rust-mode
   :mode "\\.rs\\'")
