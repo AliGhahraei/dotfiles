@@ -14,7 +14,6 @@ export __CF_USER_TEXT_ENCODING='0x0:0x0'
 # Pelican needs dis
 export PY='python3'
 
-
 # Misc.
 export VISUAL="nvim"
 export TERM="xterm-256color"
@@ -22,6 +21,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export __CF_USER_TEXT_ENCODING=""
 export HOMEBREW_NO_AUTO_UPDATE=1
+export PATH="$PATH:$HOME/bin"
 
 
 ###########
