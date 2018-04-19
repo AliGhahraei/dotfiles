@@ -5,13 +5,13 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p); Prompt only as y/n
 
-(setq browse-url-browser-function 'browse-url-generic)
-(defvar browse-url-generic-program "firefox")
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-x M-k") 'kill-buffer)
-
+(setq browse-url-browser-function 'browse-url-firefox)
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+(setq vc-follow-symlinks t)
 
 (global-set-key (kbd "s-s") (lambda ()
                               (interactive)
@@ -20,12 +20,8 @@
 
 (delete-selection-mode 1); Allow selected text deletion
 
-(global-auto-revert-mode t); Reload files when changed
+(desktop-save-mode 1)
 
-
-(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 
 (defun rename-file-and-buffer ()
   "Rename the current buffer and the file it is visiting."
@@ -39,11 +35,6 @@
          (t
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
-
-
-(setq vc-follow-symlinks t)
-
-(desktop-save-mode 1)
 
 ;;; config.el ends here
 
@@ -80,5 +71,10 @@
 
 ;; (setq initial-scratch-message (format ";; LISP, motherfucker, do you speak it?\n"))
 
+;; (global-set-key (kbd "C-x M-k") 'kill-buffer)
+
+;; (global-set-key (kbd "C-x k") 'kill-this-buffer)
+
+;; (global-auto-revert-mode t); Reload files when changed
 
 
