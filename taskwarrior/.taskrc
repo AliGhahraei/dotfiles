@@ -35,4 +35,5 @@ include ~/.task/server-config/server-credentials
 # Miscelaneous
 urgency.user.tag.habit.coefficient=-100000
 urgency.user.tag.improve.coefficient=-1000000
+urgency.user.tag.extra_urgent.coefficient=1000000
 uda.priority.values=H,M,,L

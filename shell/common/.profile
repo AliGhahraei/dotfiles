@@ -4,24 +4,24 @@
 
 # Work
 export SPECTRUM="$HOME/g/spectrum-net"
+export REQUESTS="$HOME/Documents/work/requests"
 export PYTHONPATH="$SPECTRUM:$PYTHONPATH"
-export KPI="0.0.0.0:8232/v1/kpi/kpi_data/kpis"
+
+export KPI_ROOT="0.0.0.0:8232/v1/kpi/kpi_data"
+export KPI_DATA="$KPI_ROOT/kpis"
+export KPI_NAMES="$KPI_ROOT/kpinames"
 
 # Mac
-# Prevent stupid macOS from storing yet another useless file in my $HOME
-export __CF_USER_TEXT_ENCODING='0x0:0x0'
-
-# Pelican needs dis
-export PY='python3'
+export HOMEBREW_NO_AUTO_UPDATE=1
+export __CF_USER_TEXT_ENCODING='0x0:0x0' # Prevent stupid macOS from storing yet another useless file in my $HOME
 
 # Misc.
 export VISUAL="nvim"
 export TERM="xterm-256color"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-export __CF_USER_TEXT_ENCODING=""
-export HOMEBREW_NO_AUTO_UPDATE=1
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:/usr/local/bin:$HOME/bin"
+export PY='python3' # Pelican needs dis
 
 
 ###########
@@ -30,7 +30,7 @@ export PATH="$PATH:$HOME/bin"
 
 # Work
 alias cw="cd $SPECTRUM"
-alias cr="cd $HOME/Documents/work/requests"
+alias cr="cd $REQUESTS"
 
 # Linux
 alias po='systemctl poweroff'
