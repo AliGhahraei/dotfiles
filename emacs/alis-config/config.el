@@ -26,7 +26,6 @@
   (save-buffer))
 
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; scroll two lines at a time
-;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
 
 (setq browse-url-browser-function 'browse-url-firefox)
