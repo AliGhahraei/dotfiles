@@ -25,13 +25,14 @@
   (whitespace-cleanup)
   (save-buffer))
 
-(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; scroll two lines at a time
 ;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
 
 (setq browse-url-browser-function 'browse-url-firefox)
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (setq vc-follow-symlinks t)
+(setq desktop-save t)
 
 
 ;;;; Key Bindings
@@ -39,8 +40,8 @@
 
 
 ;;;; Setup
-(delete-selection-mode 1); Allow selected text deletion
+(delete-selection-mode t); Allow selected text deletion
 
-(desktop-save-mode 1)
+(desktop-save-mode t)
 
 ;;; config.el ends here
