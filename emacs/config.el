@@ -43,4 +43,5 @@
 
 (desktop-save-mode t)
 
+(provide 'config)
 ;;; config.el ends here
