@@ -4,17 +4,7 @@
 ;;; Code:
 
 
-;;;; Variables:
-(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
-;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-
-(setq browse-url-browser-function 'browse-url-firefox)
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
-(setq vc-follow-symlinks t)
-
-
-;;;; Definitions:
+;;;; Definitions and Global Variables:
 (defalias 'yes-or-no-p 'y-or-n-p); Prompt only as y/n
 
 (defun rename-file-and-buffer ()
@@ -30,13 +20,21 @@
         (set-visited-file-name new-file-name t t))))))
 
 (defun clean-and-save-buffer ()
-  "Save the current buffer and also fix whitespace problems"
+  "Call `whitespace-cleanup' and save the current buffer with `save-buffer'"
   (interactive)
   (whitespace-cleanup)
   (save-buffer))
 
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
+;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 
-;;;; Bindings
+(setq browse-url-browser-function 'browse-url-firefox)
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+(setq vc-follow-symlinks t)
+
+
+;;;; Key Bindings
 (global-set-key (kbd "s-s") 'clean-and-save-buffer)
 
 
