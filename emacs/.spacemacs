@@ -50,7 +50,6 @@ values."
      ;; spell-checking
      syntax-checking
      version-control
-     alis-config
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you n'clean-and-save-buffereed some configuration for these
