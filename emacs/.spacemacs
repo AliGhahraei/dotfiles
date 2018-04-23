@@ -52,10 +52,10 @@ values."
      version-control
      )
    ;; List of additional packages that will be installed without being
-   ;; wrapped in a layer. If you n'clean-and-save-buffereed some configuration for these
+   ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-a'clean-and-save-bufferdditional-packages '()
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
