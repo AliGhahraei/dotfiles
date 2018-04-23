@@ -19,12 +19,6 @@
         (rename-file buffer-file-name new-file-name t)
         (set-visited-file-name new-file-name t t))))))
 
-(defun clean-and-save-buffer ()
-  "Call `whitespace-cleanup' and save the current buffer with `save-buffer'"
-  (interactive)
-  (whitespace-cleanup)
-  (save-buffer))
-
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
 (setq mouse-wheel-progressive-speed nil) ;; No acceleration
 (setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
@@ -33,10 +27,6 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (setq vc-follow-symlinks t)
 (setq desktop-save t)
-
-
-;;;; Key Bindings
-(global-set-key (kbd "s-s") 'clean-and-save-buffer)
 
 
 ;;;; Setup

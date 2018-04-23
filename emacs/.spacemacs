@@ -312,15 +312,18 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (require 'whitespace)
   (defun clean-and-save-buffer ()
     "Call `whitespace-cleanup' and save the current buffer with `save-buffer'"
     (interactive)
     (whitespace-cleanup)
     (save-buffer))
 
-  (dolist (binding (list ("s-b" . 'ivy-switch-buffer)
-                         ("s-s" . 'clean-and-save-buffer))
-                   (spacemacs/set-leader-keys (car binding) (cadr binding)))))
+  (require 'ivy)
+  (mapc (lambda (binding)
+          (global-set-key (kbd (car binding)) (cadr binding)))
+        (list '("s-b" ivy-switch-buffer)
+              '("s-s" clean-and-save-buffer))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
