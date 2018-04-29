@@ -32,19 +32,18 @@
   "Whether `clean-and-save-buffer' should also call `whitespace-cleanup'.")
 
 
-(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ; Two lines at a time
-(setq mouse-wheel-progressive-speed nil) ; No acceleration
-(setq mouse-wheel-follow-mouse t) ; Scroll window under mouse
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1)) ; Two lines at a time
+      mouse-wheel-progressive-speed nil ; No acceleration
+      mouse-wheel-follow-mouse t ; Scroll window under mouse
 
-(setq browse-url-browser-function 'browse-url-firefox)
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
-(setq vc-follow-symlinks t)
-(setq desktop-save t)
+      browse-url-browser-function 'browse-url-firefox
+      backup-directory-alist '(("." . "~/.emacs.d/backup"))
+      vc-follow-symlinks t
+      desktop-save t)
 
 
 ;;;; Key bindings
 (global-set-key (kbd "s-s") 'clean-and-save-buffer)
-
 
 ;;;; Setup
 (delete-selection-mode t) ; Allow selected text deletion

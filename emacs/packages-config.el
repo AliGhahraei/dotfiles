@@ -1,9 +1,10 @@
 ;;; packages-config.el --- Packages config for Emacs
 ;;; Author: Ali Ghahraei Figueroa
 ;;; Commentary: Personal Emacs' packages config. Base Emacs setup is handled elsewhere
+;;; Notes: Don't use ensure in this package to avoid breaking spacemacs
 ;;; Code:
 
-;; Reminder: Don't use ensure here to avoid breaking spacemacs
+(require 'use-package)
 (use-package ivy
   :config
   (global-set-key (kbd "s-b") 'ivy-switch-buffer))
@@ -15,7 +16,7 @@
 
 (use-package flycheck
   :config
-  (setq flycheck-python-flake8-executable "/usr/local/bin/python3"))
+  (setq flycheck-python-pylint-executable "/usr/local/bin/python3"))
 
 
 (provide 'packages-config)
