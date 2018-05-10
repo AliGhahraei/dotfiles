@@ -5,6 +5,7 @@ fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/metro
 tuvistavie/oh-my-fish-core
+fisherman/pipenv
 fisherman/pwd_info
 fisherman/pwd_is_home
 fisherman/segment

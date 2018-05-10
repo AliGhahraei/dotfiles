@@ -3,13 +3,7 @@
 ###########
 
 # Work
-export SPECTRUM="$HOME/g/spectrum-net"
-export REQUESTS="$HOME/Documents/work/requests"
-export PYTHONPATH="$SPECTRUM:$PYTHONPATH"
-
-export KPI_ROOT="0.0.0.0:8232/v1/kpi/kpi_data"
-export KPI_DATA="$KPI_ROOT/kpis"
-export KPI_NAMES="$KPI_ROOT/kpinames"
+source "$HOME/.work_profile"
 
 # Mac
 export HOMEBREW_NO_AUTO_UPDATE=1

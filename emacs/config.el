@@ -7,6 +7,15 @@
 ;;;; Definitions and global variables:
 (defalias 'yes-or-no-p 'y-or-n-p); Prompt only as y/n
 
+(defun clean-and-save-buffer ()
+  "Call `whitespace-cleanup' and save current buffer with `save-buffer' if
+`whitespace-cleanup-p' is non-nil, otherwise just save."
+  (interactive)
+  (if whitespace-cleanup-p
+      (progn (whitespace-cleanup)
+             (save-buffer))
+    (save-buffer)))
+
 (defun rename-file-and-buffer ()
   "Rename the current buffer and the file it is visiting."
   (interactive)
@@ -19,36 +28,29 @@
         (rename-file buffer-file-name new-file-name t)
         (set-visited-file-name new-file-name t t))))))
 
-(defun clean-and-save-buffer ()
-  "Call `whitespace-cleanup' and save current buffer with `save-buffer' if
-`whitespace-cleanup-p' is non-nil, otherwise just save."
-  (interactive)
-  (if whitespace-cleanup-p
-    (progn (whitespace-cleanup)
-           (save-buffer))
-    (save-buffer)))
-
 (defvar whitespace-cleanup-p t
   "Whether `clean-and-save-buffer' should also call `whitespace-cleanup'.")
-
 
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1)) ; Two lines at a time
       mouse-wheel-progressive-speed nil ; No acceleration
       mouse-wheel-follow-mouse t ; Scroll window under mouse
 
+      fill-column 100
       browse-url-browser-function 'browse-url-firefox
       backup-directory-alist '(("." . "~/.emacs.d/backup"))
-      vc-follow-symlinks t
-      desktop-save t)
+      indicate-buffer-boundaries nil
+      vc-follow-symlinks t)
 
 
 ;;;; Key bindings
 (global-set-key (kbd "s-s") 'clean-and-save-buffer)
 
+
 ;;;; Setup
 (delete-selection-mode t) ; Allow selected text deletion
 
-(desktop-save-mode t)
+(toggle-frame-maximized)
+
 
 (provide 'config)
 ;;; config.el ends here
