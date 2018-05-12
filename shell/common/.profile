@@ -7,13 +7,12 @@ source "$HOME/.work_profile"
 
 # Mac
 export HOMEBREW_NO_AUTO_UPDATE=1
-export __CF_USER_TEXT_ENCODING='0x0:0x0' # Prevent stupid macOS from storing yet another useless file in my $HOME
+export __CF_USER_TEXT_ENCODING='0x0:0x0' # Prevent macOS from storing another useless file 
 
 # Misc.
 export VISUAL="nvim"
 export TERM="xterm-256color"
 export _JAVA_AWT_WM_NONREPARENTING=1
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH="$PATH:/usr/local/bin:$HOME/bin"
 export PY='python3' # Pelican needs dis
 

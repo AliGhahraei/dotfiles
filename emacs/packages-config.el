@@ -4,31 +4,22 @@
 ;;; Notes: Don't use ensure in this package to avoid breaking spacemacs
 ;;; Code:
 
-(require 'use-package)
-
-
-(use-package ivy
-  :config
+(with-eval-after-load 'ivy
   (global-set-key (kbd "s-b") 'ivy-switch-buffer))
 
-(use-package flycheck
-  :config
-  (setq flycheck-python-pylint-executable "/usr/local/bin/python3"))
-
-(use-package counsel
-  :config
+(with-eval-after-load 'counsel
   (global-set-key (kbd "s-;") 'counsel-git-grep))
 
-(use-package counsel-projectile
-  :config
+(with-eval-after-load 'counsel-projectile
   (global-set-key (kbd "s-f") 'counsel-projectile-find-file))
 
-(use-package noctilux-theme
-  :config
-  (load-theme 'noctilux t))
+(with-eval-after-load 'magit
+  (global-set-key (kbd "s-g") 'magit-status))
 
-(use-package evil-mc
-  :config
+(with-eval-after-load 'flycheck
+  (setq flycheck-python-pylint-executable "/usr/local/bin/python3"))
+
+(with-eval-after-load 'evil-mc
   (global-evil-mc-mode  1)
 
   (defun evil--mc-make-cursor-at-col (startcol _endcol orig-line)
@@ -46,8 +37,7 @@
                                                beg
                                              end)))))
 
-(use-package restclient
-  :config
+(with-eval-after-load 'restclient
   (defvar restclient-response-vars '()
     "List used to store response variables to extract. It is used by
 `restclient-extract-var'")
@@ -63,7 +53,6 @@
                     (when (re-search-forward
                            (format "\"%s\":\"\\(.*?\\)\"" var) nil t)
                       (set var (match-string 1)))))))))
-
 
 (provide 'packages-config)
 ;;; packages-config.el ends here
