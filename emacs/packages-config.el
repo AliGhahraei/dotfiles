@@ -19,6 +19,13 @@
 (with-eval-after-load 'flycheck
   (setq flycheck-python-pylint-executable "/usr/local/bin/python3"))
 
+(with-eval-after-load 'circe
+  (setq circe-network-options
+        `(("Freenode"
+          :nick "Nonbeliever"
+          :channels (:after-auth "#archlinux")
+          :nickserv-password ,freenode-password))))
+
 (with-eval-after-load 'evil-mc
   (global-evil-mc-mode  1)
 

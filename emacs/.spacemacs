@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     circe
      shell-scripts
      restclient
      javascript
@@ -38,7 +39,6 @@ values."
      yaml
      python
      themes-megapack
-     circe
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
