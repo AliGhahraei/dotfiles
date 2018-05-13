@@ -63,7 +63,7 @@ alias python='python3'
 alias pip='pip3'
 
 # Misc.
-alias maintenance="$HOME/g/scripts/maintenance/maintenance.sh"
+alias maintenance="$HOME/g/scripts/maintenance/maintenance.fish"
 alias md='mkdir'
 alias n='nvim'
 alias pretty="python -m json.tool"
