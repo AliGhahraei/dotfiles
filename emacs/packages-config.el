@@ -4,27 +4,37 @@
 ;;; Notes: Don't use ensure in this package to avoid breaking spacemacs
 ;;; Code:
 
-(with-eval-after-load 'ivy
-  (global-set-key (kbd "s-b") 'ivy-switch-buffer))
+;;; Key bindings
+(global-set-key (kbd "s-b") 'ivy-switch-buffer)
+(global-set-key (kbd "s-;") 'counsel-git-grep)
+(global-set-key (kbd "s-f") 'counsel-projectile-find-file)
+(global-set-key (kbd "s-g") 'magit-status)
 
-(with-eval-after-load 'counsel
-  (global-set-key (kbd "s-;") 'counsel-git-grep))
 
-(with-eval-after-load 'counsel-projectile
-  (global-set-key (kbd "s-f") 'counsel-projectile-find-file))
-
-(with-eval-after-load 'magit
-  (global-set-key (kbd "s-g") 'magit-status))
-
+;;; Configuration
 (with-eval-after-load 'flycheck
   (setq flycheck-python-pylint-executable "/usr/local/bin/python3"))
 
 (with-eval-after-load 'circe
+  (setq auth-sources '("~/.ircauth.gpg"))
+
+  (defun fetch-password (&rest params)
+    (require 'auth-source)
+    (let ((match (car (apply 'auth-source-search params))))
+      (if match
+          (let ((secret (plist-get match :secret)))
+            (if (functionp secret)
+                (funcall secret)
+              secret))
+        (error "Password not found for %S" params))))
+
   (setq circe-network-options
-        `(("Freenode"
+        '(("Freenode"
           :nick "Nonbeliever"
           :channels (:after-auth "#archlinux")
-          :nickserv-password ,freenode-password))))
+          :nickserv-password (lambda (server)
+                               (fetch-password :login "Nonbeliever"
+                                               :machine "irc.freenode.net"))))))
 
 (with-eval-after-load 'evil-mc
   (global-evil-mc-mode  1)
@@ -60,6 +70,7 @@
                     (when (re-search-forward
                            (format "\"%s\":\"\\(.*?\\)\"" var) nil t)
                       (set var (match-string 1)))))))))
+
 
 (provide 'packages-config)
 ;;; packages-config.el ends here

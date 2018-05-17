@@ -36,10 +36,15 @@
       mouse-wheel-follow-mouse t ; Scroll window under mouse
 
       fill-column 100
-      browse-url-browser-function 'browse-url-firefox
       backup-directory-alist '(("." . "~/.emacs.d/backup"))
       indicate-buffer-boundaries nil
       vc-follow-symlinks t)
+
+(cond ((eq system-type 'darwin)
+       (setq browse-url-generic-program "open"
+             browse-url-browser-function (quote browse-url-generic)))
+      (t
+       (setq browse-url-browser-function 'browse-url-firefox)))
 
 
 ;;;; Key bindings
