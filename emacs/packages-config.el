@@ -19,6 +19,8 @@
   (setq auth-sources '("~/.ircauth.gpg"))
 
   (defun fetch-password (&rest params)
+    "Fetch a password using auth-source (Copied from the Circe wiki: URL
+`https://github.com/jorgenschaefer/circe/wiki/Configuration#safer-password-management')"
     (require 'auth-source)
     (let ((match (car (apply 'auth-source-search params))))
       (if match
@@ -30,11 +32,10 @@
 
   (setq circe-network-options
         '(("Freenode"
-          :nick "Nonbeliever"
-          :channels (:after-auth "#archlinux")
-          :nickserv-password (lambda (server)
-                               (fetch-password :login "Nonbeliever"
-                                               :machine "irc.freenode.net"))))))
+           :nick "Nonbeliever"
+           :channels (:after-auth "#archlinux")
+           :nickserv-password (lambda (server)
+                                (fetch-password :machine server))))))
 
 (with-eval-after-load 'evil-mc
   (global-evil-mc-mode  1)
