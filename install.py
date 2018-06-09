@@ -9,22 +9,15 @@ HOME = expanduser('~')
 CONFIG = join(HOME, ".config")
 
 SHELLS_SRC = "shell"
-EMACS_BASE_SRC = "emacs"
 
 # Source and destination mapping
-EMACS_INIT_SRC = join(EMACS_BASE_SRC, 'init')
-EMACS_CONFIG_SRC = join(EMACS_BASE_SRC, 'config')
 FISH_SRC = join(SHELLS_SRC, 'fish')
 NEOVIM_SRC = 'neovim'
 
-EMACS = join(HOME, ".emacs.d")
-EMACS_CONFIG = join(EMACS, 'config')
 NEOVIM = join(CONFIG, 'nvim')
 FISH = join(CONFIG, 'fish')
 
 SRC_TO_DEST = {
-    EMACS_INIT_SRC: EMACS,
-    EMACS_CONFIG_SRC: EMACS_CONFIG,
     FISH_SRC: FISH,
     NEOVIM_SRC: NEOVIM,
 }
