@@ -27,8 +27,9 @@ COMMON_SHELL_FILES = join(SHELLS_SRC, 'common')
 BASH = join(SHELLS_SRC, 'bash')
 ZSH = join(SHELLS_SRC, 'zsh')
 TASKWARRIOR = 'taskwarrior'
+SPACEMACS = join('emacs', 'spacemacs')
 
-HOME_FILES_SRC = (COMMON_SHELL_FILES, BASH, ZSH, TASKWARRIOR)
+HOME_FILES_SRC = (COMMON_SHELL_FILES, BASH, ZSH, TASKWARRIOR, SPACEMACS)
 
 
 def link_src_files_to_dest_dirs(src_to_target):
