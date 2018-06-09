@@ -1,5 +1,13 @@
-if test -e $HOME/.profile
-    source $HOME/.profile
+source $HOME/.profile
+thefuck --alias | source
+
+if status is-login; and test -e $HOME/.profile
+    switch (uname) 
+    case Darwin
+        export JAVA_HOME=/Library/Java/Home
+    case '*'
+        export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+    end
 end
 
 function fish_greeting 
@@ -13,11 +21,4 @@ function cd
     ls
 end
 
-switch (uname) 
-case Darwin
-    export JAVA_HOME=/Library/Java/Home
-case '*'
-   export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-end
 
-thefuck --alias | source

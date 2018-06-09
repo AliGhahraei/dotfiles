@@ -2,28 +2,31 @@
 # EXPORTS #
 ###########
 
-# Work
+# Projects
+export PROJECTS_PATH="$HOME/g"
+
+# Work (out of source control for security reasons)
 source "$HOME/.work_profile"
 
 # Mac
 export HOMEBREW_NO_AUTO_UPDATE=1
 export __CF_USER_TEXT_ENCODING='0x0:0x0' # Prevent macOS from storing another useless file 
 
+# Pelican
+export PY='python3' # Looks like it needs dis
+export PELICAN_THEMES_PATH="$PROJECTS_PATH/pelican-themes"
+export PELICAN_PLUGINS_PATH="$PROJECTS_PATH/pelican-plugins"
+
 # Misc.
 export VISUAL="nvim"
 export TERM="xterm-256color"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export PATH="$PATH:/usr/local/bin:$HOME/bin"
-export PY='python3' # Pelican needs dis
 
 
 ###########
 # ALIASES #
 ###########
-
-# Work
-alias cw="cd $SPECTRUM"
-alias cr="cd $REQUESTS"
 
 # Linux
 alias po='systemctl poweroff'
@@ -63,7 +66,7 @@ alias python='python3'
 alias pip='pip3'
 
 # Misc.
-alias maintenance="$HOME/g/scripts/maintenance/maintenance.fish"
+alias maintenance="$PROJECTS_PATH/scripts/maintenance/maintenance.fish"
 alias md='mkdir'
 alias n='nvim'
 alias pretty="python -m json.tool"
