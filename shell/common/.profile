@@ -2,11 +2,11 @@
 # EXPORTS #
 ###########
 
-# Projects
-export PROJECTS_PATH="$HOME/g"
-
 # Work (out of source control for security reasons)
 # source "$HOME/.work_profile"
+
+# Projects
+export PROJECTS_PATH="$HOME/g"
 
 # Mac
 export HOMEBREW_NO_AUTO_UPDATE=1
