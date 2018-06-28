@@ -6,7 +6,7 @@
 export PROJECTS_PATH="$HOME/g"
 
 # Work (out of source control for security reasons)
-source "$HOME/.work_profile"
+# source "$HOME/.work_profile"
 
 # Mac
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -53,7 +53,7 @@ alias h='http'
 alias hp='http-prompt'
 
 # Colorful ls
-alias ls='ls -GF'
+alias ls='ls -GF --color'
 alias l='ls'
 alias la='ls -a'
 
@@ -63,7 +63,7 @@ alias umnt="sudo umount /mnt"
 
 # Python
 alias python='python3'
-alias pip='pip3'
+alias pip='sudo pip3'
 
 # Misc.
 alias maintenance="$PROJECTS_PATH/scripts/maintenance/maintenance.fish"
