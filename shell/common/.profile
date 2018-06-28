@@ -3,7 +3,7 @@
 ###########
 
 # Work (out of source control for security reasons)
-# source "$HOME/.work_profile"
+source "$HOME/.work_profile"
 
 # Projects
 export PROJECTS_PATH="$HOME/g"
@@ -53,7 +53,7 @@ alias h='http'
 alias hp='http-prompt'
 
 # Colorful ls
-alias ls='ls -GF --color'
+alias ls='ls -GF'
 alias l='ls'
 alias la='ls -a'
 
