@@ -3,7 +3,7 @@
 URxvt*.transparent: true
 URxvt.perl-ext:
 URxvt.perl-ext-common:
-URxvt*font:       xft:Inconsolata:pixelsize=12:antialiasing=false 
+URxvt*font:	xft:Inconsolata for Powerline:pixelsize=14:antialiasing=false
 
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 URxvt*.shading: 25
