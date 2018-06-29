@@ -11,9 +11,9 @@ if [[ $(uname) == 'Linux' ]]; then
    alias ls='ls --color'
 fi
 
-# Commented out so xonsh doesn't complain
-#function cd() {
-#  builtin cd $1
-#  ls
-#}
-#[ -f ~/.config/fzf/fzf.bash ] && source ~/.config/fzf/fzf.bash
+function cd() {
+  builtin cd $1
+  ls
+}
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

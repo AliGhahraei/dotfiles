@@ -18,4 +18,4 @@ alias bundle='antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins.sh'
 # Plugins #
 ###########
 
-[ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
