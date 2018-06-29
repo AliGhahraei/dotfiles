@@ -41,12 +41,9 @@ urxvtd &
 # Pon al cursor normal como flecha
 xsetroot -cursor_name left_ptr &
 
-# Lanza trayer 
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype percent --height 12 --margin 320 --transparent true --tint 0x1C1E1F  --width 8 &
-
 # Make DISPLAY and XAUTHORITY available to systemd
 sh /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
 # Y lanza al WM en turno
 # exec startxfce4
-exec xmonad
+exec qtile
