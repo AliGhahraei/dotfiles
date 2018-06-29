@@ -63,7 +63,7 @@ alias umnt="sudo umount /mnt"
 
 # Python
 alias python='python3'
-alias pip='sudo pip3'
+alias pip='pip3'
 
 # Misc.
 alias maintenance="$PROJECTS_PATH/scripts/maintenance/maintenance.fish"
