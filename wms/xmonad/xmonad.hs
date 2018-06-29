@@ -47,7 +47,7 @@ main = do
     [ ("M-w"                   , kill)
     , ("M-n"                   , sendMessage NextLayout)
     , ("M-f"                   , sendMessage $ Toggle FULL)
-    , ("M-r"                 , spawn "if type xmonad; then xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
+    , ("M-r"                   , spawn "if type xmonad; then xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
     , ("M-z"                   , spawn "setxkbmap es")
     , ("M-x"                   , spawn "setxkbmap us")
     , ("M-d"                   , spawn "dmenu_run") 
@@ -61,7 +61,8 @@ main = do
     ]
 
     `removeKeysP`
-    [ "M-p" ]
+    [ "M-p"
+    ]
 
 
     -- ++
