@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+from getpass import getpass
 from os import listdir, sep
 from os.path import abspath, dirname, expanduser, join
 from platform import system
 from sh import ln, mkdir
+from sh.contrib import sudo
 from typing import Tuple, Dict
 
 
@@ -32,13 +34,15 @@ SRC_TO_TARGET = {
 LINUX_SRC_TO_TARGET = {
     ('alsa',): (HOME,),
 
-    ('udev-rules',): (sep, 'etc', 'udev', 'rules.d',),
-
     ('wms', 'qtile',): (CONFIG, 'qtile',),
 
     (XORG, '.Xresources',): (HOME,),
     (XORG, '.xinitrc',): (HOME,),
     (XORG, 'dunstrc',): (CONFIG, 'dunst',),
+}
+ROOT_LINUX_SRC_TO_TARGET = {
+    ('udev-rules',): (sep, 'etc', 'udev', 'rules.d',),
+
     (XORG, '70-synaptics.conf',): (sep, 'etc', 'X11', 'xorg.conf.d',),
 }
 
@@ -66,3 +70,6 @@ if __name__ == '__main__':
     link_src_files_to_dest_dirs(SRC_TO_TARGET)
     if system() == 'Linux':
         link_src_files_to_dest_dirs(LINUX_SRC_TO_TARGET)
+
+        with sudo(getpass(), _with=True):
+            link_src_files_to_dest_dirs(ROOT_LINUX_SRC_TO_TARGET)
