@@ -1,70 +1,69 @@
 #!/usr/bin/env python3
-from os import listdir, symlink, makedirs, unlink
+from os import listdir, sep
 from os.path import abspath, dirname, expanduser, join
+from platform import system
+from sh import ln, mkdir
+from typing import Tuple, Dict
+
 
 SCRIPTS_CURRENT_DIR = dirname(abspath(__file__))
 
-# Base paths
+# Source paths
+EDITORS = 'editors'
+SHELLS = 'shells'
+XORG = 'xorg'
+
+# Destination paths
 HOME = expanduser('~')
 CONFIG = join(HOME, ".config")
 
-SHELLS_SRC = "shell"
 
-# Source and destination mapping
-FISH_SRC = join(SHELLS_SRC, 'fish')
-NEOVIM_SRC = 'neovim'
+SRC_TO_TARGET = {
+    (EDITORS, 'emacs', '.spacemacs',): (HOME,),
+    (EDITORS, 'neovim',): (CONFIG, 'nvim',),
 
-NEOVIM = join(CONFIG, 'nvim')
-FISH = join(CONFIG, 'fish')
+    (SHELLS, 'common',): (HOME,),
+    (SHELLS, 'bash',): (HOME,),
+    (SHELLS, 'fish',): (CONFIG, 'fish',),
+    (SHELLS, 'zsh',): (HOME,),
 
-SRC_TO_DEST = {
-    FISH_SRC: FISH,
-    NEOVIM_SRC: NEOVIM,
+    ('taskwarrior',): (HOME,),
+}
+LINUX_SRC_TO_TARGET = {
+    ('alsa',): (HOME,),
+
+    ('udev-rules',): (sep, 'etc', 'udev', 'rules.d',),
+
+    ('wms', 'qtile',): (CONFIG, 'qtile',),
+
+    (XORG, '.Xresources',): (HOME,),
+    (XORG, '.xinitrc',): (HOME,),
+    (XORG, 'dunstrc',): (CONFIG, 'dunst',),
+    (XORG, '70-synaptics.conf',): (sep, 'etc', 'X11', 'xorg.conf.d',),
 }
 
-# Home files
-COMMON_SHELL_FILES = join(SHELLS_SRC, 'common')
-BASH = join(SHELLS_SRC, 'bash')
-ZSH = join(SHELLS_SRC, 'zsh')
-TASKWARRIOR = 'taskwarrior'
-SPACEMACS = join('emacs', 'spacemacs')
 
-HOME_FILES_SRC = (COMMON_SHELL_FILES, BASH, ZSH, TASKWARRIOR, SPACEMACS)
+def link_src_files_to_dest_dirs(src_to_target: Dict[Tuple[str], Tuple[str]]):
+    for partial_src_tuple, target_tuple in src_to_target.items():
+        src_dir = join(SCRIPTS_CURRENT_DIR, *partial_src_tuple)
+        target_dir = join(*target_tuple)
 
+        mkdir('-p', target_dir)
 
-def link_src_files_to_dest_dirs(src_to_target):
-    for partial_src_dir, target_dir in src_to_target.items():
-        makedirs(target_dir, exist_ok=True)
-        absolute_src_dir = join(SCRIPTS_CURRENT_DIR, partial_src_dir)
+        try:
+            filenames = listdir(src_dir)
+        except NotADirectoryError:
+            filenames = src_dir,
+        else:
+            if not filenames:
+                print(f'Empty dir: {src_dir}')
 
-        for filename in listdir(absolute_src_dir):
-            absolute_src_file = join(absolute_src_dir, filename)
-            target_file = join(target_dir, filename)
-
-            try:
-                symlink(absolute_src_file, target_file)
-            except FileExistsError:
-                unlink(join(target_dir, filename))
-                symlink(absolute_src_file, target_file)
+        for filename in filenames:
+            src_file = join(src_dir, filename)
+            ln('-sf', src_file, abspath(target_dir))
 
 
 if __name__ == '__main__':
-    link_src_files_to_dest_dirs(SRC_TO_DEST)
-    link_src_files_to_dest_dirs({src: HOME for src in HOME_FILES_SRC})
-
-# TODO: change to python
-# if [[ "$(uname)" == "Linux" ]]; then
-#     XORG_CONF=/etc/X11/xorg.conf.d/
-#     XMONAD="$HOME/.xmonad/"
-#     DUNST="$HOME/.config/dunst/"
-
-#     mkdir -p $XMONAD
-#     mkdir -p $DUNST
-
-#     sudo ln -sf $VC/70-synaptics.conf $XORG_CONF
-#     ln -sf $VC/xmonad.hs $XMONAD
-#     ln -sf $VC/dunstrc $DUNST
-#     ln -sf $VC/.xinitrc $HOME
-#     ln -sf $VC/.Xresources $HOME
-#     ln -sf $VC/.asoundrc $HOME
-# fi
+    link_src_files_to_dest_dirs(SRC_TO_TARGET)
+    if system() == 'Linux':
+        link_src_files_to_dest_dirs(LINUX_SRC_TO_TARGET)
