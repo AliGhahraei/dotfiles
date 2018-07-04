@@ -13,7 +13,7 @@
 
 ;;; Configuration
 (with-eval-after-load 'flycheck
-  (setq flycheck-python-pylint-executable "/usr/local/bin/python3"))
+  (setq flycheck-python-flake8-executable "/usr/local/bin/python3"))
 
 (with-eval-after-load 'circe
   (setq auth-sources '("~/.ircauth.gpg"))
