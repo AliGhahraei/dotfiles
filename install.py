@@ -51,7 +51,7 @@ def link_src_files_to_dest_dirs(src_to_target: Dict[Tuple[str], Tuple[str]]):
         mkdir('-p', target_dir)
 
         try:
-            filenames = listdir(src_dir)
+            filenames = (join(src_dir, filename) for filename in listdir(src_dir))
         except NotADirectoryError:
             filenames = src_dir,
         else:
@@ -59,8 +59,7 @@ def link_src_files_to_dest_dirs(src_to_target: Dict[Tuple[str], Tuple[str]]):
                 print(f'Empty dir: {src_dir}')
 
         for filename in filenames:
-            src_file = join(src_dir, filename)
-            ln('-sf', src_file, abspath(target_dir))
+            ln('-sf', filename, abspath(target_dir))
 
 
 if __name__ == '__main__':
