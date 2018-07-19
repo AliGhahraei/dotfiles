@@ -3,7 +3,7 @@ from getpass import getpass
 from os import listdir, sep
 from os.path import abspath, dirname, expanduser, join
 from platform import system
-from sh import ln, mkdir
+from sh import ln, mkdir, echo
 from sh.contrib import sudo
 from typing import Tuple, Dict
 
@@ -34,7 +34,7 @@ SRC_TO_TARGET = {
 LINUX_SRC_TO_TARGET = {
     ('alsa',): (HOME,),
 
-    ('wms', 'qtile',): (CONFIG, 'qtile',),
+    ('wms', 'xmonad',): (HOME, '.xmonad',),
 
     (XORG, '.Xresources',): (HOME,),
     (XORG, '.xinitrc',): (HOME,),
