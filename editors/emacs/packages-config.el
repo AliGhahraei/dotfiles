@@ -15,6 +15,7 @@
 (with-eval-after-load 'flycheck
   (setq flycheck-python-flake8-executable "/usr/local/bin/python3"))
 
+
 (with-eval-after-load 'circe
   (setq auth-sources '("~/.ircauth.gpg"))
 
@@ -37,6 +38,7 @@
            :nickserv-password (lambda (server)
                                 (fetch-password :machine server))))))
 
+
 (with-eval-after-load 'evil-mc
   (global-evil-mc-mode  1)
 
@@ -55,22 +57,28 @@
                                                beg
                                              end)))))
 
+
 (with-eval-after-load 'restclient
   (defvar restclient-response-vars '()
-    "List used to store response variables to extract. It is used by
-`restclient-extract-var'")
+    "List used to store response variables to extract. It is used by `req-var'")
 
-  (defun restclient-extract-var (var)
-    (add-to-list 'restclient-response-vars var))
+  (defun req-var (req-var-name &optional var-name)
+    (add-to-list 'restclient-response-vars
+                 `(,(or var-name req-var-name) ,req-var-name))
+    nil)
 
-  (add-hook 'restclient-response-received-hook
-            (lambda ()
-              (save-excursion
-                (save-match-data
-                  (dolist (var 'restclient-response-vars)
-                    (when (re-search-forward
-                           (format "\"%s\":\"\\(.*?\\)\"" var) nil t)
-                      (set var (match-string 1)))))))))
+  (defun --extract-req-vars ()
+    "Extract variables specified in `restclient-response-vars'"
+    (save-excursion
+      (save-match-data
+        (dolist (var-and-req-var restclient-response-vars)
+          (let ((var-name (car var-and-req-var)) (req-var-name (cadr var-and-req-var)))
+            (message (buffer-name)
+            (when (re-search-forward
+                   (format "\"%s\":\ *\"(.*?)\"" req-var-name) nil t)
+              (set var-name (match-string 1)))))))))
+
+  (add-hook 'restclient-response-received-hook '--extract-req-vars))
 
 
 (provide 'packages-config)
