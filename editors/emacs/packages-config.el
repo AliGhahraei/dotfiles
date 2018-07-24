@@ -7,7 +7,8 @@
 ;;; Key bindings
 (global-set-key (kbd "s-b") 'ivy-switch-buffer)
 (global-set-key (kbd "s-;") 'counsel-git-grep)
-(global-set-key (kbd "s-f") 'counsel-projectile-find-file)
+(global-set-key (kbd "s-a") 'counsel-projectile-find-file)
+(global-set-key (kbd "s-z") 'ido-kill-buffer)
 (global-set-key (kbd "s-g") 'magit-status)
 
 

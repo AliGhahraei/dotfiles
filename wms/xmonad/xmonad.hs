@@ -48,8 +48,6 @@ main = do
     , ("M-n"                   , sendMessage NextLayout)
     , ("M-f"                   , sendMessage $ Toggle FULL)
     , ("M-r"                   , spawn "if type xmonad; then xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi")
-    , ("M-z"                   , spawn "setxkbmap es")
-    , ("M-x"                   , spawn "setxkbmap us")
     , ("M-d"                   , spawn "dmenu_run") 
     , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
