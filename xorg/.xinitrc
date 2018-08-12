@@ -29,24 +29,20 @@ fi
 
 #-------------------------------Personal---------------------------------
 
-# Cambia el teclado
 setxkbmap es
 
-# Inicia al daemon de nuestro queridísimo URxvt
-urxvtd &
-
-# Pon al wallpaper 
 /home/ali/.fehbg
 
-# Pon al cursor normal como flecha
+# Set cursoor as an arrow
 xsetroot -cursor_name left_ptr &
 
 # Make DISPLAY and XAUTHORITY available to systemd
 sh /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
-# Launch trayer
 trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype percent --height 12 --margin 320 --transparent true --tint 0x1C1E1F  --width 8 &
 
-# Y lanza al WM en turno
+# Compositor (for transparency)
+compton &
+
 # exec startxfce4
 exec xmonad
