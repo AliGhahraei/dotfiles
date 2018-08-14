@@ -20,9 +20,11 @@ case Linux
 end
 
 function fish_greeting 
-    set_color brmagenta
-    echo Welcome to the afterlife. 
-    set_color normal
+    if mail -e
+        set_color red
+        echo MAAAAAAAAAAAAAAAAAAAAIL!
+        set_color normal
+    end
 end
 
 function cd

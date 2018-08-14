@@ -36,3 +36,4 @@ colorscheme dracula
 set number
 let $LANG = 'en_US'
 set mouse=a
+au FileType crontab setlocal bkc=yes
