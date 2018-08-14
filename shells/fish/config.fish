@@ -31,7 +31,7 @@ function fish_greeting
         case Darwin
             osascript -e "display notification \"$mail_message\""
         case Linux
-	    notify-send $mail_message
+	    notify-send -u critical $mail_message
         end
     else
 	set_color brmagenta
