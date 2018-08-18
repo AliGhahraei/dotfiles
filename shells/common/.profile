@@ -21,7 +21,7 @@ export PELICAN_PLUGINS_PATH="$PROJECTS_PATH/pelican-plugins"
 export VISUAL="nvim"
 export TERM="xterm-256color"
 export _JAVA_AWT_WM_NONREPARENTING=1
-export PATH="$PATH:/usr/local/bin:$HOME/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 
 ###########
@@ -64,6 +64,9 @@ alias umnt="sudo umount /mnt"
 # Python
 alias python='python3'
 alias pip='pip3'
+
+# Haskell
+alias s='stack'
 
 # Misc.
 alias maintenance="$PROJECTS_PATH/scripts/maintenance/maintenance.fish"
