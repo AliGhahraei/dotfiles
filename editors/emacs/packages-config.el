@@ -14,7 +14,9 @@
 
 ;;; Configuration
 (with-eval-after-load 'flycheck
-  (setq flycheck-python-flake8-executable "/usr/local/bin/python3"))
+  (if (eq system-type 'darwin)
+      (setq flycheck-python-flake8-executable "/usr/local/bin/python3")
+    (setq flycheck-python-flake8-executable "/usr/bin/python")))
 
 
 (with-eval-after-load 'circe
