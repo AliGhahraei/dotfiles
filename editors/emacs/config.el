@@ -51,9 +51,11 @@
 
 (cond ((eq system-type 'darwin)
        (setq browse-url-generic-program "open"
-             browse-url-browser-function (quote browse-url-generic)))
+             browse-url-browser-function (quote browse-url-generic)
+             python-shell-interpreter "/usr/local/bin/python3"))
       (t
-       (setq browse-url-browser-function 'browse-url-firefox)))
+       (setq browse-url-browser-function 'browse-url-firefox
+             python-shell-interpreter "/usr/bin/python")))
 
 
 ;;;; Key bindings
