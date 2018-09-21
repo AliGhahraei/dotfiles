@@ -21,7 +21,7 @@ export PELICAN_PLUGINS_PATH="$PROJECTS_PATH/pelican-plugins"
 export VISUAL="nvim"
 export TERM="xterm-256color"
 export _JAVA_AWT_WM_NONREPARENTING=1
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 
 
 ###########

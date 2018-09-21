@@ -21,7 +21,7 @@ CONFIG = join(HOME, ".config")
 
 
 SRC_TO_TARGET = {
-    (EDITORS, 'emacs', '.spacemacs',): (HOME,),
+    (EDITORS, 'emacs', 'config.el',): (HOME, '.doom.d',),
     (EDITORS, 'neovim',): (CONFIG, 'nvim',),
 
     (SHELLS, 'common',): (HOME,),
