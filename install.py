@@ -12,6 +12,7 @@ SCRIPTS_CURRENT_DIR = dirname(abspath(__file__))
 
 # Source paths
 EDITORS = 'editors'
+EMACS = join(EDITORS, 'emacs')
 SHELLS = 'shells'
 XORG = 'xorg'
 
@@ -21,7 +22,8 @@ CONFIG = join(HOME, ".config")
 
 
 SRC_TO_TARGET = {
-    (EDITORS, 'emacs', 'config.el',): (HOME, '.doom.d',),
+    (EMACS, 'config.el',): (HOME, '.doom.d',),
+    (EMACS, 'private',): (HOME, '.emacs.d', 'modules', 'private',),
     (EDITORS, 'neovim',): (CONFIG, 'nvim',),
 
     (SHELLS, 'common',): (HOME,),

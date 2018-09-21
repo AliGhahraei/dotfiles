@@ -72,7 +72,6 @@
 (delete-selection-mode t) ; Allow selected text deletion
 (add-hook 'json-mode-hook (lambda ()
                             (setq js-indent-level 2)))
-(toggle-frame-maximized)
 
 
 (provide 'config)
