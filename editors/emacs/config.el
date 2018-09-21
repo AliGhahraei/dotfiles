@@ -37,6 +37,12 @@
         (rename-file buffer-file-name new-file-name t)
         (set-visited-file-name new-file-name t t))))))
 
+(defun kill-matching-buffers-just-do-it ()
+  "Like `kill-matching-buffers', but without asking."
+  (interactive)
+  (cl-letf (((symbol-function 'kill-buffer-ask) #'kill-buffer))
+    (call-interactively #'kill-matching-buffers)))
+
 (defvar whitespace-cleanup-p t
   "Whether `clean-and-save-buffer' should also call `whitespace-cleanup'.")
 
