@@ -44,3 +44,5 @@ function cd
     builtin cd $argv
     ls
 end
+
+status --is-interactive; and . (pyenv init - | psub)

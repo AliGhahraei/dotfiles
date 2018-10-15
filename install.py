@@ -22,6 +22,7 @@ CONFIG = join(HOME, ".config")
 
 
 SRC_TO_TARGET = {
+    (EMACS, 'init.el',): (HOME, '.doom.d',),
     (EMACS, 'config.el',): (HOME, '.doom.d',),
     (EMACS, 'private',): (HOME, '.emacs.d', 'modules', 'private',),
     (EDITORS, 'neovim',): (CONFIG, 'nvim',),

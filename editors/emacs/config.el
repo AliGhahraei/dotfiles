@@ -50,9 +50,13 @@
       mouse-wheel-progressive-speed nil ; No acceleration
       mouse-wheel-follow-mouse t ; Scroll window under mouse
 
+      confirm-kill-emacs nil
+      python-shell-interpreter "python3"
+
       fill-column 100
       backup-directory-alist '(("." . "~/.emacs.d/backup"))
       indicate-buffer-boundaries nil
+
       vc-follow-symlinks t)
 
 (cond ((eq system-type 'darwin)

@@ -70,6 +70,7 @@ alias s='stack'
 
 # Misc.
 alias maintenance="$PROJECTS_PATH/scripts/maintenance/maintenance.fish"
+alias dot_install="$PROJECTS_PATH/dotfiles/install.py"
 alias md='mkdir'
 alias n='nvim'
 alias pretty="python -m json.tool"
