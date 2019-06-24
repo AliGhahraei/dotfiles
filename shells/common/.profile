@@ -1,9 +1,14 @@
 ###########
-# EXPORTS #
+# SOURCES #
 ###########
 
 # Work (out of source control for security reasons)
 source "$HOME/.work_profile"
+
+
+###########
+# EXPORTS #
+###########
 
 # Projects
 export PROJECTS_PATH="$HOME/g"
@@ -70,7 +75,7 @@ alias pip='pip3'
 alias s='stack'
 
 # Misc.
-alias maintenance="$PROJECTS_PATH/scripts/maintenance/maintenance.fish"
+alias maintenance="$PROJECTS_PATH/scripts/maintenance/trigger_maintenance.fish"
 alias dot_install="$PROJECTS_PATH/dotfiles/install.py"
 alias md='mkdir'
 alias n='nvim'
