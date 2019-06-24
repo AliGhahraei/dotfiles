@@ -10,7 +10,7 @@ source "$HOME/.work_profile"
 # EXPORTS #
 ###########
 
-# Projects
+# (Git) Projects
 export PROJECTS_PATH="$HOME/g"
 
 # Mac
