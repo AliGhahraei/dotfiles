@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 from getpass import getpass
 from os import listdir, sep
-from os.path import abspath, dirname, expanduser, join
+from os.path import abspath, expanduser, join
 from platform import system
 from sh import ln, mkdir, echo
 from sh.contrib import sudo
-from typing import Tuple, Dict
-
+from typing import Iterable, Dict, List
 
 # Source paths
 EDITORS = 'editors'
@@ -19,7 +18,7 @@ HOME = expanduser('~')
 CONFIG = join(HOME, ".config")
 
 
-SCRIPTS_CURRENT_DIR = join(HOME, 'g', 'dotfiles')
+DOTFILES_DIR = join(HOME, 'g', 'dotfiles')
 
 
 SRC_TO_TARGET = {
@@ -51,23 +50,27 @@ ROOT_LINUX_SRC_TO_TARGET = {
 }
 
 
-def link_src_files_to_dest_dirs(src_to_target: Dict[Tuple[str], Tuple[str]]):
-    for partial_src_tuple, target_tuple in src_to_target.items():
-        src_dir = join(SCRIPTS_CURRENT_DIR, *partial_src_tuple)
-        target_dir = join(*target_tuple)
-
+def link_src_files_to_dest_dirs(src_to_target: Dict[Iterable[str], Iterable[str]]):
+    for relative_source, target in src_to_target.items():
+        absolute_source = join(DOTFILES_DIR, *relative_source)
+        target_dir = join(*target)
         mkdir('-p', target_dir)
 
-        try:
-            filenames = [join(src_dir, filename) for filename in listdir(src_dir)]
-        except NotADirectoryError:
-            filenames = src_dir,
-        else:
-            if not filenames:
-                print(f'Empty dir: {src_dir}')
+        source_dotfiles = get_dotfiles(absolute_source)
+        if not source_dotfiles:
+            print(f'Empty dir: {absolute_source}')
+        for source_dotfile in source_dotfiles:
+            ln('-sf', source_dotfile, abspath(target_dir))
 
-        for filename in filenames:
-            ln('-sf', filename, abspath(target_dir))
+
+def get_dotfiles(absolute_src_dir_or_file: str) -> List[str]:
+    try:
+        relative_filenames = listdir(absolute_src_dir_or_file)
+    except NotADirectoryError:
+        filenames = [absolute_src_dir_or_file]
+    else:
+        filenames = [join(absolute_src_dir_or_file, filename) for filename in relative_filenames]
+    return filenames
 
 
 def main():
