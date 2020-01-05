@@ -9,7 +9,6 @@ from typing import Iterable, Dict, List
 
 # Source paths
 EDITORS = 'editors'
-EMACS = join(EDITORS, 'emacs')
 SHELLS = 'shells'
 XORG = 'xorg'
 
@@ -22,9 +21,7 @@ DOTFILES_DIR = join(HOME, 'g', 'dotfiles')
 
 
 SRC_TO_TARGET = {
-    (EMACS, 'init.el',): (HOME, '.doom.d',),
-    (EMACS, 'config.el',): (HOME, '.doom.d',),
-    (EMACS, 'private',): (HOME, '.emacs.d', 'modules', 'private',),
+    (EDITORS, 'emacs',): (HOME, CONFIG, 'doom',),
     (EDITORS, 'neovim',): (CONFIG, 'nvim',),
 
     (SHELLS, 'common',): (HOME,),

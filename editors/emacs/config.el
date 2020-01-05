@@ -1,82 +1,52 @@
-;;; config.el --- Base config for Emacs
-;;; Author: Ali Ghahraei Figueroa
-;;; Commentary: Personal base Emacs config. Package setup is handled elsewhere
-;;; Code:
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+
+;; Place your private configuration here! Remember, you do not need to run 'doom
+;; refresh' after modifying this file!
 
 
-;;;; Definitions and global variables:
-(defalias 'yes-or-no-p 'y-or-n-p); Prompt only as y/n
+;; These are used for a number of things, particularly for GPG configuration,
+;; some email clients, file templates and snippets.
+(setq user-full-name "Ali Ghahraei Figueroa"
+      user-mail-address "aligf94@gmail.com")
 
-(defun create-article (filename)
-  "Create a new pelican article with default content. Prompt for a filename using `read-file-name'."
-  (interactive (list (read-file-name "Article filename: " "~/g/personal-website/content/")))
-  (find-file filename)
-  (insert (format "#+TITLE: \n#+DATE: %s\n#+PROPERTY: SUMMARY "
-                  (format-time-string "%Y-%m-%d")))
-  (beginning-of-buffer)
-  (move-end-of-line nil))
+;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
+;; are the three important ones:
+;;
+;; + `doom-font'
+;; + `doom-variable-pitch-font'
+;; + `doom-big-font' -- used for `doom-big-font-mode'
+;;
+;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
+;; font string. You generally only need these two:
+(setq doom-font (font-spec :family "monospace" :size 14))
 
-(defun clean-and-save-buffer ()
-  "Call `whitespace-cleanup' and save current buffer with `save-buffer' if
-`whitespace-cleanup-p' is non-nil, otherwise just save."
-  (interactive)
-  (if whitespace-cleanup-p
-      (progn (whitespace-cleanup)
-             (save-buffer))
-    (save-buffer)))
+;; There are two ways to load a theme. Both assume the theme is installed and
+;; available. You can either set `doom-theme' or manually load a theme with the
+;; `load-theme' function. These are the defaults.
+(setq doom-theme 'doom-one)
 
-(defun rename-file-and-buffer ()
-  "Rename the current buffer and the file it is visiting."
-  (interactive)
-  (if (not (and buffer-file-name (file-exists-p buffer-file-name)))
-      (message "Buffer is not visiting a file!")
-    (let ((new-file-name (read-file-name "New name: " buffer-file-name)))
-      (cond
-       ((vc-backend buffer-file-name) (vc-rename-file buffer-file-name new-file-name))
-       (t
-        (rename-file buffer-file-name new-file-name t)
-        (set-visited-file-name new-file-name t t))))))
+;; If you intend to use org, it is recommended you change this!
+(setq org-directory "~/org/")
 
-(defun kill-matching-buffers-just-do-it ()
-  "Like `kill-matching-buffers', but without asking."
-  (interactive)
-  (cl-letf (((symbol-function 'kill-buffer-ask) #'kill-buffer))
-    (call-interactively #'kill-matching-buffers)))
-
-(defvar whitespace-cleanup-p t
-  "Whether `clean-and-save-buffer' should also call `whitespace-cleanup'.")
-
-(setq mouse-wheel-scroll-amount '(2 ((shift) . 1)) ; Two lines at a time
-      mouse-wheel-progressive-speed nil ; No acceleration
-      mouse-wheel-follow-mouse t ; Scroll window under mouse
-
-      confirm-kill-emacs nil
-      python-shell-interpreter "python3"
-
-      fill-column 100
-      backup-directory-alist '(("." . "~/.emacs.d/backup"))
-      indicate-buffer-boundaries nil
-
-      vc-follow-symlinks t)
-
-(cond ((eq system-type 'darwin)
-       (setq browse-url-generic-program "open"
-             browse-url-browser-function (quote browse-url-generic)
-             python-shell-interpreter "/usr/local/bin/python3"))
-      (t
-       (setq browse-url-browser-function 'browse-url-firefox
-             python-shell-interpreter "/usr/bin/python")))
+;; If you want to change the style of line numbers, change this to `relative' or
+;; `nil' to disable it:
+(setq display-line-numbers-type t)
 
 
-;;;; Key bindings
-(global-set-key (kbd "s-s") 'clean-and-save-buffer)
-
-
-;;;; Setup
-(delete-selection-mode t) ; Allow selected text deletion
-(add-hook 'json-mode-hook (lambda ()
-                            (setq js-indent-level 2)))
-
-
-(provide 'config)
-;;; config.el ends here
+;; Here are some additional functions/macros that could help you configure Doom:
+;;
+;; - `load!' for loading external *.el files relative to this one
+;; - `use-package' for configuring packages
+;; - `after!' for running code after a package has loaded
+;; - `add-load-path!' for adding directories to the `load-path', where Emacs
+;;   looks when you load packages with `require' or `use-package'.
+;; - `map!' for binding new keys
+;;
+;; To get information about any of these functions/macros, move the cursor over
+;; the highlighted symbol at press 'K' (non-evil users must press 'C-c g k').
+;; This will open documentation for it, including demos of how they are used.
+;;
+;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
+;; they are implemented.
+(load! "vanilla-config")
+(load! "packages-config")
