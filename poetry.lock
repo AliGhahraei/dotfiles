@@ -7,8 +7,8 @@ python-versions = "*"
 version = "1.12.14"
 
 [metadata]
-content-hash = "c88a99a8b63d0d6bca1d47d24967ec238b6652a5ec165b27496ade3d2aa05fe1"
-python-versions = "^3.7"
+content-hash = "4a3e6450eb22fb046c5dab4dc1885fa10fc8a9c5ef38745642fa5c116b24ab82"
+python-versions = "^3.8"
 
 [metadata.files]
 sh = [
