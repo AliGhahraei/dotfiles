@@ -1,73 +1,73 @@
 #!/usr/bin/env python3
 from getpass import getpass
-from os import listdir, sep
-from os.path import abspath, expanduser, join
+from pathlib import Path
 from platform import system
 from sh import ln, mkdir, echo
 from sh.contrib import sudo
-from typing import Iterable, Dict, List
+from typing import Dict, List
+
+PathDict = Dict[Path, Path]
+
+HOME = Path.home()
 
 # Source paths
-EDITORS = 'editors'
-SHELLS = 'shells'
-XORG = 'xorg'
+DOTFILES = HOME / 'g/dotfiles'
+EDITORS = DOTFILES / 'editors'
+SHELLS = DOTFILES / 'shells'
+XORG = DOTFILES / 'xorg'
 
 # Destination paths
-HOME = expanduser('~')
-CONFIG = join(HOME, ".config")
-
-
-DOTFILES_DIR = join(HOME, 'g', 'dotfiles')
-
+CONFIG = HOME / ".config"
+ETC = Path('/etc')
 
 SRC_TO_TARGET = {
-    (EDITORS, 'emacs',): (HOME, CONFIG, 'doom',),
-    (EDITORS, 'neovim',): (CONFIG, 'nvim',),
+    EDITORS / 'emacs': CONFIG / 'doom',
+    EDITORS / 'neovim': CONFIG / 'nvim',
 
-    (SHELLS, 'common',): (HOME,),
-    (SHELLS, 'bash',): (HOME,),
-    (SHELLS, 'fish',): (CONFIG, 'fish',),
-    (SHELLS, 'ipython',): (HOME, '.ipython', 'profile_default'),
+    SHELLS / 'common': HOME,
+    SHELLS / 'bash': HOME,
+    SHELLS / 'fish': CONFIG / 'fish',
+    SHELLS / 'ipython': HOME / '.ipython/profile_default',
 
-    ('taskwarrior',): (HOME,),
-}
+    DOTFILES / 'taskwarrior': HOME,
+}  # type: PathDict
+
 LINUX_SRC_TO_TARGET = {
-    ('alsa',): (HOME,),
+    DOTFILES / 'alsa': HOME,
 
-    ('wms', 'xmonad',): (HOME, '.xmonad',),
+    DOTFILES / 'wms/xmonad': HOME / '.xmonad',
 
-    (XORG, '.Xresources',): (HOME,),
-    (XORG, '.xinitrc',): (HOME,),
-    (XORG, 'dunstrc',): (CONFIG, 'dunst',),
-}
+    XORG / '.Xresources': HOME,
+    XORG / '.xinitrc': HOME,
+    XORG / 'dunstrc': CONFIG / 'dunst',
+}  # type: PathDict
+
 ROOT_LINUX_SRC_TO_TARGET = {
-    ('udev-rules',): (sep, 'etc', 'udev', 'rules.d',),
+    DOTFILES / 'udev-rules': ETC / 'udev/rules.d',
 
-    (XORG, '70-synaptics.conf',): (sep, 'etc', 'X11', 'xorg.conf.d',),
-}
+    XORG / '70-synaptics.conf': ETC / 'X11/xorg.conf.d',
+}  # type: PathDict
 
 
-def link_src_files_to_dest_dirs(src_to_target: Dict[Iterable[str], Iterable[str]]):
-    for relative_source, target in src_to_target.items():
-        absolute_source = join(DOTFILES_DIR, *relative_source)
-        target_dir = join(*target)
+def link_src_files_to_dest_dirs(src_to_target: PathDict):
+    for source, target_dir in src_to_target.items():
         mkdir('-p', target_dir)
 
-        source_dotfiles = get_dotfiles(absolute_source)
+        source_dotfiles = get_dotfiles(source)
         if not source_dotfiles:
-            print(f'Empty dir: {absolute_source}')
-        for source_dotfile in source_dotfiles:
-            ln('-sf', source_dotfile, abspath(target_dir))
+            print(f'Empty dir: {source}')
+        for source_file in source_dotfiles:
+            target_file = target_dir / source_file.name
+            target_file.unlink(missing_ok=True)
+            target_file.symlink_to(source_file)
 
 
-def get_dotfiles(absolute_src_dir_or_file: str) -> List[str]:
+def get_dotfiles(source: Path) -> List[Path]:
     try:
-        relative_filenames = listdir(absolute_src_dir_or_file)
+        paths = list(source.iterdir())
     except NotADirectoryError:
-        filenames = [absolute_src_dir_or_file]
-    else:
-        filenames = [join(absolute_src_dir_or_file, filename) for filename in relative_filenames]
-    return filenames
+        paths = [source]
+    return paths
 
 
 def main():
