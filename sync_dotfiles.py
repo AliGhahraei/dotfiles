@@ -27,6 +27,7 @@ SRC_TO_TARGET = {
     SHELLS / 'common': HOME,
     SHELLS / 'bash': HOME,
     SHELLS / 'fish': CONFIG / 'fish',
+    SHELLS / 'starship.toml': CONFIG,
     SHELLS / 'ipython': HOME / '.ipython/profile_default',
 
     DOTFILES / 'taskwarrior': HOME,
