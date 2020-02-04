@@ -6,3 +6,11 @@ disabled = true
 
 [character]
 symbol = "❯ "
+use_symbol_for_status = true
+
+[cmd_duration]
+show_milliseconds = true
+
+[directory]
+fish_style_pwd_dir_length = 2
+truncate_ro_repo = false
