@@ -38,4 +38,3 @@ function cd
 end
 
 status --is-interactive; and source (pyenv init -|psub)
-starship init fish | source
