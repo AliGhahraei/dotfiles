@@ -4,6 +4,7 @@ from pathlib import Path
 from platform import system
 from sh import ln, mkdir, echo
 from sh.contrib import sudo
+from sys import argv
 from typing import Dict, List
 
 PathDict = Dict[Path, Path]
@@ -72,7 +73,8 @@ def get_dotfiles(source: Path) -> List[Path]:
 
 def main():
     link_src_files_to_dest_dirs(SRC_TO_TARGET)
-    if system() == 'Linux':
+    install_gui_files = len(argv) == 0
+    if system() == 'Linux' and install_gui_files:
         link_src_files_to_dest_dirs(LINUX_SRC_TO_TARGET)
 
         with sudo(getpass(), _with=True):
