@@ -74,7 +74,7 @@ main = do
 editor               = "emacs"
 editorClass          = "Emacs"
 browser              = "firefox-developer-edition"
-browserClass         = "Firefox Developer Edition"
+browserClass         = "firefoxdeveloperedition"
 
 myTerminal           = "termite"
 myNormalBorderColor  = "#FFFFFF"

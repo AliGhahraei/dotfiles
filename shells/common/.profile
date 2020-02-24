@@ -14,8 +14,8 @@ source "$HOME/.work_profile"
 export PROJECTS_PATH="$HOME/g"
 
 # Mac
-export HOMEBREW_NO_AUTO_UPDATE=1
-export __CF_USER_TEXT_ENCODING='0x0:0x0' # Prevent macOS from storing another useless file 
+# export HOMEBREW_NO_AUTO_UPDATE=1
+# export __CF_USER_TEXT_ENCODING='0x0:0x0' # Prevent macOS from storing another useless file 
 
 # Pelican
 export PY='python3' # Looks like it needs dis
@@ -42,6 +42,10 @@ alias en='sudo setxkbmap us'
 alias sql='sudo systemctl start mysqld'
 alias clipboard="xclip -selection c"
 
+# Mac
+# alias python3="python"
+# alias pip3="pip"
+
 # Git
 alias gs='git status'
 alias gc='git commit'
@@ -66,10 +70,6 @@ alias la='ls -a'
 # System
 alias mnt="sudo mount /dev/sdb1 /mnt"
 alias umnt="sudo umount /mnt"
-
-# Python
-alias python='python3'
-alias pip='pip3'
 
 # Haskell
 alias s='stack'

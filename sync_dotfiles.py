@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
+from functools import partial
 from getpass import getpass
 from pathlib import Path
 from platform import system
-from sh import ln, mkdir, echo
-from sh.contrib import sudo
 from sys import argv
-from typing import Dict, List
+from typing import Dict, List, Tuple, Iterator, Callable
+
+from sh import ln, mkdir, cp
+from sh.contrib import sudo
 
 PathDict = Dict[Path, Path]
 
@@ -18,24 +20,26 @@ SHELLS = DOTFILES / 'shells'
 XORG = DOTFILES / 'xorg'
 
 # Destination paths
+ROOT = Path('/')
+ETC = ROOT / 'etc'
 CONFIG = HOME / ".config"
-ETC = Path('/etc')
 
-SRC_TO_TARGET = {
+SOURCES_TO_TARGETS = {
     EDITORS / 'emacs': CONFIG / 'doom',
     EDITORS / 'neovim': CONFIG / 'nvim',
 
     SHELLS / 'common': HOME,
     SHELLS / 'bash': HOME,
-    SHELLS / 'fish': CONFIG / 'fish',
+    SHELLS / 'fish' / 'config.fish': CONFIG / 'fish',
+    SHELLS / 'fish' / 'fishfile': CONFIG / 'fish',
+    SHELLS / 'fish' / 'fish_user_key_bindings.fish': CONFIG / 'fish' / 'functions',
     SHELLS / 'ipython': HOME / '.ipython/profile_default',
 
     DOTFILES / 'taskwarrior': HOME,
+    DOTFILES / 'termite': CONFIG / 'termite',
 }  # type: PathDict
 
-LINUX_SRC_TO_TARGET = {
-    DOTFILES / 'alsa': HOME,
-
+LINUX_SOURCES_TO_TARGETS = {
     DOTFILES / 'wms/xmonad': HOME / '.xmonad',
 
     XORG / '.Xresources': HOME,
@@ -43,42 +47,58 @@ LINUX_SRC_TO_TARGET = {
     XORG / 'dunstrc': CONFIG / 'dunst',
 }  # type: PathDict
 
-ROOT_LINUX_SRC_TO_TARGET = {
+ROOT_LINUX_SOURCES_TO_TARGETS = {
     DOTFILES / 'udev-rules': ETC / 'udev/rules.d',
-
-    XORG / '70-synaptics.conf': ETC / 'X11/xorg.conf.d',
+    XORG / '30-touchpad.conf': ETC / 'X11/xorg.conf.d',
 }  # type: PathDict
 
+COPYABLE_ROOT_LINUX_SOURCES_TO_TARGETS = {
+    DOTFILES / 'refind': ROOT / 'boot/EFI/refind'
+}  # type: PathDict
 
-def link_src_files_to_dest_dirs(src_to_target: PathDict):
-    for source, target_dir in src_to_target.items():
-        mkdir('-p', target_dir)
-
-        source_dotfiles = get_dotfiles(source)
-        if not source_dotfiles:
-            print(f'Empty dir: {source}')
-        for source_file in source_dotfiles:
-            target_file = target_dir / source_file.name
-            target_file.unlink(missing_ok=True)
-            target_file.symlink_to(source_file)
-
-
-def get_dotfiles(source: Path) -> List[Path]:
-    try:
-        paths = list(source.iterdir())
-    except NotADirectoryError:
-        paths = [source]
-    return paths
+soft_link = ln.bake('-sfn')
 
 
 def main():
-    link_src_files_to_dest_dirs(SRC_TO_TARGET)
-    install_gui_files = len(argv) == 0
+    sync_files(SOURCES_TO_TARGETS)
+    install_gui_files = len(argv) == 1
     if system() == 'Linux' and install_gui_files:
-        link_src_files_to_dest_dirs(LINUX_SRC_TO_TARGET)
+        sync_files(LINUX_SOURCES_TO_TARGETS)
+        password = getpass()
+        sync_files(ROOT_LINUX_SOURCES_TO_TARGETS, sync=partial(_root_sync, password, soft_link))
+        sync_files(COPYABLE_ROOT_LINUX_SOURCES_TO_TARGETS, sync=partial(_root_sync, password, cp))
 
-        with sudo(getpass(), _with=True):
-            link_src_files_to_dest_dirs(ROOT_LINUX_SRC_TO_TARGET)
+
+def sync_files(sources_to_targets: PathDict, *, sync: Callable[[Path, Path], None] = soft_link):
+    for (source_dir, target_dir), files in _get_dirs_to_files(sources_to_targets):
+        if files:
+            mkdir('-p', target_dir)
+            for source_file, target_file in files.items():
+                sync(source_file, target_file)
+        else:
+            print(f'Empty source dir: {source_dir}')
+
+
+def _get_dirs_to_files(sources_to_targets: PathDict) -> Iterator[Tuple[Tuple[Path, Path], PathDict]]:
+    return (((source_file_or_dir, target_dir), _get_file_sources_to_file_targets(source_file_or_dir, target_dir))
+            for source_file_or_dir, target_dir in sources_to_targets.items())
+
+
+def _get_file_sources_to_file_targets(source_file_or_dir: Path, target_dir: Path) -> PathDict:
+    return {source_file: target_dir / source_file.name for source_file in _get_source_files(source_file_or_dir)}
+
+
+def _get_source_files(source_file_or_dir: Path) -> List[Path]:
+    try:
+        paths = list(source_file_or_dir.iterdir())
+    except NotADirectoryError:
+        paths = [source_file_or_dir]
+    return paths
+
+
+def _root_sync(password: str, sync: Callable[[Path, Path], None], source_file: Path, target_file: Path):
+    with sudo(password=password, _with=True):
+        sync(source_file, target_file)
 
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@ if status is-login; and test -e $HOME/.profile
         export JAVA_HOME=/Library/Java/Home
     case Linux
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-        startx
+        exec startx -- -keeptty
     end
 end
 
