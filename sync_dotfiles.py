@@ -37,6 +37,8 @@ SOURCES_TO_TARGETS = {
 
     DOTFILES / 'taskwarrior': HOME,
     DOTFILES / 'termite': CONFIG / 'termite',
+    DOTFILES / 'systemd-units': CONFIG / 'systemd/user',
+    DOTFILES / 'git': CONFIG / 'git',
 }  # type: PathDict
 
 LINUX_SOURCES_TO_TARGETS = {
@@ -49,6 +51,7 @@ LINUX_SOURCES_TO_TARGETS = {
 
 ROOT_LINUX_SOURCES_TO_TARGETS = {
     DOTFILES / 'udev-rules': ETC / 'udev/rules.d',
+    DOTFILES / 'arch': ETC,
     XORG / '30-touchpad.conf': ETC / 'X11/xorg.conf.d',
 }  # type: PathDict
 
