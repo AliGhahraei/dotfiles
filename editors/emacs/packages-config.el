@@ -3,8 +3,18 @@
 ;;; Commentary:
 ;;; Code:
 
-;;;; Configuration
-;;; Obsolete:
+;;;; Current
+
+;;; Configuration
+
+(after! org
+  (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled))
+
+
+
+;;;; Obsolete:
+
+;;; Configuration
 
 ;; (use-package! elpy
 ;;   :hook (python-mode . elpy-mode)
@@ -83,8 +93,8 @@
 ;;   (add-hook 'restclient-response-received-hook '--extract-req-vars))
 
 
-;;;; Key bindings
-;;; Obsolete:
+;;; Key bindings
+
 ;; (global-set-key (kbd "s-b") 'ivy-switch-buffer)
 ;; (global-set-key (kbd "s-;") 'counsel-git-grep)
 ;; (global-set-key (kbd "s-a") 'counsel-projectile-find-file)
