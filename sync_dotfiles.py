@@ -50,7 +50,6 @@ LINUX_SOURCES_TO_TARGETS = {
 }  # type: PathDict
 
 ROOT_LINUX_SOURCES_TO_TARGETS = {
-    DOTFILES / 'udev-rules': ETC / 'udev/rules.d',
     DOTFILES / 'arch': ETC,
     XORG / '30-touchpad.conf': ETC / 'X11/xorg.conf.d',
 }  # type: PathDict
