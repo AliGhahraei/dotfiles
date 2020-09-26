@@ -37,4 +37,4 @@ function cd
     ls
 end
 
-status --is-interactive; and source (pyenv init -|psub)
+source /usr/local/opt/asdf/asdf.fish
