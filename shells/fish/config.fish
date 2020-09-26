@@ -4,7 +4,7 @@ thefuck --alias | source
 if status is-login; and test -e $HOME/.profile
     switch (uname)
     case Darwin
-        export JAVA_HOME=/Library/Java/Home
+        export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
     case Linux
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
         exec startx -- -keeptty
