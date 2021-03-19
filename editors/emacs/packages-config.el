@@ -7,6 +7,24 @@
 
 ;;; Configuration
 
+
+(after! python-pytest
+  (advice-add 'python-pytest--project-root :around
+              (lambda (original-function &rest args)
+                "Return SUBPROJECT envvar if defined, otherwise apply normally."
+                (let ((subproject (or (getenv "SUBPROJECT")
+                                      (apply original-function args))))
+                  subproject)))
+
+  (advice-add 'python-pytest--run :before
+              (lambda (&rest args)
+                "Set pytest executable to PYTHONPATH if set"
+                (setq python-pytest-executable
+                      (if-let ((pythonpath (getenv "PYTHONPATH")))
+                          (concat "PYTHONPATH=" pythonpath " " "pytest")
+                        "pytest")))))
+
+
 (after! org
   (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled))
 
