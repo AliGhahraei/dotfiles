@@ -1,5 +1,6 @@
 source $HOME/.profile
 thefuck --alias | source
+set -x DIRENV_LOG_FORMAT ""
 
 if status is-login; and test -e $HOME/.profile
     switch (uname)
