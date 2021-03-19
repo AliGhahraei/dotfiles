@@ -6,8 +6,8 @@
 ;;;; Recipes
 
 
-;;; Doom config diff
 (defun doom--get-modules (file)
+  "Doom config diff"
   (unless (file-exists-p file)
     (user-error "%s does not exist" file))
   (with-temp-buffer
