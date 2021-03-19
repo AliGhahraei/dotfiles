@@ -36,5 +36,3 @@ function cd
     builtin cd $argv
     ls
 end
-
-source /usr/local/opt/asdf/asdf.fish
