@@ -22,6 +22,10 @@ export PY='python3' # Looks like it needs dis
 export PELICAN_THEMES_PATH="$PROJECTS_PATH/pelican-themes"
 export PELICAN_PLUGINS_PATH="$PROJECTS_PATH/pelican-plugins"
 
+# Video
+export LIBVA_DRIVER_NAME="iHD"
+export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/intel_icd.i686.json:/usr/share/vulkan/icd.d/intel_icd.x86_64.json"
+
 # Misc.
 export VISUAL="nvim"
 export TERM="xterm-256color"
