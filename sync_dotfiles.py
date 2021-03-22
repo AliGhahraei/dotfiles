@@ -39,6 +39,7 @@ SOURCES_TO_TARGETS = {
     DOTFILES / 'termite': CONFIG / 'termite',
     DOTFILES / 'systemd-units': CONFIG / 'systemd/user',
     DOTFILES / 'git': CONFIG / 'git',
+    DOTFILES / 'asdf': HOME,
 }  # type: PathDict
 
 LINUX_SOURCES_TO_TARGETS = {
