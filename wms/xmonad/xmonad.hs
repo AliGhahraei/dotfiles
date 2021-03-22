@@ -6,6 +6,7 @@ import XMonad.Actions.WindowGo
 import XMonad.Actions.OnScreen
 
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName()
 import XMonad.Hooks.ManageHelpers
@@ -15,7 +16,7 @@ import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.NoBorders
 import XMonad.Layout.SimpleFloat
 
--- import qualified XMonad.StackSet as W
+import qualified XMonad.StackSet as W
 
 import XMonad.Util.EZConfig
 import XMonad.Util.Run(spawnPipe)
@@ -25,25 +26,27 @@ import System.IO
 
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
-  xmonad $ def
+  xmonad $ ewmh def
     -- Xmobar needs this to show the window title, the workspaces, etc.
     { logHook           = dynamicLogWithPP xmobarPP
       { ppOutput        = hPutStrLn xmproc
       , ppTitle         = xmobarColor "green" "" . shorten 50
       }
     -- XMonad doesn't cover xmobar with this. It also activates class rules
-    , manageHook        = myManageHook <+> manageDocks <+> manageHook def
+    , manageHook        = userManageHook <+> manageDocks <+> manageHook def
     -- This prevents xmobar from being covered in the first workspace
     , handleEventHook   = docksEventHook <+> handleEventHook def
-    , layoutHook        = myLayout 
-    , workspaces        = myWorkspaces
-    , terminal          = myTerminal
-    , modMask           = myModMask
-    , normalBorderColor = myNormalBorderColor
-    , focusedBorderColor= myFocusedBorderColor
-    }
-    
-    `additionalKeysP`
+    , layoutHook        = userLayout 
+    -- , workspaces        = userWorkspaces
+    , terminal          = userTerminal
+    , modMask           = userModMask
+    , normalBorderColor = userNormalBorderColor
+    , focusedBorderColor= userFocusedBorderColor
+    } 
+    `additionalKeysP` userKeys 
+    `removeKeysP` userRemovedKeys
+
+userKeys =
     [ ("M-w"                   , kill)
     , ("M-n"                   , sendMessage NextLayout)
     , ("M-f"                   , sendMessage $ Toggle FULL)
@@ -53,48 +56,46 @@ main = do
     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
     , ("<XF86AudioMute>"       , spawn "amixer set Master toggle")
     , ("<Print>"               , spawn "scrot")
-    , ("M-<Space>"             , spawn myTerminal)
-    , ("M-2"                   , switchAndRunOrRaise "code" editor editorClass)
-    , ("M-3"                   , switchAndRunOrRaise "web" browser browserClass)
+    , ("M-<Space>"             , spawn userTerminal)
+    -- , ("M-2"                   , switchAndRunOrRaise "code" editor editorClass)
+    -- , ("M-3"                   , switchAndRunOrRaise "web" browser browserClass)
+    ]
+    ++
+    [ (mask ++ "M-" ++ [key], screenWorkspace scr
+        >>= flip whenJust (windows . action))
+    | (key, scr)  <- zip "yui" [0..]
+    , (action, mask) <- [ (W.view, "") , (W.shift, "S-")]
     ]
 
-    `removeKeysP`
+userRemovedKeys =
     [ "M-p"
     ]
-
-
-    -- ++
-    -- mod-{y,u,i} %! Switch to physical/Xinerama screens 1, 2, or 3
-    -- mod-shift-{y,u,i} %! Move client to screen 1, 2, or 3
-    -- [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-    --     | (key, sc) <- zip [xK_y, xK_u, xK_i] [0..]
-    --     , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
     
 
-editor               = "emacs"
-editorClass          = "Emacs"
-browser              = "firefox-developer-edition"
-browserClass         = "firefoxdeveloperedition"
+editor                 = "emacs"
+editorClass            = "Emacs"
+browser                = "firefox-developer-edition"
+browserClass           = "firefoxdeveloperedition"
 
-myTerminal           = "termite"
-myNormalBorderColor  = "#FFFFFF"
-myFocusedBorderColor = "#3137FD"
-myModMask            = mod4Mask
-myWorkspaces         = ["def", "code", "web"] ++ map show [4 :: Int .. 9]
+userTerminal           = "termite"
+userNormalBorderColor  = "#FFFFFF"
+userFocusedBorderColor = "#3137FD"
+userModMask            = mod4Mask
+userWorkspaces         = map show [1 :: Int .. 9] ++ ["editor", "browser"]
 
-myLayout             = smartBorders
-                     -- workspace that can be toggled and will be activated by a signal
+userLayout             = smartBorders
+                       -- workspace can be toggled and be activated by signal
                        . mkToggle (NOBORDERS ?? FULL ?? EOT)
-                     -- layouts that won't cover xmobar thanks to avoidStruts
+                       -- layouts won't cover xmobar thanks to avoidStruts
                        $ avoidStruts (tall ||| simpleFloat)
   where tall = Tall 1 (3/100) (1/2)
                                
-myManageHook = composeAll
+userManageHook = composeAll
   [ className =? "Gimp"                   --> doFloat
   , className =? "sun-awt-X11-XFramePeer" --> doFloat
   , className =? "trayer"                 --> doIgnore
-  , className =? editorClass              --> doShift "code"
-  , className =? browserClass             --> doShift "web"
+  , className =? editorClass              --> doShift "editor"
+  , className =? browserClass             --> doShift "browser"
   -- Fixes fullscreen players (like Youtube)
   , isFullscreen                          --> doFullFloat
   ]
