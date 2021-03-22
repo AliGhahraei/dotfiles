@@ -31,7 +31,7 @@ SOURCES_TO_TARGETS = {
     SHELLS / 'common': HOME,
     SHELLS / 'bash': HOME,
     SHELLS / 'fish' / 'config.fish': CONFIG / 'fish',
-    SHELLS / 'fish' / 'fishfile': CONFIG / 'fish',
+    SHELLS / 'fish' / 'fish_plugins': CONFIG / 'fish',
     SHELLS / 'fish' / 'fish_user_key_bindings.fish': CONFIG / 'fish' / 'functions',
     SHELLS / 'ipython': HOME / '.ipython/profile_default',
 
