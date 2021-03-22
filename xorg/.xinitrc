@@ -47,5 +47,8 @@ picom &
 # Emacs
 doom run &
 
+# ActivityWatch
+aw-qt &
+
 # exec wm
 exec xmonad
