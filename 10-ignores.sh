@@ -21,12 +21,14 @@ IgnorePath '/boot/EFI/refind/vars/*'
 IgnorePath '/etc/*-'								# Automatic backups for important files
 IgnorePath '/etc/*.cache'
 IgnorePath '/etc/*.lock'
+IgnorePath '/etc/.updated'							# Systemd file that tracks last modification time
 IgnorePath '/etc/adjtime'							# Bookkeeping file used by hwclock
 IgnorePath '/etc/ca-certificates/*'
 IgnorePath '/etc/gshadow'							# Group passwords
 IgnorePath '/etc/hostname'
 IgnorePath '/etc/machine-id'							# Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
+IgnorePath '/etc/netctl/*'							# Netctl profiles and other files
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
@@ -56,17 +58,24 @@ IgnorePath '/usr/share/info/dir'						# Info pages index
 IgnorePath '/usr/share/mime/*'							# Libnotify files
 
 
-# /var/lib
+# /var
+IgnorePath '/var/.updated'							# Systemd file that tracks last modification time
+
+## /var/lib
 IgnorePath '/var/lib/dbus/machine-id'
+IgnorePath '/var/lib/dhcpcd/*.lease'						# DHCP leases
 IgnorePath '/var/lib/pacman/local/*'						# Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db'						# Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files'					# Pacman's repository files
 
-# Systemd
+### Systemd
 IgnorePath '/var/lib/machines/*'
 IgnorePath '/var/lib/portables/*'
 IgnorePath '/var/lib/private/*'
 IgnorePath '/var/lib/systemd/*'
+
+## /var/tmp
+IgnorePath '/var/tmp/*'
 
 
 # /var/log

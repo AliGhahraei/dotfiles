@@ -8,3 +8,6 @@ AddPackage dialog 								# For wifi-menu
 
 # Files
 CopyFile /etc/group								# To add dhcpcd group
+
+## After connecting to wifi
+CopyFile /etc/resolv.conf '' systemd-resolve systemd-resolve
