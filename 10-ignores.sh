@@ -46,7 +46,14 @@ IgnorePath '/lost+found/*'
 IgnorePath '/usr/lib/locale/locale-archive'					# Selected locales in binary format for speed
 IgnorePath '/usr/lib/modules/*'							# Kernel modules
 IgnorePath '/usr/lib/udev/hwdb.bin'						# Udev db to apply rules to devices
+
+## /usr/lib
+IgnorePath '/usr/lib/ghc-*/package.conf.d/*'					# GHC packages
+IgnorePath '/usr/lib/gdk-pixbuf-*/*'						# Libnotify files
+
+## /usr/share
 IgnorePath '/usr/share/info/dir'						# Info pages index
+IgnorePath '/usr/share/mime/*'							# Libnotify files
 
 
 # /var/lib

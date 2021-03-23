@@ -43,3 +43,4 @@ systemd-coredump:x:978:
 uuidd:x:68:
 ali:x:1000:
 git:x:977:
+dhcpcd:x:975:
