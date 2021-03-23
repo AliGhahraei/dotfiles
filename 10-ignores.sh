@@ -53,6 +53,7 @@ IgnorePath '/usr/share/info/dir'						# Info pages index
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/pacman/local/*'						# Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db'						# Pacman's repository DBs
+IgnorePath '/var/lib/pacman/sync/*.files'					# Pacman's repository files
 
 # Systemd
 IgnorePath '/var/lib/machines/*'
