@@ -2,13 +2,20 @@ source $HOME/.profile
 thefuck --alias | source
 set -x DIRENV_LOG_FORMAT ""
 
-if status is-login; and test -e $HOME/.profile
+if status --is-login; and test -e $HOME/.profile
     switch (uname)
     case Darwin
         export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
     case Linux
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
         exec startx -- -keeptty
+    end
+end
+
+if status --is-interactive
+    function cd
+        builtin cd $argv
+        ls
     end
 end
 
@@ -33,7 +40,3 @@ function fish_greeting
     end
 end
 
-function cd
-    builtin cd $argv
-    ls
-end
