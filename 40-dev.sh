@@ -3,6 +3,9 @@ AddPackage fish
 AddPackage git
 AddPackage neovim
 
+## Python
+AddPackage pyenv
+
 ## base-devel
 AddPackage autoconf
 AddPackage automake
