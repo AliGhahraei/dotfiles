@@ -47,3 +47,4 @@ dhcpcd:x:975:
 avahi:x:974:
 colord:x:973:
 polkitd:x:102:
+rtkit:x:972:
