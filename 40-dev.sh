@@ -3,9 +3,6 @@ AddPackage fish
 AddPackage git
 AddPackage neovim
 
-## Terminal emulator
-AddPackage termite
-
 ## Python
 AddPackage pyenv
 
