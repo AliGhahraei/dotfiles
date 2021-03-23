@@ -1,4 +1,4 @@
-# Si no estamos corriendo de forma interactiva, no hacemos nada
+# Return if not running interactively
 [[ $- != *i* ]] && return
 
 # Include common shell config
