@@ -11,3 +11,4 @@ AddPackage xorg-xinit								# Enables startx to start Xorg
 AddPackage xmonad
 AddPackage xmonad-contrib							# Xmoand add-ons used in my config
 AddPackage dmenu								# Command runner
+AddPackage xmobar 								# Minimalistic Text Based Status Bar
