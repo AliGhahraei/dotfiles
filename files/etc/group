@@ -5,7 +5,7 @@ ftp:x:11:
 mail:x:12:
 log:x:19:
 smmsp:x:25:
-proc:x:26:
+proc:x:26:polkitd
 games:x:50:
 lock:x:54:
 network:x:90:
@@ -44,3 +44,6 @@ uuidd:x:68:
 ali:x:1000:
 git:x:977:
 dhcpcd:x:975:
+avahi:x:974:
+colord:x:973:
+polkitd:x:102:

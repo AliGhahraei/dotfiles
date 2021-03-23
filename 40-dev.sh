@@ -3,6 +3,9 @@ AddPackage fish
 AddPackage git
 AddPackage neovim
 
+## Terminal emulator
+AddPackage termite
+
 ## Python
 AddPackage pyenv
 
@@ -31,3 +34,8 @@ AddPackage sed
 AddPackage sudo
 AddPackage texinfo
 AddPackage which
+
+
+
+# Files
+CopyFile /etc/group								# Termite changes
