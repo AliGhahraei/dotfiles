@@ -1,7 +1,7 @@
 # Boot
-IgnorePath '/boot/*.img'							# OS images
-IgnorePath '/boot/System\ Volume\ Information'					# M$ stuff for restoration
-IgnorePath '/boot/vmlinuz-linux'						# Kernel executable
+IgnorePath '/boot/*.img' # OS images
+IgnorePath '/boot/System\ Volume\ Information' # M$ stuff for restoration
+IgnorePath '/boot/vmlinuz-linux' # Kernel executable
 
 ## /boot/EFI
 IgnorePath '/boot/EFI/Boot/*'
@@ -18,17 +18,17 @@ IgnorePath '/boot/EFI/refind/vars/*'
 
 
 # /etc
-IgnorePath '/etc/*-'								# Automatic backups for important files
+IgnorePath '/etc/*-' # Automatic backups for important files
 IgnorePath '/etc/*.cache'
 IgnorePath '/etc/*.lock'
-IgnorePath '/etc/.updated'							# Systemd file that tracks last modification time
-IgnorePath '/etc/adjtime'							# Bookkeeping file used by hwclock
+IgnorePath '/etc/.updated' # Systemd file that tracks last modification time
+IgnorePath '/etc/adjtime' # Bookkeeping file used by hwclock
 IgnorePath '/etc/ca-certificates/*'
-IgnorePath '/etc/gshadow'							# Group passwords
+IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
-IgnorePath '/etc/machine-id'							# Random identifier generated at install/boot time
+IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
-IgnorePath '/etc/netctl/*'							# Netctl profiles and other files
+IgnorePath '/etc/netctl/*' # Netctl profiles and other files
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
@@ -45,32 +45,32 @@ IgnorePath '/lost+found/*'
 
 
 # /usr
-IgnorePath '/usr/lib/locale/locale-archive'					# Selected locales in binary format for speed
-IgnorePath '/usr/lib/modules/*'							# Kernel modules
-IgnorePath '/usr/lib/udev/hwdb.bin'						# Udev db to apply rules to devices
+IgnorePath '/usr/lib/locale/locale-archive' # Selected locales in binary format
+IgnorePath '/usr/lib/modules/*' # Kernel modules
+IgnorePath '/usr/lib/udev/hwdb.bin' # Udev db to apply rules to devices
 
 ## /usr/lib
 IgnorePath '/usr/lib/**/*.cache'
-IgnorePath '/var/lib/colord/*'							# Added by termite
-IgnorePath '/usr/lib/ghc-*/package.conf.d/*'					# GHC packages
-IgnorePath '/usr/lib/gdk-pixbuf-*/*'						# Libnotify files
+IgnorePath '/var/lib/colord/*' # Added by termite
+IgnorePath '/usr/lib/ghc-*/package.conf.d/*' # GHC packages
+IgnorePath '/usr/lib/gdk-pixbuf-*/*' # Libnotify files
 
 ## /usr/share
 IgnorePath '/usr/share/**/*.cache'
 IgnorePath '/usr/share/**/*.compiled'
-IgnorePath '/usr/share/info/dir'						# Info pages index
-IgnorePath '/usr/share/mime/*'							# Libnotify files
+IgnorePath '/usr/share/info/dir' # Info pages index
+IgnorePath '/usr/share/mime/*' # Libnotify files
 
 
 # /var
-IgnorePath '/var/.updated'							# Systemd file that tracks last modification time
+IgnorePath '/var/.updated' # Systemd file that tracks last modification time
 
 ## /var/lib
 IgnorePath '/var/lib/dbus/machine-id'
-IgnorePath '/var/lib/dhcpcd/*.lease'						# DHCP leases
-IgnorePath '/var/lib/pacman/local/*'						# Pacman's local DB
-IgnorePath '/var/lib/pacman/sync/*.db'						# Pacman's repository DBs
-IgnorePath '/var/lib/pacman/sync/*.files'					# Pacman's repository files
+IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
+IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
+IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
+IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
 
 ### Systemd
 IgnorePath '/var/lib/machines/*'

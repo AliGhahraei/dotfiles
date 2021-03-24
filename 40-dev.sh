@@ -35,4 +35,4 @@ AddPackage which
 
 
 # Files
-CopyFile /etc/group								# Termite changes
+CopyFile /etc/group # Termite changes
