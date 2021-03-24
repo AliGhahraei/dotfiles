@@ -1,23 +1,32 @@
-source $HOME/.profile
-thefuck --alias | source
-set -x DIRENV_LOG_FORMAT ""
+set -l platform (uname)
 
-if status --is-login; and test -e $HOME/.profile
-    switch (uname)
-    case Darwin
-        export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
-    case Linux
-        export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-        exec startx -- -keeptty
-    end
+
+source $HOME/.profile
+
+
+switch $platform
+case Darwin
+    set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+case Linux
+    set -gx BROWSER "firefox-developer-edition"
+    set -gx JAVA_HOME /usr/lib/jvm/java-8-openjdk
 end
 
+
+if status --is-login; and test $platform = "Linux"
+    exec startx -- -keeptty
+end
+
+
 if status --is-interactive
+    set -x DIRENV_LOG_FORMAT ""
+    thefuck --alias | source
     function cd
         builtin cd $argv
         ls
     end
 end
+
 
 function fish_greeting 
     if mail -e
@@ -27,7 +36,7 @@ function fish_greeting
         echo $mail_message
         set_color normal
 
-        switch (uname)
+        switch $platform
         case Darwin
             osascript -e "display notification \"$mail_message\""
         case Linux
@@ -40,3 +49,9 @@ function fish_greeting
     end
 end
 
+
+
+# pyenv init
+if command -v pyenv 1>/dev/null 2>&1
+  pyenv init - | source
+end

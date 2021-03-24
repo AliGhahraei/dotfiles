@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from functools import partial
-from getpass import getpass
 from pathlib import Path
 from platform import system
 from sys import argv
@@ -49,15 +48,6 @@ LINUX_SOURCES_TO_TARGETS = {
     XORG / 'dunstrc': CONFIG / 'dunst',
 }  # type: PathDict
 
-ROOT_LINUX_SOURCES_TO_TARGETS = {
-    DOTFILES / 'arch' / 'pacman.conf': ETC,
-    XORG / '30-touchpad.conf': ETC / 'X11/xorg.conf.d',
-}  # type: PathDict
-
-COPYABLE_ROOT_LINUX_SOURCES_TO_TARGETS = {
-    DOTFILES / 'refind': ROOT / 'boot/EFI/refind'
-}  # type: PathDict
-
 soft_link = ln.bake('-sfn')
 
 
@@ -66,9 +56,6 @@ def main():
     install_gui_files = len(argv) == 1
     if system() == 'Linux' and install_gui_files:
         sync_files(LINUX_SOURCES_TO_TARGETS)
-        password = getpass()
-        sync_files(ROOT_LINUX_SOURCES_TO_TARGETS, sync=partial(_root_sync, password, soft_link))
-        sync_files(COPYABLE_ROOT_LINUX_SOURCES_TO_TARGETS, sync=partial(_root_sync, password, cp))
 
 
 def sync_files(sources_to_targets: PathDict, *, sync: Callable[[Path, Path], None] = soft_link):
