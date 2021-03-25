@@ -6,6 +6,8 @@
 ;;;; Current
 
 ;;; Configuration
+(use-package! fish-mode
+  :hook fish-mode)
 
 
 (after! python-pytest
