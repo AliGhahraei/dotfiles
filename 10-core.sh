@@ -2,6 +2,7 @@
 AddPackage base
 AddPackage linux
 AddPackage linux-firmware
+AddPackageGroup base-devel
 
 
 
