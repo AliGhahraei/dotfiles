@@ -1,10 +1,12 @@
 # Packages
+AddPackage dash # Fast alternative for /bin/sh
 AddPackage fish
 AddPackage git
 AddPackage neovim
 
 ## Python
-AddPackage pyenv
+AddPackage ipython # An enhanced Interactive Python shell.
+AddPackage pyenv # Easily switch between multiple versions of Python
 
 ## base-devel
 AddPackage autoconf
@@ -35,4 +37,4 @@ AddPackage which
 
 
 # Files
-CopyFile /etc/group # Termite changes
+CopyFile /etc/shells # New shells
