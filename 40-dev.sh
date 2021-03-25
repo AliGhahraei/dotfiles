@@ -1,6 +1,5 @@
 # Packages
-AddPackage dash # Fast alternative for /bin/sh
-AddPackage fish
+
 AddPackage git
 AddPackage neovim
 
@@ -33,8 +32,3 @@ AddPackage sed
 AddPackage sudo
 AddPackage texinfo
 AddPackage which
-
-
-
-# Files
-CopyFile /etc/shells # New shells
