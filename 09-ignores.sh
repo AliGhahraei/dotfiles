@@ -1,3 +1,8 @@
+# General
+IgnorePath '*.cache'
+IgnorePath '*.lock'
+
+
 # Boot
 IgnorePath '/boot/*.img' # OS images
 IgnorePath '/boot/System\ Volume\ Information' # M$ stuff for restoration
@@ -19,8 +24,6 @@ IgnorePath '/boot/EFI/refind/vars/*'
 
 # /etc
 IgnorePath '/etc/*-' # Automatic backups for important files
-IgnorePath '/etc/*.cache'
-IgnorePath '/etc/*.lock'
 IgnorePath '/etc/.updated' # Systemd file that tracks last modification time
 IgnorePath '/etc/adjtime' # Bookkeeping file used by hwclock
 IgnorePath '/etc/ca-certificates/*'
@@ -50,13 +53,11 @@ IgnorePath '/usr/lib/modules/*' # Kernel modules
 IgnorePath '/usr/lib/udev/hwdb.bin' # Udev db to apply rules to devices
 
 ## /usr/lib
-IgnorePath '/usr/lib/**/*.cache'
 IgnorePath '/var/lib/colord/*' # Added by termite
 IgnorePath '/usr/lib/ghc-*/package.conf.d/*' # GHC packages
 IgnorePath '/usr/lib/gdk-pixbuf-*/*' # Libnotify files
 
 ## /usr/share
-IgnorePath '/usr/share/**/*.cache'
 IgnorePath '/usr/share/**/*.compiled'
 IgnorePath '/usr/share/info/dir' # Info pages index
 IgnorePath '/usr/share/mime/*' # Libnotify files
