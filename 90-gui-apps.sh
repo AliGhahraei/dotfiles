@@ -2,6 +2,7 @@
 AddPackage emacs # The best OS with a half-decent editor
 AddPackage firefox-developer-edition # Developer Edition of Firefox web browser
 AddPackage termite # Terminal emulator
+AddPackage --foreign ventoy-bin # A new multiboot USB solution (Binary)
 
 
 ## Doom Emacs dependencies
