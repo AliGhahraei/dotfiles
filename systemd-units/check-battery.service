@@ -1,5 +1,0 @@
-[Unit]
-Description=Check battery
-
-[Service]
-ExecStart=/home/ali/g/scripts/miscellaneous/battery.sh
