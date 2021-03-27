@@ -12,3 +12,5 @@ AddPackage thefuck # Magnificent app which corrects your previous command
 
 # Files
 CopyFile /etc/shells
+CopyFile /usr/share/libalpm/hooks/dashbinsh.hook '' ali ali # Use dash as sh
+CreateLink /usr/bin/sh /bin/dash
