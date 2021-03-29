@@ -31,7 +31,7 @@ fi
 
 setxkbmap en
 
-/home/ali/.fehbg
+. $XDG_CONFIG_HOME/desktop/set_wallpaper
 
 # Set cursor as an arrow
 xsetroot -cursor_name left_ptr &
