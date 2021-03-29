@@ -10,6 +10,7 @@ IgnorePath '/boot/vmlinuz-linux' # Kernel executable
 
 ## /boot/EFI
 IgnorePath '/boot/EFI/Boot/*'
+IgnorePath '/boot/EFI/HP/*'
 IgnorePath '/boot/EFI/Microsoft/*'
 IgnorePath '/boot/EFI/tools/*'
 
