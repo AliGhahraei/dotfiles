@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# shellcheck disable=SC2155
+export PLATFORM_TYPE="$(uname)"
+export PROJECTS_PATH="$HOME/g"
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
+export CHROME_CONFIG_HOME=$XDG_DATA_HOME
+export LESSHISTFILE=$XDG_DATA_HOME/less/history
+
+export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
+export TASKRC=$XDG_CONFIG_HOME/task/taskrc
+
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
+export TASKDATA=$XDG_DATA_HOME/task
+
+export DIRENV_LOG_FORMAT=""
+
+
+common=$HOME/.config/common_profile
+
+if [ "$PLATFORM_TYPE" = "Linux" ]; then
+    # shellcheck source=/dev/null
+    . "$common/linux"
+elif [ "$PLATFORM_TYPE" = "Darwin" ]; then
+    # shellcheck source=/dev/null
+    . "$common/macos"
+fi
+
+# shellcheck source=/dev/null
+[ -f "$common/work" ] && . "$common/work" # Out of source control
+
+
+# Pelican
+export PY='python3' # Looks like it needs dis
+export PELICAN_THEMES_PATH="$PROJECTS_PATH/pelican-themes"
+export PELICAN_PLUGINS_PATH="$PROJECTS_PATH/pelican-plugins"
+
+# Misc.
+export VISUAL="nvim"
+export PATH="$HOME/.local/bin:$HOME/.poetry/bin:$HOME/.config/emacs/bin:$PATH"
+export VIRTUAL_ENV_DISABLE_PROMPT=1
