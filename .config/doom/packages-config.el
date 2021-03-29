@@ -27,6 +27,21 @@
                         "pytest")))))
 
 
+(after! tramp
+  (add-to-list 'tramp-methods
+               '("yadm"
+                 (tramp-login-program "yadm")
+                 (tramp-login-args (("enter")))
+                 (tramp-remote-shell "/bin/sh")
+                 (tramp-remote-shell-args ("-c")))))
+
+
+(map! :leader
+      (:prefix-map ("a" . "applications")
+       (:when (featurep! :tools magit)
+        :desc "YADM magit status" "y" (cmd! (magit-status "/yadm::")))))
+
+
 (after! org
   (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled))
 
