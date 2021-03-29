@@ -14,14 +14,7 @@ if test $PLATFORM_TYPE = Linux
 
 
     # YADM
-    abbr ys 'yadm status'
-    abbr yc 'yadm commit'
-    abbr yp 'yadm push'
-    abbr yu 'yadm pull'
-    abbr ya 'yadm add'
-    abbr yl 'yadm log'
-    abbr yd 'yadm diff'
-    abbr yi "yadm ls-files -v | grep '^[[:lower:]]'"
+    abbr ye 'yadm enter'
 end
 
 # Git
