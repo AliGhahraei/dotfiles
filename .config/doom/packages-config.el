@@ -53,9 +53,12 @@
     (delete-other-windows))
 
   (add-hook! 'git-commit-setup-hook
-            (defun add-kill-magit-diff-editor-hook ()
-              (add-hook! 'with-editor-post-finish-hook :local
-                         #'kill-diff-buffer-in-repo-and-delete-windows))))
+    (defun add-kill-magit-diff-finish-hook ()
+      (add-hook! 'with-editor-post-finish-hook :local
+                 #'kill-diff-buffer-in-repo-and-delete-windows))
+    (defun add-kill-magit-diff-cancel-hook ()
+      (add-hook! 'with-editor-post-cancel-hook :local
+                 #'kill-diff-buffer-in-repo-and-delete-windows))))
 
 
 (after! org
