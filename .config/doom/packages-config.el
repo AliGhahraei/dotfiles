@@ -43,6 +43,21 @@
         :desc "YADM magit status" "y" (cmd! (magit-status "/yadm::")))))
 
 
+(after! magit
+  ;; Based on https://emacs.stackexchange.com/a/35812
+  (defun kill-diff-buffer-in-repo-and-delete-windows (&rest _)
+    "Delete magit diff buffer related to current repo"
+    (let ((magit-diff-buffer-in-current-repo
+           (magit-mode-get-buffer 'magit-diff-mode)))
+      (kill-buffer magit-diff-buffer-in-current-repo))
+    (delete-other-windows))
+
+  (add-hook! 'git-commit-setup-hook
+            (defun add-kill-magit-diff-editor-hook ()
+              (add-hook! 'with-editor-post-finish-hook :local
+                         #'kill-diff-buffer-in-repo-and-delete-windows))))
+
+
 (after! org
   (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled))
 
