@@ -28,6 +28,7 @@
 
 
 (after! tramp
+  ;; From YADM's manpage
   (add-to-list 'tramp-methods
                '("yadm"
                  (tramp-login-program "yadm")
