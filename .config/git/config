@@ -6,5 +6,6 @@
 [pull]
 	rebase = false
 [credential]
-	helper = /usr/lib/git-core/git-credential-libsecret
 	username = AliGhahraei
+[include]
+    path = local.yadm
