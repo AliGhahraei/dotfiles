@@ -39,8 +39,10 @@
 
 (map! :leader
       (:prefix-map ("a" . "applications")
-       (:when (featurep! :tools magit)
-        :desc "YADM magit status" "y" (cmd! (magit-status "/yadm::")))))
+       (:when (and (featurep! :tools magit) (featurep! :ui workspaces))
+        :desc "YADM magit status" "y"
+        (cmd! (+workspace/new "yadm")
+              (magit-status "/yadm::")))))
 
 
 (after! magit
