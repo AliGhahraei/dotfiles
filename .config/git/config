@@ -3,6 +3,7 @@
 	name = Ali Ghahraei
 [core]
 	editor = nvim
+	excludesFile = ~/.config/git/gitignore
 [pull]
 	rebase = false
 [credential]

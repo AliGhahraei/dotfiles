@@ -1,0 +1,6 @@
+# Direnv
+.direnv
+.envrc
+
+# Projectile
+.projectile
