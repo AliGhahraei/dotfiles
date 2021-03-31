@@ -1,0 +1,58 @@
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+documents
+g
+org
+pictures
+
+
+# mkdir -p
+# $XDG_DATA_HOME/less
+# XDG_DATA_HOME/bash_history
+
+
+# Tolerate temporarily
+.xmonad/xmonad.errors
+.xmonad/xmonad.hi
+.xmonad/xmonad.o
+.xmonad/xmonad-x86_64-linux
+
+.Xauthority
+.gnupg
+
+
+# Mostly data, not config
+.config/BraveSoftware
+.config/dconf
+.config/emacs
+
+.config/fish/completions
+.config/fish/conf.d
+.config/fish/fish_plugins
+.config/fish/fish_variables
+.config/fish/functions
+
+.config/ipython/**/history.sqlite
+.config/ipython/**/startup
+
+.config/pulse
+
+
+# Bugtracker
+# https://bugzilla.mozilla.org/show_bug.cgi?id=259356
+.mozilla
+# https://github.com/brave/brave-browser/issues/13733
+.pki
+
+
+# Permanently ignore
+*.yadm
+!*.yadm##
+.cache
+.local
+.python_history
+__pycache__
