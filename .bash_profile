@@ -7,3 +7,4 @@ if [ "$(uname)" == 'Linux' ] && systemctl -q is-active graphical.target && [[ ! 
   exec startx
 fi
 
+eval "$(pyenv init -)"
