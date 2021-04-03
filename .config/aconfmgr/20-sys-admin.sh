@@ -1,6 +1,6 @@
 # Packages
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
-AddPackage --foreign paru # "Feature packed AUR helper" :)
+AddPackage --foreign paru-git # "Feature packed AUR helper" :)
 AddPackage gptfdisk # For cgdisk
 AddPackage htop # Interactive process viewer
 AddPackage tree # Visualize dirs as tree
