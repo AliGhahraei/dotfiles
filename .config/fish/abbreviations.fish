@@ -32,7 +32,6 @@ abbr l 'ls'
 abbr la 'ls -a'
 
 # Misc.
-abbr maintenance '$PROJECTS_PATH/scripts/maintenance/trigger_maintenance.fish'
 abbr n 'nvim'
 abbr pretty 'python -m json.tool'
 abbr f 'fuck'
