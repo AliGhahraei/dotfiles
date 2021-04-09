@@ -11,11 +11,6 @@ org
 pictures
 
 
-# mkdir -p
-# $XDG_DATA_HOME/less
-# XDG_DATA_HOME/bash_history
-
-
 # Tolerate temporarily
 .xmonad/xmonad.errors
 .xmonad/xmonad.hi
