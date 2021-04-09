@@ -38,7 +38,7 @@
 
 
 (map! :leader
-      (:prefix-map ("a" . "applications")
+      (:prefix-map ("z" . "unclassified")
        (:when (and (featurep! :tools magit) (featurep! :ui workspaces))
         :desc "YADM magit status" "y"
         (cmd! (+workspace/new "yadm")
