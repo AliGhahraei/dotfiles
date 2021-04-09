@@ -15,7 +15,6 @@ CopyFile /etc/locale.gen
 CreateLink /etc/localtime /usr/share/zoneinfo/America/Mexico_City
 CopyFile /etc/pacman.conf
 CopyFile /etc/pacman.d/mirrorlist
-CopyFile /etc/resolv.conf '' systemd-resolve systemd-resolve # DNS file
 CopyFile /etc/shells
 CopyFile /etc/sudoers
 

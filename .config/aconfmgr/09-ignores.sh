@@ -37,6 +37,7 @@ IgnorePath '/etc/netctl/*' # Netctl profiles and other files
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
+IgnorePath '/etc/resolv.conf' # Managed by filesystem package (base dependency)
 IgnorePath '/etc/shadow'
 IgnorePath '/etc/ssl/certs/*'
 
