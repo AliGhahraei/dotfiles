@@ -4,7 +4,7 @@ AddPackage --foreign paru-git # "Feature packed AUR helper" :)
 AddPackage gptfdisk # For cgdisk
 AddPackage htop # Interactive process viewer
 AddPackage tree # Visualize dirs as tree
-AddPackage --foreign yadm # Yet Another Dotfiles Manager
+AddPackage --foreign yadm-git # Yet Another Dotfiles Manager
 
 ## Paru optional deps
 AddPackage bat # For colored pkgbuild printing
