@@ -28,7 +28,7 @@ IgnorePath '/etc/*-' # Automatic backups for important files
 IgnorePath '/etc/.updated' # Systemd file that tracks last modification time
 IgnorePath '/etc/adjtime' # Bookkeeping file used by hwclock
 IgnorePath '/etc/ca-certificates/*'
-IgnorePath '/etc/fonts/conf.d/*'
+IgnorePath '/etc/fonts/conf.d/*' # Fontconfigs should be handled by pacman
 IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
 IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
