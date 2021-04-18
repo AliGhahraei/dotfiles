@@ -5,6 +5,7 @@ AddPackage xorg-xinit # Enables startx to start Xorg
 
 ## WM
 AddPackage dmenu # Command runner
+AddPackage trayer # lightweight GTK2-based systray for UNIX desktop
 AddPackage xmonad
 AddPackage xmonad-contrib # Xmonad add-ons used in my config
 AddPackage xmobar # Minimalistic Text Based Status Bar
