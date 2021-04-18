@@ -35,7 +35,7 @@ pictures
 .config/ipython/**/history.sqlite
 .config/ipython/**/startup
 
-.config/pulse
+.config/pipewire
 
 
 # Bugtracker
