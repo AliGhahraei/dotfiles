@@ -56,7 +56,6 @@ IgnorePath '/usr/lib/modules/*' # Kernel modules
 IgnorePath '/usr/lib/udev/hwdb.bin' # Udev db to apply rules to devices
 
 ## /usr/lib
-IgnorePath '/var/lib/colord/*' # Added by termite
 IgnorePath '/usr/lib/ghc-*/package.conf.d/*' # GHC packages
 IgnorePath '/usr/lib/gdk-pixbuf-*/*' # Libnotify files
 
@@ -71,6 +70,7 @@ IgnorePath '/var/.updated' # Systemd file that tracks last modification time
 
 ## /var/lib
 IgnorePath '/var/lib/bluetooth/*' # Bluetooth device info, cache, settings, etc.
+IgnorePath '/var/lib/colord/*' # Added by termite
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
