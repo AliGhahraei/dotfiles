@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # Packages
 AddPackage bluez # Daemons for the bluetooth protocol stack
 AddPackage bluez-utils # For bluetoothctl

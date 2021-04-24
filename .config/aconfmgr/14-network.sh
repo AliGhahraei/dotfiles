@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # Packages
 AddPackage netctl # Profile based systemd network management
 AddPackage wpa_supplicant # A utility providing key negotiation for WPA wireless

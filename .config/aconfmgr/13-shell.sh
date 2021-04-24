@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # Packages
 AddPackage dash # Fast alternative for /bin/sh
 AddPackage fish

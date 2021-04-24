@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # General
 IgnorePath '*.cache'
 IgnorePath '*.lock'

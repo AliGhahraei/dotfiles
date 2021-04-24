@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # Packages
 AddPackage gnome-keyring # Stores passwords and encryption keys
 AddPackage mpv # a free, open source, and cross-platform media player

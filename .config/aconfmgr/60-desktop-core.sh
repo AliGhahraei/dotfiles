@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # Packages
 ## Xorg
 AddPackage xorg-server # Enough to run Xorg

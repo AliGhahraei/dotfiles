@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # Packages
 AddPackage emacs # The best OS with a half-decent editor
 AddPackage firefox-developer-edition # Developer Edition of Firefox web browser
