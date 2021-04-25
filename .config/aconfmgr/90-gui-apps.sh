@@ -4,6 +4,7 @@ set -euo pipefail
 # Packages
 AddPackage emacs # The best OS with a half-decent editor
 AddPackage firefox-developer-edition # Developer Edition of Firefox web browser
+AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
 AddPackage scrot # Simple command-line screenshot utility for X
 AddPackage termite # Terminal emulator
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.

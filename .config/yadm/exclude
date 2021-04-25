@@ -38,6 +38,8 @@ pictures
 .config/pipewire
 .config/pulse
 
+.config/qBittorrent
+
 
 # Bugtracker
 # https://bugzilla.mozilla.org/show_bug.cgi?id=259356
