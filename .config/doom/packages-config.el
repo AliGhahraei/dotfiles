@@ -10,6 +10,13 @@
   :hook fish-mode)
 
 
+(use-package! lsp-jedi
+  :after (python lsp-mode)
+  :config
+  (add-to-list 'lsp-disabled-clients 'mspyls)
+  (add-to-list 'lsp-enabled-clients 'jedi))
+
+
 (after! python-pytest
   (advice-add 'python-pytest--project-root :around
               (lambda (original-function &rest args)

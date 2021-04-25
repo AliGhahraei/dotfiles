@@ -25,8 +25,10 @@ AddPackage adobe-source-sans-pro-fonts # Cool variable pitch option for doom
 ### Modules
 AddPackage pandoc # Enable doom markdown previews
 AddPackage shellcheck # For shell script linting
-AddPackage unzip # lsp-mode requires it to install servers
 AddPackage cmake # vterm needs it to (re)compile the executable
+#### Python mode
+AddPackage flake8 # The modular source code checker
+AddPackage jedi-language-server # Language server for Jedi
 
 
 # Files
