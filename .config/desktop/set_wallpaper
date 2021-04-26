@@ -1,4 +1,4 @@
 #!/bin/sh
-WALLPAPER=$HOME/pictures/wallpapers/archlinux-wallpaper-1.4/archlinux-berry.jpg
+WALLPAPER=$HOME/wallpapers/archlinux-wallpaper-1.4/archlinux-berry.jpg
 
 hsetroot -cover $WALLPAPER > /dev/null
