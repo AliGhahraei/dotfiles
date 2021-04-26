@@ -38,6 +38,15 @@ pictures
 .config/pipewire
 .config/pulse
 
+.config/pomotroid/Cache
+.config/pomotroid/Code Cache
+.config/pomotroid/Dictionaries
+.config/pomotroid/GPUCache
+.config/pomotroid/Local Storage
+.config/pomotroid/Network Persistent State
+.config/pomotroid/Session Storage
+.config/pomotroid/logs
+
 .config/qBittorrent
 
 

@@ -9,6 +9,7 @@ AddPackage scrot # Simple command-line screenshot utility for X
 AddPackage termite # Terminal emulator
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 AddPackage --foreign brave-bin # Blocks ads and trackers (binary release).
+AddPackage --foreign pomotroid-bin # Simple and visually-pleasing Pomodoro timer
 AddPackage --foreign ventoy-bin # A new multiboot USB solution (Binary)
 
 
