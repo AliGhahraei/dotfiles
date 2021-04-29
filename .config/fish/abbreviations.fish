@@ -10,10 +10,10 @@ if test $PLATFORM_TYPE = Linux
     abbr es 'sudo setxkbmap latam'
     abbr en 'sudo setxkbmap us'
 
+    abbr mega 'restic -r rclone:mega_remote:backup --password-command="secret-tool lookup program restic remote mega_remote"'
+
     abbr clipboard 'xclip -selection c'
 
-
-    # YADM
     abbr ye 'yadm enter'
 end
 
