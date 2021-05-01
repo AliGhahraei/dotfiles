@@ -15,6 +15,8 @@ if test $PLATFORM_TYPE = Linux
 
     abbr clipboard 'xclip -selection c'
 
+    abbr dbot 'domestobot'
+
     abbr ye 'yadm enter'
 end
 
