@@ -11,6 +11,7 @@ AddPackage dialog # For wifi-menu
 
 # Files
 CopyFile /etc/group # To add dhcpcd group
+CopyFile /etc/sysctl.d/40-ipv6.conf # Disable IPv6 until I get a new router
 
 ## Auto-connect
 srcdir=/etc/systemd/system/sys-subsystem-net-devices-wlo1.device.wants/
