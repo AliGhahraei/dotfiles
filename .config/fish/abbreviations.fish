@@ -37,4 +37,5 @@ abbr la 'ls -a'
 # Misc.
 abbr n 'nvim'
 abbr pretty 'python -m json.tool'
+abbr pip-uninstall 'pip freeze | xargs pip uninstall -y'
 abbr f 'fuck'
