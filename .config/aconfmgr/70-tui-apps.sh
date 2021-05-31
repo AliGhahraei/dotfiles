@@ -14,6 +14,3 @@ AddPackage xorg-xkill # Kill a client by its X resource
 
 AddPackage xdg-utils # Provide xdg-open so apps like Emacs can find default apps
                      # (e.g. a browser)
-
-## Ranger optional deps
-AddPackage highlight # Code syntax highlighting
