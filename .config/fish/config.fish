@@ -16,6 +16,10 @@ else
         bass source $HOME/.config/common_profile/base
         source $__fish_config_dir/abbreviations.fish
         exec startx $XDG_CONFIG_HOME/X11/xinitrc -- -keeptty
+
+    	if command -v pyenv 1>/dev/null 2>&1
+            pyenv init - | source
+        end
     end
 
 
@@ -50,8 +54,5 @@ else
     end
 
 
-    # pyenv init
-    if command -v pyenv 1>/dev/null 2>&1
-        pyenv init - | source
-    end
+
 end
