@@ -4,9 +4,9 @@ set -euo pipefail
 # Packages
 AddPackage emacs # The best OS with a half-decent editor
 AddPackage firefox-developer-edition # Developer Edition of Firefox web browser
+AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
 AddPackage scrot # Simple command-line screenshot utility for X
-AddPackage termite # Terminal emulator
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 AddPackage --foreign brave-bin # Blocks ads and trackers (binary release).
 AddPackage --foreign pomotroid-bin # Simple and visually-pleasing Pomodoro timer
@@ -34,4 +34,3 @@ AddPackage jedi-language-server # Language server for Jedi
 
 
 # Files
-CopyFile /etc/group # Termite changes

@@ -45,7 +45,6 @@ ali:x:1000:
 git:x:977:
 dhcpcd:x:975:
 avahi:x:974:
-colord:x:973:
 polkitd:x:102:
 sgx:x:971:
 systemd-oom:x:969:

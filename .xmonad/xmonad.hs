@@ -77,7 +77,7 @@ editorClass            = "Emacs"
 browser                = "firefox-developer-edition"
 browserClass           = "firefoxdeveloperedition"
 
-userTerminal           = "termite"
+userTerminal           = "kitty"
 userNormalBorderColor  = "#FFFFFF"
 userFocusedBorderColor = "#3137FD"
 userModMask            = mod4Mask
