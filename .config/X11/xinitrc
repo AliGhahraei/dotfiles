@@ -29,7 +29,7 @@ fi
 
 #-------------------------------Personal---------------------------------
 
-setxkbmap en
+setxkbmap -layout us -variant altgr-intl
 
 . $XDG_CONFIG_HOME/desktop/set_wallpaper
 
