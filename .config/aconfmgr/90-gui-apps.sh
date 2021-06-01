@@ -34,3 +34,8 @@ AddPackage jedi-language-server # Language server for Jedi
 
 
 # Files
+## gtk3 apps use colord
+CreateDir /var/lib/colord/icc '' colord colord
+CopyFile /etc/group
+SetFileProperty /var/lib/colord group colord
+SetFileProperty /var/lib/colord owner colord
