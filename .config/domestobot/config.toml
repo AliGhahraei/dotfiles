@@ -1,1 +1,50 @@
-repos = ['~/g/domestobot', '~/g/scripts']
+[[steps]]
+name = 'upgrade_fisher'
+doc = "Upgrade Fish package manager (Linux only)."
+[[steps.env]]
+os = 'Linux'
+title = 'Upgrading fisher'
+command = ['fish', '-c', 'fisher update']
+
+[[steps]]
+name = 'upgrade_os'
+doc = "Upgrade using native package manager (Homebrew/Arch's Paru only)."
+[[steps.env]]
+os = 'Darwin'
+title = 'Upgrading with brew'
+commands = [
+    ['brew', 'update'],
+    ['brew', 'upgrade']
+]
+[[steps.env]]
+os = 'Linux'
+title = 'Upgrading with paru'
+command = ['paru']
+
+[[steps]]
+name = 'recompile_xmonad'
+doc = "Recompiles xmonad in case it was upgraded."
+[[steps.env]]
+os = 'Linux'
+title = 'Recompiling xmonad'
+command = ['xmonad', '--recompile']
+
+[[steps]]
+name = 'upgrade_python_tools'
+doc = "Upgrade Pipx tool and packages."
+title = 'Upgrading pipx and packages'
+command = ['pipx', 'upgrade-all']
+
+[[steps]]
+name = 'upgrade_doom'
+doc = 'Upgrade doom emacs distribution.'
+title = 'Upgrading doom'
+command = ['doom', 'upgrade']
+
+[[steps]]
+name = 'save_aconfmgr'
+doc = 'Run `aconfmgr save`.'
+[[steps.env]]
+os = 'Linux'
+title = 'Saving aconfmgr'
+command = ['aconfmgr', 'save']
