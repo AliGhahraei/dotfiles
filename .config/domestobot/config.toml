@@ -1,3 +1,12 @@
+default_subcommands = [
+    'upgrade_fisher',
+    'upgrade_os',
+    'recompile_xmonad',
+    'upgrade_python_tools',
+    'upgrade_doom',
+    'save_aconfmgr',
+]
+
 [[steps]]
 name = 'upgrade_fisher'
 doc = "Upgrade Fish package manager (Linux only)."
