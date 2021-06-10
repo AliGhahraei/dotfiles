@@ -8,7 +8,7 @@ if test $PLATFORM_TYPE = Linux
     abbr umnt 'sudo umount /mnt'
 
     abbr es 'sudo setxkbmap latam'
-    abbr en 'sudo setxkbmap us'
+    abbr en 'sudo setxkbmap -layout us -variant altgr-intl'
 
     abbr box 'restic -r rclone:box_remote:backup --password-command="secret-tool lookup program restic remote box_remote"'
     abbr mega 'restic -r rclone:mega_remote:backup --password-command="secret-tool lookup program restic remote mega_remote"'
@@ -17,7 +17,7 @@ if test $PLATFORM_TYPE = Linux
 
     abbr clipboard 'xclip -selection c'
 
-    abbr dbot 'domestobot'
+    abbr d 'domestobot'
 
     abbr ye 'yadm enter'
 end
