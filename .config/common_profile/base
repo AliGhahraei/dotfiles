@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2155
 export PLATFORM_TYPE="$(uname)"
-export PROJECTS_PATH="$HOME/g"
+export GIT="$HOME/g"
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -36,8 +36,8 @@ fi
 
 # Pelican
 export PY='python3' # Looks like it needs dis
-export PELICAN_THEMES_PATH="$PROJECTS_PATH/pelican-themes"
-export PELICAN_PLUGINS_PATH="$PROJECTS_PATH/pelican-plugins"
+export PELICAN_THEMES_PATH="$GIT/pelican-themes"
+export PELICAN_PLUGINS_PATH="$GIT/pelican-plugins"
 
 # Misc.
 export VISUAL="nvim"
