@@ -1,3 +1,4 @@
+help_message = 'Domestobot maintenance routines'
 default_subcommands = [
     'upgrade_fisher',
     'upgrade_os',

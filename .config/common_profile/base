@@ -19,6 +19,8 @@ export TASKDATA=$XDG_DATA_HOME/task
 
 export DIRENV_LOG_FORMAT=""
 
+export TYPER_SCRIPTS_REPOS="$GIT/scripts $GIT/typer-scripts"
+
 
 common=$HOME/.config/common_profile
 

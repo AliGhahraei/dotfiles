@@ -18,6 +18,8 @@ if test $PLATFORM_TYPE = Linux
     abbr clipboard 'xclip -selection c'
 
     abbr ye 'yadm enter'
+
+    abbr d 'dbot'
 end
 
 # Git
