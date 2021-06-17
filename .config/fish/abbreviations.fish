@@ -13,7 +13,7 @@ if test $PLATFORM_TYPE = Linux
     abbr box 'restic -r rclone:box_remote:backup --password-command="secret-tool lookup program restic remote box_remote"'
     abbr mega 'restic -r rclone:mega_remote:backup --password-command="secret-tool lookup program restic remote mega_remote"'
 
-    alias nn 'nnn -e'
+    abbr nn 'nnn -e'
 
     abbr clipboard 'xclip -selection c'
 
