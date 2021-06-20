@@ -14,8 +14,6 @@ wallpapers
 
 # Tolerate temporarily
 .xmonad/xmonad.errors
-.xmonad/xmonad.hi
-.xmonad/xmonad.o
 .xmonad/xmonad-x86_64-linux
 
 .Xauthority
@@ -54,6 +52,9 @@ wallpapers
 .config/pomotroid/logs
 
 .config/qBittorrent
+
+.config/xmonad/xmonad.hi
+.config/xmonad/xmonad.o
 
 
 # Bugtracker

@@ -25,7 +25,7 @@ import System.IO
 
 
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "xmobar ~/.config/xmonad/xmobar.hs"
   xmonad $ ewmh def
     -- Xmobar needs this to show the window title, the workspaces, etc.
     { logHook           = dynamicLogWithPP xmobarPP
