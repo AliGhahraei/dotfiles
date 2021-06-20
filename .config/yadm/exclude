@@ -13,9 +13,6 @@ wallpapers
 
 
 # Tolerate temporarily
-.xmonad/xmonad.errors
-.xmonad/xmonad-x86_64-linux
-
 .Xauthority
 .gnupg
 
