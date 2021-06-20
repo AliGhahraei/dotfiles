@@ -43,5 +43,5 @@ export PELICAN_PLUGINS_PATH="$GIT/pelican-plugins"
 
 # Misc.
 export VISUAL="nvim"
-export PATH="$HOME/.local/bin:$HOME/.poetry/bin:$HOME/.config/emacs/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/g/scripts/miscellaneous:$HOME/.poetry/bin:$HOME/.config/emacs/bin:$PATH"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
