@@ -15,12 +15,12 @@ if test $PLATFORM_TYPE = Linux
     abbr nn 'nnn -e'
 
     abbr clipboard 'xclip -selection c'
-
-    abbr ye 'yadm enter'
-
-    abbr d 'dbot'
-    abbr db 'dbot backup'
 end
+
+
+# Dbot
+abbr d 'dbot'
+abbr db 'dbot backup'
 
 # Git
 abbr gs 'git status'
@@ -37,6 +37,7 @@ abbr l 'ls'
 abbr la 'ls -a'
 
 # Misc.
+abbr ye 'yadm enter'
 abbr n 'nvim'
 abbr pretty 'python -m json.tool'
 abbr pip-uninstall 'pip freeze | xargs pip uninstall -y'
