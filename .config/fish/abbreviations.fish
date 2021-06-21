@@ -10,7 +10,6 @@ if test $PLATFORM_TYPE = Linux
     abbr es 'sudo setxkbmap latam'
     abbr en 'sudo setxkbmap -layout us -variant altgr-intl'
 
-    abbr box 'restic -r rclone:box_remote:backup --password-command="secret-tool lookup program restic remote box_remote"'
     abbr mega 'restic -r rclone:mega_remote:backup --password-command="secret-tool lookup program restic remote mega_remote"'
 
     abbr nn 'nnn -e'
@@ -20,6 +19,7 @@ if test $PLATFORM_TYPE = Linux
     abbr ye 'yadm enter'
 
     abbr d 'dbot'
+    abbr db 'dbot backup'
 end
 
 # Git

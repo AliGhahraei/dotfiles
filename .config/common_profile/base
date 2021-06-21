@@ -3,6 +3,8 @@
 # shellcheck disable=SC2155
 export PLATFORM_TYPE="$(uname)"
 export GIT="$HOME/g"
+export SCRIPTS="$GIT/scripts"
+export BACKUP_PATHS="$HOME/g $HOME/org $HOME/documents $HOME/pictures"
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -19,7 +21,7 @@ export TASKDATA=$XDG_DATA_HOME/task
 
 export DIRENV_LOG_FORMAT=""
 
-export TYPER_SCRIPTS_REPOS="$GIT/scripts $GIT/typer-scripts"
+export TYPER_SCRIPTS_REPOS="$SCRIPTS $GIT/typer-scripts"
 
 
 common=$HOME/.config/common_profile
@@ -43,5 +45,9 @@ export PELICAN_PLUGINS_PATH="$GIT/pelican-plugins"
 
 # Misc.
 export VISUAL="nvim"
-export PATH="$HOME/.local/bin:$HOME/g/scripts/miscellaneous:$HOME/.poetry/bin:$HOME/.config/emacs/bin:$PATH"
+
+export PATH="\
+$HOME/.local/bin:$SCRIPTS/miscellaneous:$SCRIPTS/backup:$HOME/.poetry/bin:\
+$HOME/.config/emacs/bin:$PATH"
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1

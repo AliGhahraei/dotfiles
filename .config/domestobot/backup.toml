@@ -1,0 +1,22 @@
+help_message = 'Domestobot backup routines'
+default_subcommands = [
+    'box_backup',
+]
+
+[[steps]]
+name = 'box_backup'
+doc = "Backup to Box."
+title = 'Backing up'
+command = ['box-backup']
+
+[[steps]]
+name = 'box_ls'
+doc = 'Show all backups in box.'
+title = 'Showing previous backups'
+command = ['box-ls']
+
+[[steps]]
+name = 'box_mgmt'
+doc = 'Pass any subcommand to the underlying backup backend.'
+title = 'Invoking backup backend'
+command = ['box-mgmt']
