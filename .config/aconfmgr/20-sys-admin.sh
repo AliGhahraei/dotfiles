@@ -4,6 +4,7 @@ set -euo pipefail
 # Packages
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
 AddPackage --foreign paru-git # "Feature packed AUR helper" :)
+AddPackage borg # Deduplicating backup program with compression and encryption
 AddPackage gptfdisk # For cgdisk
 AddPackage htop # Interactive process viewer
 AddPackage ncdu # Disk usage analyzer with an ncurses interface
