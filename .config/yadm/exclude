@@ -23,6 +23,7 @@ wallpapers
 
 # Mostly data, not config
 .config/BraveSoftware
+.config/borg
 .config/dconf
 .config/emacs
 
