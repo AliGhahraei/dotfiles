@@ -1,0 +1,4 @@
+program_options:
+  tray: true
+  terminal: 'kitty -d'
+  file_manager: 'kitty nnn -e'
