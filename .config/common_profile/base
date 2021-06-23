@@ -7,7 +7,7 @@ export SCRIPTS="$GIT/scripts"
 export BACKUP_PATHS="$HOME/g $HOME/org $HOME/documents $HOME/pictures"
 export BACKUPDIR=/run/media/ali/backup/backup
 
-# In case some program misbehaves and requires the variable
+# In case some program misbehaves and requires the variables
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
