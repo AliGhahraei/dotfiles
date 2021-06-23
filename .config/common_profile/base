@@ -5,7 +5,7 @@ export PLATFORM_TYPE="$(uname)"
 export GIT="$HOME/g"
 export SCRIPTS="$GIT/scripts"
 export BACKUP_PATHS="$HOME/g $HOME/org $HOME/documents $HOME/pictures"
-export BACKUPDIR=/run/media/ali/backup
+export BACKUPDIR=/run/media/ali/backup/backup
 
 # In case some program misbehaves and requires the variable
 export XDG_CONFIG_HOME=$HOME/.config
