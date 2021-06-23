@@ -21,6 +21,8 @@ end
 # Dbot
 abbr d 'dbot'
 abbr db 'dbot backup'
+abbr dm 'dbot maintenance'
+abbr dr 'dbot repos'
 
 # Git
 abbr gs 'git status'
