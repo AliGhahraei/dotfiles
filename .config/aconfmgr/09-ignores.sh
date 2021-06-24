@@ -27,16 +27,16 @@ IgnorePath '/boot/EFI/refind/vars/*'
 
 
 # /etc
-IgnorePath '/etc/*-' # Automatic backups for important files
-IgnorePath '/etc/.updated' # Systemd file that tracks last modification time
+IgnorePath '/etc/*-' # Automatic backups for important files like passwd
+IgnorePath '/etc/.updated' # Tracks last directory modification time for systemd
 IgnorePath '/etc/adjtime' # Bookkeeping file used by hwclock
-IgnorePath '/etc/ca-certificates/*'
+IgnorePath '/etc/ca-certificates/*' # Certification authority certificates
 IgnorePath '/etc/fonts/conf.d/*' # Fontconfigs should be handled by pacman
 IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
 IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
-IgnorePath '/etc/netctl/*' # Netctl profiles and other files
+IgnorePath '/etc/netctl/*' # Netctl profiles and related files
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
@@ -69,7 +69,7 @@ IgnorePath '/usr/share/mime/*' # Libnotify files
 
 
 # /var
-IgnorePath '/var/.updated' # Systemd file that tracks last modification time
+IgnorePath '/var/.updated' # Tracks last directory modification time for systemd
 
 ## /var/lib
 IgnorePath '/var/lib/bluetooth/*' # Bluetooth device info, cache, settings, etc.
