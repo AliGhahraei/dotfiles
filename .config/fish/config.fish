@@ -8,7 +8,7 @@ if test "$TERM" = "dumb"
     function fish_greeting; end
     function fish_title; end
 else
-    set -q PLATFORM_TYPE || set PLATFORM_TYPE (uname)
+    set -q PLATFORM_TYPE || set -gx PLATFORM_TYPE (uname)
 
 
     if status --is-login
