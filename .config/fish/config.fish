@@ -11,14 +11,15 @@ else
 
 
     if status --is-login
-        and test $PLATFORM_TYPE = "Linux"
-
         bass source $HOME/.config/common_profile/base
         source $__fish_config_dir/abbreviations.fish
-        exec startx $XDG_CONFIG_HOME/X11/xinitrc -- -keeptty
 
-    	if command -v pyenv 1>/dev/null 2>&1
+        if command -v pyenv 1>/dev/null 2>&1
             pyenv init - | source
+        end
+
+        if test $PLATFORM_TYPE = "Linux"
+            exec startx $XDG_CONFIG_HOME/X11/xinitrc -- -keeptty
         end
     end
 
