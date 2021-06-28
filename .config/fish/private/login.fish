@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 bass source $HOME/.config/common_profile/base
-source $__fish_config_dir/abbreviations.fish
+source $PRIVATE_FISH/abbreviations.fish
 
 
 if not contains /home/ali/.pyenv/shims $PATH

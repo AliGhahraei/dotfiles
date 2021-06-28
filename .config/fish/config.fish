@@ -9,10 +9,11 @@ if test "$TERM" = "dumb"
     function fish_title; end
 else
     set -q PLATFORM_TYPE || set -gx PLATFORM_TYPE (uname)
+    set -gx PRIVATE_FISH $__fish_config_dir/private
 
 
     if status --is-login
-        source $__fish_config_dir/login.fish
+        source $PRIVATE_FISH/login.fish
     end
 
 
