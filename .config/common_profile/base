@@ -24,6 +24,15 @@ export DIRENV_LOG_FORMAT=""
 
 export TYPER_SCRIPTS_REPOS="$SCRIPTS $GIT/typer-scripts"
 
+# Pelican
+export PY='python3' # Looks like it needs dis
+export PELICAN_THEMES_PATH="$GIT/pelican-themes"
+export PELICAN_PLUGINS_PATH="$GIT/pelican-plugins"
+
+# Misc.
+export VISUAL="nvim"
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 
 common=$HOME/.config/common_profile
 
@@ -39,16 +48,17 @@ fi
 [ -f "$common/work" ] && . "$common/work" # Out of source control
 
 
-# Pelican
-export PY='python3' # Looks like it needs dis
-export PELICAN_THEMES_PATH="$GIT/pelican-themes"
-export PELICAN_PLUGINS_PATH="$GIT/pelican-plugins"
+userpaths="\
+$HOME/.local/bin $SCRIPTS/miscellaneous $SCRIPTS/backup $HOME/.poetry/bin \
+$HOME/.config/emacs/bin ${PLATFORM_PATH:-}"
 
-# Misc.
-export VISUAL="nvim"
+addpath() {
+    case ":${PATH:=$1}:" in
+        *:"$1":*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
 
-export PATH="\
-$HOME/.local/bin:$SCRIPTS/miscellaneous:$SCRIPTS/backup:$HOME/.poetry/bin:\
-$HOME/.config/emacs/bin:$PATH"
-
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+for path in $userpaths; do
+    addpath "$path"
+done
