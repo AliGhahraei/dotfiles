@@ -39,6 +39,7 @@ abbr l 'ls'
 abbr la 'ls -a'
 
 # Misc.
+abbr wa 'convert-whatsapp'
 abbr ye 'yadm enter'
 abbr n 'nvim'
 abbr pretty 'python -m json.tool'
