@@ -11,7 +11,7 @@ else
 
 
     if status --is-login
-        and test (uname) = "Linux"
+        and test $PLATFORM_TYPE = "Linux"
 
         bass source $HOME/.config/common_profile/base
         source $__fish_config_dir/abbreviations.fish
