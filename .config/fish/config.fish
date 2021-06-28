@@ -1,3 +1,4 @@
+#!/usr/bin/env fish
 if test "$TERM" = "dumb"
     function fish_prompt
         echo "\$ "
