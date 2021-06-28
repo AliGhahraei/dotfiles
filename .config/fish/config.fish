@@ -52,7 +52,4 @@ else
             set_color normal
         end
     end
-
-
-
 end
