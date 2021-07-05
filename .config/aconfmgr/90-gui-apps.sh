@@ -23,7 +23,7 @@ AddPackage ripgrep
 AddPackage fd # Improves performance for many file indexing commands in doom
 
 ### Config
-AddPackage adobe-source-sans-pro-fonts # Cool variable pitch option for doom
+AddPackage adobe-source-sans-fonts # Cool variable pitch option for doom
 
 ### Modules
 AddPackage pandoc # Enable doom markdown previews
