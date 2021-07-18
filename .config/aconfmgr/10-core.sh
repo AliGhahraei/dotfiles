@@ -13,6 +13,7 @@ AddPackage rsync # Rate rsync mirrors
 
 
 # Files
+CopyFile /etc/arch-release
 CopyFile /etc/fstab
 CopyFile /etc/group
 CopyFile /etc/hosts
