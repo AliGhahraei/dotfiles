@@ -7,6 +7,7 @@ AddPackage firefox-developer-edition # Developer Edition of Firefox web browser
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
 AddPackage scrot # Simple command-line screenshot utility for X
+AddPackage steam # Valve's digital software delivery system
 AddPackage udiskie # Removable disk automounter using udisks
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 AddPackage --foreign brave-bin # Blocks ads and trackers (binary release).
