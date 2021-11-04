@@ -50,3 +50,4 @@ sgx:x:971:
 systemd-oom:x:969:
 rtkit:x:972:
 colord:x:967:
+ntp:x:964:

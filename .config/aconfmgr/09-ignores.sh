@@ -36,7 +36,9 @@ IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
 IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
-IgnorePath '/etc/netctl/*' # Netctl profiles and related files
+IgnorePath '/etc/netctl/w*' # Netctl profiles
+IgnorePath '/etc/netctl/examples/*'
+IgnorePath '/etc/netctl/interfaces/*'
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
