@@ -61,9 +61,20 @@ wallpapers
 
 
 # Permanently ignore
-*.yadm
-!*.yadm##
-.cache
-.local
+.pulse-cookie
+
 .python_history
 __pycache__
+
+cef_user_data
+.steam
+.steampath
+.steampid
+
+.wine
+
+*.yadm
+!*.yadm##
+
+.cache
+.local
