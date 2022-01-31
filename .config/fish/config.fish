@@ -17,6 +17,8 @@ else
 
     if status --is-interactive
         thefuck --alias | source
+	    direnv hook fish | source
+
         function cd
             builtin cd $argv
             ls
