@@ -18,6 +18,7 @@ export TASKRC=$XDG_CONFIG_HOME/task/taskrc
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export CHROME_CONFIG_HOME=$XDG_DATA_HOME
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 export TASKDATA=$XDG_DATA_HOME/task
 
 export DIRENV_LOG_FORMAT=""
