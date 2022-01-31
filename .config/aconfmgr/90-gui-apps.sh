@@ -35,6 +35,9 @@ AddPackage cmake # vterm needs it to (re)compile the executable
 AddPackage flake8 # The modular source code checker
 AddPackage jedi-language-server # Language server for Jedi
 
+## Route-tracker dependencies
+AddPackage graphviz # Graph visualization software
+
 
 # Files
 ## gtk3 apps use colord
