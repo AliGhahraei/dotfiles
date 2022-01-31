@@ -10,6 +10,8 @@ AddPackage qpdfview # A tabbed PDF viewer using the poppler library.
 AddPackage scrot # Simple command-line screenshot utility for X
 AddPackage steam # Valve's digital software delivery system
 AddPackage udiskie # Removable disk automounter using udisks
+AddPackage wine # A compatibility layer for running Windows programs
+AddPackage wine-mono # Wine's built-in replacement for Microsoft's .NET Framework
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 AddPackage --foreign brave-bin # Blocks ads and trackers (binary release).
 AddPackage --foreign pomotroid-bin # Simple and visually-pleasing Pomodoro timer
