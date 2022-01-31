@@ -8,3 +8,4 @@ AddPackage pulsemixer # CLI and curses mixer for pulseaudio
 
 # Files
 CopyFile /etc/group # Pipewire needs rtkit group
+CreateLink /etc/systemd/user/pipewire-session-manager.service /usr/lib/systemd/user/pipewire-media-session.service
