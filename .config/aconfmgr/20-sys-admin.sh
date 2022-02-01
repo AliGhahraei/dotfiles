@@ -10,7 +10,7 @@ AddPackage htop # Interactive process viewer
 AddPackage ncdu # Disk usage analyzer with an ncurses interface
 AddPackage restic # Fast, secure, efficient backup program
 AddPackage tree # Visualize dirs as tree
-AddPackage --foreign yadm-git # Yet Another Dotfiles Manager
+AddPackage yadm # Yet Another Dotfiles Manager
 
 ## Paru optional deps
 AddPackage bat # For colored pkgbuild printing
