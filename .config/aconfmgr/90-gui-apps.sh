@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Packages
 AddPackage emacs # The best OS with a half-decent editor
+AddPackage chromium # A web browser built for speed, simplicity, and security
 AddPackage firefox-developer-edition # Developer Edition of Firefox web browser
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
@@ -13,7 +14,6 @@ AddPackage udiskie # Removable disk automounter using udisks
 AddPackage wine # A compatibility layer for running Windows programs
 AddPackage wine-mono # Wine's built-in replacement for Microsoft's .NET Framework
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
-AddPackage --foreign brave-bin # Blocks ads and trackers (binary release).
 AddPackage --foreign pomotroid-bin # Simple and visually-pleasing Pomodoro timer
 AddPackage --foreign ventoy-bin # A new multiboot USB solution (Binary)
 

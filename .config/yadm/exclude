@@ -56,8 +56,6 @@ wallpapers
 # Bugtracker
 # https://bugzilla.mozilla.org/show_bug.cgi?id=259356
 .mozilla
-# https://github.com/brave/brave-browser/issues/13733
-.pki
 
 
 # Permanently ignore
