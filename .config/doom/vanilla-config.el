@@ -82,15 +82,6 @@
 
 ;; (defalias 'yes-or-no-p 'y-or-n-p); Prompt only as y/n
 
-(defun create-article (filename)
-  "Create a new pelican article with default content. Prompt for a FILENAME using `read-file-name'."
-  (interactive (list (read-file-name "Article filename: " "~/g/personal-website/content/")))
-  (find-file filename)
-  (insert (format "#+TITLE: \n#+DATE: %s\n#+PROPERTY: SUMMARY "
-                  (format-time-string "%Y-%m-%d")))
-  (beginning-of-buffer)
-  (move-end-of-line nil))
-
 (defun rename-file-and-buffer ()
   "Rename the current buffer and the file it is visiting."
   (interactive)
