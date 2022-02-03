@@ -5,6 +5,10 @@ set -euo pipefail
 AddPackage git
 AddPackage neovim
 
+## Hugo-related
+AddPackage hugo # Fast and Flexible Static Site Generator in Go
+AddPackage go # Core compiler tools for the Go programming language
+
 ## Python-related
 AddPackage ipython # An enhanced Interactive Python shell.
 AddPackage pyenv # Easily switch between multiple versions of Python
