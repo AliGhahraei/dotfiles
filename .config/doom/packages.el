@@ -51,3 +51,4 @@
 (package! fish-mode)
 (when (featurep! :lang python +lsp)
     (package! lsp-jedi))
+(package! ox-hugo)

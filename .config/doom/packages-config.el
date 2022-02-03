@@ -17,6 +17,10 @@
   (add-to-list 'lsp-enabled-clients 'jedi))
 
 
+(use-package! ox-hugo
+  :after ox)
+
+
 (after! python-pytest
   (advice-add 'python-pytest--project-root :around
               (lambda (original-function &rest args)
