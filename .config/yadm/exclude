@@ -59,6 +59,8 @@ wallpapers
 
 
 # Permanently ignore
+.pki
+
 .pulse-cookie
 
 .python_history
