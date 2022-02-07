@@ -38,6 +38,11 @@ abbr gi "git ls-files -v | grep '^[[:lower:]]'"
 abbr l 'ls'
 abbr la 'ls -a'
 
+# route-tracker
+abbr rc 'route tsukihime choices'
+abbr re 'route tsukihime ending'
+abbr rv 'route tsukihime view'
+
 # Misc.
 abbr wa 'convert-whatsapp'
 abbr ye 'yadm enter'
