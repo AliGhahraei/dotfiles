@@ -7,28 +7,9 @@ export SCRIPTS="$GIT/scripts"
 export BACKUP_PATHS="$HOME/g $HOME/org $HOME/documents $HOME/pictures"
 export BACKUPDIR=/run/media/ali/backup/backup
 
-# In case some program misbehaves and requires the variables
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-
-export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
-export TASKRC=$XDG_CONFIG_HOME/task/taskrc
-
-export CARGO_HOME=$XDG_DATA_HOME/cargo
-export CHROME_CONFIG_HOME=$XDG_DATA_HOME
-export LESSHISTFILE=$XDG_DATA_HOME/less/history
-export PYENV_ROOT=$XDG_DATA_HOME/pyenv
-export TASKDATA=$XDG_DATA_HOME/task
-
 export DIRENV_LOG_FORMAT=""
 
 export TYPER_SCRIPTS_REPOS="$SCRIPTS $GIT/typer-scripts"
-
-# Pelican
-export PY='python3' # Looks like it needs dis
-export PELICAN_THEMES_PATH="$GIT/pelican-themes"
-export PELICAN_PLUGINS_PATH="$GIT/pelican-plugins"
 
 # Misc.
 export VISUAL="nvim"
