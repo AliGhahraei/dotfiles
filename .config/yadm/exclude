@@ -22,7 +22,7 @@ wallpapers
 
 
 # Mostly data, not config
-.config/BraveSoftware
+.config/JetBrains
 .config/borg
 .config/dconf
 .config/emacs
@@ -59,6 +59,8 @@ wallpapers
 
 
 # Permanently ignore
+.java
+
 .pki
 
 .pulse-cookie
