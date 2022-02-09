@@ -39,9 +39,10 @@ abbr l 'ls'
 abbr la 'ls -a'
 
 # route-tracker
-abbr rtc 'route tsukihime choices'
-abbr rte 'route tsukihime ending'
-abbr rtv 'route tsukihime view'
+abbr ta 'route --save tsukihime choices add'
+abbr td 'route tsukihime choices advance'
+abbr te 'route tsukihime ending'
+abbr tv 'route tsukihime view'
 
 # Misc.
 abbr wa 'convert-whatsapp'
