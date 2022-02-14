@@ -20,6 +20,10 @@ AddPackage python-typer # Build great CLIs. Easy to code. Based on type hints
 
 
 # Files
+## Neovim
+CreateLink /usr/bin/vi /usr/bin/nvim
+CreateLink /usr/bin/vim /usr/bin/nvim
+
 ## Pycharm
 CreateLink /usr/lib/jvm/default java-11-openjdk
 CreateLink /usr/lib/jvm/default-runtime java-11-openjdk
