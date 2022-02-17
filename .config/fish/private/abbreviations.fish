@@ -41,7 +41,7 @@ abbr la 'ls -a'
 # route-tracker
 abbr ta 'route --save tsukihime choices add'
 abbr td 'route tsukihime choices advance'
-abbr te 'route tsukihime ending'
+abbr te 'route tsukihime ending add'
 abbr tv 'route tsukihime view'
 
 # Misc.
