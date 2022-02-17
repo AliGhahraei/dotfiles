@@ -16,7 +16,6 @@ else
     end
 
     if status --is-interactive
-        thefuck --alias | source
 	    direnv hook fish | source
 
         function cd
