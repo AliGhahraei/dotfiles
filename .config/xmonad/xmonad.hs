@@ -1,27 +1,40 @@
 {-# OPTIONS -fno-warn-missing-signatures #-}
+import System.IO (hPutStrLn)
 
-import XMonad
 
-import XMonad.Actions.WindowGo
-import XMonad.Actions.OnScreen
+import XMonad (mod4Mask)
 
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.SetWMName()
-import XMonad.Hooks.ManageHelpers
+import XMonad.Actions.WindowGo ((<+>), (=?), (-->), className, composeAll, doFloat
+                               , doIgnore, doShift, raiseMaybe
+                               )
+import XMonad.Actions.OnScreen (viewOnScreen)
 
-import XMonad.Layout.MultiToggle
-import XMonad.Layout.MultiToggle.Instances
-import XMonad.Layout.NoBorders
-import XMonad.Layout.SimpleFloat
+import XMonad.Core (focusedBorderColor, handleEventHook, layoutHook, logHook, manageHook
+                   , modMask, normalBorderColor, spawn, terminal, whenJust, workspaces
+                   )
 
-import qualified XMonad.StackSet as W
+import XMonad.Hooks.DynamicLog (def, dynamicLogWithPP, ppOutput, ppTitle, shorten
+                               , xmobarColor, xmobarPP
+                               )
+import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Hooks.ManageDocks (manageDocks, docksEventHook, avoidStruts)
+import XMonad.Hooks.ManageHelpers (doFullFloat, isFullscreen)
 
-import XMonad.Util.EZConfig
-import XMonad.Util.Run(spawnPipe)
+import XMonad.Layout (Tall(..))
+import XMonad.Layout ((|||), ChangeLayout(NextLayout))
+import XMonad.Layout.MultiToggle ((??), EOT(..), mkToggle, Toggle(..))
+import XMonad.Layout.MultiToggle.Instances (StdTransformers(FULL, NOBORDERS))
+import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Layout.SimpleFloat (simpleFloat)
 
-import System.IO
+import XMonad.Main (xmonad)
+
+import XMonad.Operations (kill, sendMessage, screenWorkspace, windows)
+
+import XMonad.StackSet (view, shift)
+
+import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
+import XMonad.Util.Run (spawnPipe)
 
 
 main = do
@@ -64,7 +77,7 @@ userKeys =
     [ (mask ++ "M-" ++ [key], screenWorkspace scr
         >>= flip whenJust (windows . action))
     | (key, scr)  <- zip "yui" [0..]
-    , (action, mask) <- [ (W.view, "") , (W.shift, "S-")]
+    , (action, mask) <- [ (view, "") , (shift, "S-")]
     ]
 
 userRemovedKeys =
