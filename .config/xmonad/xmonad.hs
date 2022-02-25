@@ -50,7 +50,7 @@ main = do
     -- This prevents xmobar from being covered in the first workspace
     , handleEventHook   = docksEventHook <+> handleEventHook def
     , layoutHook        = userLayout 
-    -- , workspaces        = userWorkspaces
+    , workspaces        = userWorkspaces
     , terminal          = userTerminal
     , modMask           = userModMask
     , normalBorderColor = userNormalBorderColor
@@ -70,8 +70,8 @@ userKeys =
     , ("<XF86AudioMute>"       , spawn "pamixer --toggle-mute")
     , ("<Print>"               , spawn "scrot")
     , ("M-<Space>"             , spawn userTerminal)
-    -- , ("M-2"                   , switchAndRunOrRaise "code" editor editorClass)
-    -- , ("M-3"                   , switchAndRunOrRaise "web" browser browserClass)
+    , ("M-2"                   , switchAndRunOrRaise "code" editor editorClass)
+    , ("M-3"                   , switchAndRunOrRaise "web" browser browserClass)
     ]
     ++
     [ (mask ++ "M-" ++ [key], screenWorkspace scr
@@ -94,7 +94,7 @@ userTerminal           = "kitty"
 userNormalBorderColor  = "#FFFFFF"
 userFocusedBorderColor = "#3137FD"
 userModMask            = mod4Mask
-userWorkspaces         = map show [1 :: Int .. 2] -- ++ ["editor", "browser"]
+userWorkspaces         = ["main", "code", "web"] ++ map show [4 .. 9]
 
 userLayout             = smartBorders
                        -- workspace can be toggled and be activated by signal
@@ -107,8 +107,8 @@ userManageHook = composeAll
   [ className =? "Gimp"                   --> doFloat
   , className =? "sun-awt-X11-XFramePeer" --> doFloat
   , className =? "trayer"                 --> doIgnore
-  , className =? editorClass              --> doShift "editor"
-  --, className =? browserClass             --> doShift "browser"
+  , className =? editorClass              --> doShift "code"
+  , className =? browserClass             --> doShift "web"
   -- Fixes fullscreen players (like Youtube)
   , isFullscreen                          --> doFullFloat
   ]
