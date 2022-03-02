@@ -4,7 +4,7 @@ set -euo pipefail
 # Packages
 AddPackage emacs # The best OS with a half-decent editor
 AddPackage chromium # A web browser built for speed, simplicity, and security
-AddPackage firefox-developer-edition # Developer Edition of Firefox web browser
+AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
 AddPackage qpdfview # A tabbed PDF viewer using the poppler library.

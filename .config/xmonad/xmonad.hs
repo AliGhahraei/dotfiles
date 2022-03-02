@@ -86,8 +86,8 @@ userRemovedKeys =
 
 editor                 = "emacs"
 editorClass            = "Emacs"
-browser                = "firefox-developer-edition"
-browserClass           = "firefoxdeveloperedition"
+browser                = "firefox"
+browserClass           = "firefox"
 
 userTerminal           = "kitty"
 userNormalBorderColor  = "#FFFFFF"
