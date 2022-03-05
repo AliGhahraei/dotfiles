@@ -80,6 +80,7 @@ IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
+IgnorePath '/var/lib/tpm2-tss/*' # Trusted Platform Module Software Stack API (security)
 
 ### Systemd
 IgnorePath '/var/lib/machines/*'
