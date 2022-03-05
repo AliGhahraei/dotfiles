@@ -78,6 +78,11 @@
   (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled))
 
 
+(use-package! beacon
+  :init
+  (beacon-mode 1))
+
+
 
 ;;;; Obsolete:
 
