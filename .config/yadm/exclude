@@ -75,8 +75,5 @@ cef_user_data
 
 .wine
 
-*.yadm
-!*.yadm##
-
 .cache
 .local
