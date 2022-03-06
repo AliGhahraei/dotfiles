@@ -7,3 +7,5 @@
 	url = https://github.com/AliGhahraei/dotfiles
 [filter "qpdfview"]
 	clean = "sed \"/state=.*/d;/geometry=.*/d;/scaleFactor=.*/d;/recentlyUsed=.*/d;/openPath=.*/d\""
+[branch "master"]
+	pushRemote = origin
