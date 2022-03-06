@@ -47,7 +47,7 @@ abbr tv 'route tsukihime view'
 
 # Misc.
 abbr wa 'convert-whatsapp'
-abbr ye 'yadm enter'
+abbr e 'enter-dotfiles /usr/bin/fish'
 abbr n 'nvim'
 abbr pretty 'python -m json.tool'
 abbr pip-uninstall 'pip freeze | xargs pip uninstall -y'

@@ -4,6 +4,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
+export DOTFILES_REPO="$XDG_DATA_HOME/dotfiles/repo.git"
+
 export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
 export TASKRC=$XDG_CONFIG_HOME/task/taskrc
 

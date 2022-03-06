@@ -1,19 +1,9 @@
 [core]
 	repositoryformatversion = 0
 	filemode = true
-	bare = false
-	sharedrepository = 0600
+	bare = true
 	worktree = /home/ali
-[receive]
-	denyNonFastforwards = true
-[yadm]
-	managed = true
 [remote "origin"]
 	url = https://github.com/AliGhahraei/dotfiles
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-	pushRemote = origin
 [filter "qpdfview"]
 	clean = "sed \"/state=.*/d;/geometry=.*/d;/scaleFactor=.*/d;/recentlyUsed=.*/d;/openPath=.*/d\""

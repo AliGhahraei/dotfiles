@@ -2,4 +2,4 @@
 My personal configuration files
 
 ## Installation
-Just follow https://yadm.io/docs/install and yadm clone this repo
+Just run =git clone --bare https://github.com/AliGhahraei/dotfiles $XDG_DATA_HOME/dotfiles/repo.git=

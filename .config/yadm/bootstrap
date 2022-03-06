@@ -1,7 +1,0 @@
-#!/bin/sh
-ln -sf "$HOME/.config/yadm/config" "$HOME/.local/share/yadm/repo.git/config"
-ln -sf "$HOME/.config/yadm/exclude" "$HOME/.local/share/yadm/repo.git/info/exclude"
-ln -sf "$HOME/.config/yadm/attributes" "$HOME/.local/share/yadm/repo.git/info/attributes"
-
-mkdir -p $XDG_DATA_HOME/xmonad $XDG_CACHE_HOME/xmonad
-yadm alt

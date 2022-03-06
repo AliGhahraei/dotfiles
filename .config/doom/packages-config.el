@@ -39,11 +39,11 @@
 
 
 (after! tramp
-  ;; From YADM's manpage
+  ;; Adapted from YADM's manpage (https://github.com/TheLocehiliosan/yadm)
   (add-to-list 'tramp-methods
-               '("yadm"
-                 (tramp-login-program "yadm")
-                 (tramp-login-args (("enter")))
+               '("dotfiles"
+                 (tramp-login-program "enter-dotfiles")
+                 (tramp-login-args (("/bin/sh")))
                  (tramp-remote-shell "/bin/sh")
                  (tramp-remote-shell-args ("-c")))))
 
@@ -51,9 +51,9 @@
 (map! :leader
       (:prefix-map ("z" . "unclassified")
        (:when (and (featurep! :tools magit) (featurep! :ui workspaces))
-        :desc "YADM magit status" "y"
-        (cmd! (+workspace/new "yadm")
-              (magit-status "/yadm::")))))
+        :desc "Dotfiles' magit status" "d"
+        (cmd! (+workspace/new "dotfiles")
+              (magit-status "/dotfiles::")))))
 
 
 (after! magit
