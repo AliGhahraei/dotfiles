@@ -27,6 +27,7 @@ wallpapers
 .config/dconf
 .config/emacs
 
+.config/fish/completions/tide.fish
 .config/fish/conf.d
 .config/fish/fishd.tmp.*
 .config/fish/fish_variables
