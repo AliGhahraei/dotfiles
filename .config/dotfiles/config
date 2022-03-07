@@ -1,8 +1,7 @@
 [core]
 	repositoryformatversion = 0
 	filemode = true
-	bare = false
-	sharedrepository = 0600
+	bare = true
 	worktree = /home/ali
 [receive]
 	denyNonFastforwards = true
