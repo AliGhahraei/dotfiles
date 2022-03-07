@@ -1,10 +1,8 @@
 [core]
 	repositoryformatversion = 0
 	filemode = true
-	bare = true
+	bare = false
 	worktree = /home/ali
-[receive]
-	denyNonFastforwards = true
 [remote "origin"]
 	url = https://github.com/AliGhahraei/dotfiles
 	fetch = +refs/heads/*:refs/remotes/origin/*
