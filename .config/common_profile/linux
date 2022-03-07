@@ -22,7 +22,7 @@ export XMONAD_DATA_HOME=$XDG_DATA_HOME
 
 
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
-export BROWSER="firefox-developer-edition"
+export BROWSER="firefox"
 export LIBVA_DRIVER_NAME="iHD" # Hardware video acceleration
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix Java Swing apps in Xmonad
 export TERM="xterm-256color"
