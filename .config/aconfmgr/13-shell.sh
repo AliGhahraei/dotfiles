@@ -7,6 +7,7 @@ AddPackage fish
 
 ## "Add-ons" from shell configs
 AddPackage direnv # manage per-directory environments
+AddPackage fisher # A package manager for the fish shell
 AddPackage fzf # Command-line fuzzy finder
 AddPackage s-nail # Environment for sending and receiving mail
 
