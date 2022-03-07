@@ -47,7 +47,9 @@ wallpapers
 .config/pomotroid/Session Storage
 .config/pomotroid/logs
 
-.config/qBittorrent
+.config/qBittorrent/lockfile
+.config/qBittorrent/qBittorrent-data.conf
+.config/qBittorrent/rss
 
 .config/xmonad/xmonad.hi
 .config/xmonad/xmonad.o

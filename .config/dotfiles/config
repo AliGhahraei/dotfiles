@@ -12,3 +12,5 @@
 	pushRemote = origin
 [filter "qpdfview"]
 	clean = "sed \"/state=.*/d;/geometry=.*/d;/scaleFactor=.*/d;/recentlyUsed=.*/d;/openPath=.*/d\""
+[filter "qBittorrent"]
+	clean = "sed \"/=@/d;/LastViewedPage=.*/d;/SplitterSizes=.*/d\""
