@@ -99,6 +99,12 @@ only compile instead of compiling and then running `+vterm/toggle'.
                     (delete-windows-on " *Install vterm* "))))))
 
 
+(after! projectile
+  (setq projectile-known-projects-file
+        (concat (file-name-as-directory doom-private-dir)
+                "projectile.projects")))
+
+
 
 ;;;; Obsolete:
 
