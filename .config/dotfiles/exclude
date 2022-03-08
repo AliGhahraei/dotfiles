@@ -4,12 +4,14 @@
 # exclude patterns (uncomment them if you want to use them):
 # *.[oa]
 # *~
+# Backed up
 documents
-downloads
 g
 org
 pictures
-wallpapers
+.config/JetBrains
+.config/rclone
+.mozilla
 
 
 # Tolerate temporarily
@@ -17,14 +19,11 @@ wallpapers
 .gnupg
 
 
-# Encrypted
-.config/rclone
-
-
 # Mostly data, not config
-.config/JetBrains
 .config/borg
+
 .config/dconf
+
 .config/emacs
 
 .config/fish/completions/tide.fish
@@ -47,12 +46,9 @@ wallpapers
 .config/xmonad/xmonad.o
 
 
-# Bugtracker
-# https://bugzilla.mozilla.org/show_bug.cgi?id=259356
-.mozilla
-
-
 # Permanently ignore
+downloads
+
 .java
 
 .pki

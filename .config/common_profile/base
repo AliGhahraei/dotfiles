@@ -4,7 +4,9 @@
 export PLATFORM_TYPE="$(uname)"
 export GIT="$HOME/g"
 export SCRIPTS="$GIT/scripts"
-export BACKUP_PATHS="$HOME/g $HOME/org $HOME/documents $HOME/pictures"
+export BACKUP_PATHS="\
+$HOME/g $HOME/org $HOME/documents $HOME/pictures $HOME/.config/JetBrains \
+$HOME/.config/rclone .mozilla"
 export BACKUPDIR=/run/media/ali/backup/backup
 
 export DIRENV_LOG_FORMAT=""
