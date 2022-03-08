@@ -83,6 +83,22 @@
   (beacon-mode 1))
 
 
+(when (featurep! :term vterm)
+  (setq vterm-always-compile-module t)
+  (advice-add '+vterm/toggle :before
+              (lambda (&rest args)
+                "Compile vterm-module.so if missing
+
+If you only set `vterm-always-compile-module' without the advice, it will
+only compile instead of compiling and then running `+vterm/toggle'.
+"
+                (unless (require 'vterm-module nil t)
+                  (when (condition-case nil
+                            (vterm-module-compile)
+                          (error nil))
+                    (delete-windows-on " *Install vterm* "))))))
+
+
 
 ;;;; Obsolete:
 
