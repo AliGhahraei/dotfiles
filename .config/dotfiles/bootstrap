@@ -5,4 +5,6 @@ ln -sf "$config/config" "$repo/config"
 ln -sf "$config/exclude" "$repo/info/exclude"
 ln -sf "$config/attributes" "$repo/info/attributes"
 
-mkdir -p $XDG_DATA_HOME/xmonad $XDG_CACHE_HOME/xmonad
+mkdir -p "$XDG_DATA_HOME/less"
+mkdir -p "$XDG_DATA_HOME/bash/history"
+mkdir -p "$XDG_DATA_HOME/xmonad" "$XDG_CACHE_HOME/xmonad"
