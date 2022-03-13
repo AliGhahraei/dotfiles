@@ -7,4 +7,3 @@ ln -sf "$config/attributes" "$repo/info/attributes"
 
 mkdir -p "$XDG_DATA_HOME/less"
 mkdir -p "$XDG_DATA_HOME/bash/history"
-mkdir -p "$XDG_DATA_HOME/xmonad" "$XDG_CACHE_HOME/xmonad"

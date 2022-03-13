@@ -15,15 +15,9 @@ export LESSHISTFILE=$XDG_DATA_HOME/less/history
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 export TASKDATA=$XDG_DATA_HOME/task
 
-# Xmonad
-export XMONAD_CONFIG_HOME=$XDG_CONFIG_HOME
-export XMONAD_CACHE_HOME=$XDG_CACHE_HOME
-export XMONAD_DATA_HOME=$XDG_DATA_HOME
-
 
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export BROWSER="firefox"
 export LIBVA_DRIVER_NAME="iHD" # Hardware video acceleration
-export _JAVA_AWT_WM_NONREPARENTING=1 # fix Java Swing apps in Xmonad
 export TERM="xterm-256color"
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup program rclone user ali"

@@ -2,7 +2,7 @@ help_message = 'Domestobot maintenance routines'
 default_subcommands = [
     'upgrade_fisher',
     'upgrade_os',
-    'recompile_xmonad',
+    'check_qtile_config',
     'upgrade_python_tools',
     'upgrade_doom',
     'save_aconfmgr',
@@ -32,12 +32,12 @@ title = 'Upgrading with paru'
 command = ['paru']
 
 [[steps]]
-name = 'recompile_xmonad'
-doc = "Recompiles xmonad in case it was upgraded."
+name = 'check_qtile_config'
+doc = "Checks if qtile config is valid."
 [[steps.envs]]
 os = 'Linux'
-title = 'Recompiling xmonad'
-command = ['xmonad', '--recompile']
+title = 'Checking qtile config'
+command = ['qtile', 'check']
 
 [[steps]]
 name = 'upgrade_python_tools'

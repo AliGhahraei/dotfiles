@@ -42,9 +42,6 @@ pictures
 .config/qBittorrent/qBittorrent-data.conf
 .config/qBittorrent/rss
 
-.config/xmonad/xmonad.hi
-.config/xmonad/xmonad.o
-
 
 # Permanently ignore
 downloads
