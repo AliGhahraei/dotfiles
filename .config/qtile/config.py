@@ -106,7 +106,7 @@ def get_screens() -> List[Screen]:
             Battery(format='{char} {percent:2.0%}', charge_char='▲',
                     discharge_char='▼'),
             Systray(),
-            Clock(format='%a %Y-%m-%dT%H:%M'),
+            Clock(format=' %a %Y-%m-%d   %H:%M'),
         ],
         24,
     ))]
