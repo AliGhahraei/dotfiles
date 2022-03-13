@@ -8,7 +8,8 @@ from libqtile.layout import Max, Tile
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
-    Battery, Chord, Clock, CurrentLayout, GroupBox, Systray, WindowName,
+    Battery, Chord, Clock, CurrentLayout, GroupBox, PulseVolume, Systray,
+    TextBox, WindowName,
 )
 
 MOD = 'mod4'
@@ -103,9 +104,11 @@ def get_screens() -> List[Screen]:
                 },
                 name_transform=lambda name: name.upper(),
             ),
+            Systray(),
+            TextBox(text="墳"),
+            PulseVolume(),
             Battery(format='{char} {percent:2.0%}', charge_char='▲',
                     discharge_char='▼'),
-            Systray(),
             Clock(format=' %a %Y-%m-%d   %H:%M'),
         ],
         24,
