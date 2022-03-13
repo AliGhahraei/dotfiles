@@ -1,7 +1,9 @@
+from subprocess import Popen
 from typing import Iterable, Iterator, List, Tuple
 
 from libqtile.bar import Bar
 from libqtile.config import Click, Drag, Group, Key, Mouse, Screen
+from libqtile.hook import subscribe
 from libqtile.layout import Max, Tile
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -14,7 +16,7 @@ MOD = 'mod4'
 
 def get_groups() -> List[Group]:
     named_groups = (
-        Group('main', spawn='aw-qt'),
+        Group('main'),
         Group('dev', spawn='emacs'),
         Group('www', spawn='firefox'),
     )
@@ -119,6 +121,11 @@ def get_mouse_actions() -> List[Mouse]:
         Click([MOD], 'Button2',
               lazy.window.bring_to_front()),
     ]
+
+
+@subscribe.startup_once
+def startup_once():
+    Popen('aw-qt')
 
 
 groups = get_groups()
