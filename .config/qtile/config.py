@@ -85,7 +85,8 @@ def get_keys(groups_: Iterable[Group]) -> List[Key]:
         Key([], 'Print', lazy.spawn('scrot'), desc='Screenshot'),
         Key([MOD], 'space', lazy.spawn(guess_terminal()),
             desc='Launch terminal'),
-        Key([MOD], 'd', lazy.spawn('dmenu_run'), desc='Dmenu'),
+        Key([MOD], 'd', lazy.spawn(['rofi', '-show', 'run']),
+            desc='Run command with Rofi'),
 
         *_get_group_keys((str(key), group)
                          for key, group in enumerate(groups_, start=1)),
