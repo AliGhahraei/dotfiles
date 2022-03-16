@@ -8,7 +8,7 @@ AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
 AddPackage qpdfview # A tabbed PDF viewer using the poppler library.
-AddPackage scrot # Simple command-line screenshot utility for X
+AddPackage flameshot # Powerful yet simple to use screenshot software
 AddPackage steam # Valve's digital software delivery system
 AddPackage udiskie # Removable disk automounter using udisks
 AddPackage wine # A compatibility layer for running Windows programs

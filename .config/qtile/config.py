@@ -82,7 +82,7 @@ def get_keys(groups_: Iterable[Group]) -> List[Key]:
             desc='Lower volume'),
         Key([], 'XF86AudioMute', lazy.spawn(['pamixer', '--toggle-mute']),
             desc='Mute'),
-        Key([], 'Print', lazy.spawn('scrot'), desc='Screenshot'),
+        Key([], 'Print', lazy.spawn(['flameshot', 'gui']), desc='Screenshot'),
         Key([MOD], 'space', lazy.spawn(guess_terminal()),
             desc='Launch terminal'),
         Key([MOD], 'd', lazy.spawn(['rofi', '-show', 'run']),
