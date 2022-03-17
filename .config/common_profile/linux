@@ -7,13 +7,11 @@ export XDG_DATA_HOME=$HOME/.local/share
 export DOTFILES_REPO="$XDG_DATA_HOME/dotfiles/repo.git"
 
 export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
-export TASKRC=$XDG_CONFIG_HOME/task/taskrc
 
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export CHROME_CONFIG_HOME=$XDG_DATA_HOME
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
-export TASKDATA=$XDG_DATA_HOME/task
 
 
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
