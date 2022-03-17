@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/ali/pictures/wallpapers/solarized_landscape.jpg'

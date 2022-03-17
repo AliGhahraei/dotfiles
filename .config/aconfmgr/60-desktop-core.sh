@@ -16,7 +16,6 @@ AddPackage libnotify # Library for notifications, needs server
 AddPackage dunst # Notification daemon/server
 
 ## Misc
-AddPackage hsetroot # Background image setter
 AddPackage picom # X compositor for sweet transparency
 
 
