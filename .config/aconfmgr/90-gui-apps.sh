@@ -29,7 +29,7 @@ AddPackage fd # Improves performance for many file indexing commands in doom
 AddPackage adobe-source-sans-fonts # Cool variable pitch option for doom
 
 ### Modules
-AddPackage pandoc # Enable doom markdown previews
+AddPackage marked # A markdown parser built for speed
 AddPackage shellcheck # For shell script linting
 AddPackage cmake # vterm needs it to (re)compile the executable
 #### Python mode
