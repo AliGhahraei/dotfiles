@@ -4,7 +4,7 @@ from typing import Iterable, Iterator, List, Tuple
 from libqtile.bar import Bar
 from libqtile.config import Click, Drag, Group, Key, Mouse, Screen
 from libqtile.hook import subscribe
-from libqtile.layout import Max, Tile
+from libqtile.layout import Tile
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
@@ -68,7 +68,8 @@ def get_keys(groups_: Iterable[Group]) -> List[Key]:
             desc='Reset all window sizes'),
         Key([MOD], 't', lazy.window.toggle_floating(), desc='Toggle floating'),
 
-        Key([MOD], 'f', lazy.next_layout(), desc='Toggle between layouts'),
+        Key([MOD], 'f', lazy.window.toggle_fullscreen(),
+            desc='Toggle fullscreen'),
         Key([MOD], 'w', lazy.window.kill(), desc='Kill focused window'),
         Key([MOD], 'r', lazy.reload_config(), desc='Reload the config'),
         Key([MOD, 'shift'], 'r', lazy.restart(), desc='Reload the config'),
@@ -134,6 +135,6 @@ def startup_once():
 
 groups = get_groups()
 keys = get_keys(groups)
-layouts = [Tile(border_on_single=False, ratio=0.5), Max()]
+layouts = [Tile(border_on_single=False, ratio=0.5)]
 screens = get_screens()
 mouse = get_mouse_actions()
