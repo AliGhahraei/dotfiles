@@ -1,8 +1,11 @@
+from enum import Enum
 from subprocess import Popen
-from typing import Iterable, Iterator, List, Tuple
+from typing import Iterable, Iterator, List, Tuple, Callable
 
+from libqtile.backend.base import Window
 from libqtile.bar import Bar
 from libqtile.config import Click, Drag, Group, Key, Mouse, Screen
+from libqtile.core.manager import Qtile
 from libqtile.hook import subscribe
 from libqtile.layout import Tile
 from libqtile.lazy import lazy
@@ -15,18 +18,34 @@ from libqtile.widget import (
 MOD = 'mod4'
 
 
+class StrEnum(str, Enum):
+    pass
+
+
+class GroupNames(StrEnum):
+    home = '1'
+    dev = '2'
+    www = '3'
+
+
+RUN_OR_FOCUS_GROUPS = {
+    GroupNames.dev: ('emacs', 'Emacs'),
+    GroupNames.www: ('firefox', 'firefox'),
+}
+
+
 def get_groups() -> List[Group]:
     named_groups = (
-        Group('1', label='home'),
-        Group('2', label='dev', spawn='emacs'),
-        Group('3', label='www', spawn='firefox'),
+        Group(GroupNames.home, label='home'),
+        Group(GroupNames.dev, label='dev', spawn='emacs'),
+        Group(GroupNames.www, label='www', spawn='firefox'),
     )
     non_named_groups = (Group(str(index))
                         for index in range(len(named_groups) + 1, 10))
     return [*named_groups, *non_named_groups]
 
 
-def get_keys(groups_: Iterable[Group]) -> List[Key]:
+def get_keys(group_names: Iterable[str]) -> List[Key]:
     def _get_base_keys() -> Tuple[Key, ...]:
         return (
             Key([MOD], 'h', lazy.layout.left(), desc='Move focus to left'),
@@ -77,24 +96,51 @@ def get_keys(groups_: Iterable[Group]) -> List[Key]:
                 desc='Run command with Rofi'),
         )
 
-    def _get_group_keys() -> Iterator[Key]:
-        for group in groups_:
-            yield Key(
-                [MOD],
-                group.name,
-                lazy.group[group.name].toscreen(),
-                desc=f'Switch to group {group.name}',
-            )
-            yield Key(
+    def _get_group_switch_key(name: str, *extra_actions: Callable[[], None]) \
+            -> Key:
+        return Key(
+            [MOD],
+            name,
+            lazy.group[name].toscreen(), *extra_actions,
+            desc=f'Switch to group {name}'
+        )
+
+    def _run_if_no_window_matches(qtile: Qtile, command: str, wm_class: str) \
+            -> None:
+        active_windows: List[Window] = qtile.current_group.windows
+        windows_matching_class = (window for window in active_windows
+                                  if (window_classes := window.get_wm_class())
+                                  and wm_class in window_classes)
+        try:
+            next(windows_matching_class)
+        except StopIteration:
+            qtile.cmd_spawn(command)
+
+    def _get_group_move_keys(names: Iterable[str]) -> Iterator[Key]:
+        return(
+            Key(
                 [MOD, 'shift'],
-                group.name,
-                lazy.window.togroup(group.name, switch_group=True),
-                desc=f'Switch to & move focused window to group {group.name}',
+                name,
+                lazy.window.togroup(name, switch_group=True),
+                desc=f'Move focused window & switch to group {name}',
             )
+            for name in names
+        )
 
     return [
         *_get_base_keys(),
-        *_get_group_keys(),
+        *(
+            _get_group_switch_key(
+                name,
+                lazy.function(_run_if_no_window_matches, command, wm_class),
+            )
+            for name, (command, wm_class) in RUN_OR_FOCUS_GROUPS.items()
+        ),
+        *(
+            _get_group_switch_key(name)
+            for name in group_names if name not in RUN_OR_FOCUS_GROUPS
+        ),
+        *_get_group_move_keys(group_names),
     ]
 
 
@@ -138,7 +184,7 @@ def startup_once():
 
 
 groups = get_groups()
-keys = get_keys(groups)
+keys = get_keys(group.name for group in groups)
 layouts = [Tile(border_on_single=False, ratio=0.5)]
 screens = get_screens()
 mouse = get_mouse_actions()
