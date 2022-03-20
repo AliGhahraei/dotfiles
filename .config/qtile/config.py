@@ -28,21 +28,21 @@ class GroupNames(StrEnum):
     www = '3'
 
 
-RUN_OR_FOCUS_GROUPS = {
+GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
     GroupNames.dev: ('emacs', 'Emacs'),
     GroupNames.www: ('firefox', 'firefox'),
 }
 
 
 def get_groups() -> List[Group]:
-    named_groups = (
+    labelled_groups = (
         Group(GroupNames.home, label='home'),
         Group(GroupNames.dev, label='dev'),
         Group(GroupNames.www, label='www'),
     )
-    non_named_groups = (Group(str(index))
-                        for index in range(len(named_groups) + 1, 10))
-    return [*named_groups, *non_named_groups]
+    non_labelled_groups = (Group(str(index))
+                           for index in range(len(labelled_groups) + 1, 10))
+    return [*labelled_groups, *non_labelled_groups]
 
 
 def get_keys(group_names: Iterable[str]) -> List[Key]:
@@ -134,11 +134,13 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
                 name,
                 lazy.function(_run_if_no_window_matches, command, wm_class),
             )
-            for name, (command, wm_class) in RUN_OR_FOCUS_GROUPS.items()
+            for name, (command, wm_class)
+            in GROUPS_TO_PROGRAMS_AND_WM_CLASSES.items()
         ),
         *(
             _get_group_switch_key(name)
-            for name in group_names if name not in RUN_OR_FOCUS_GROUPS
+            for name in group_names
+            if name not in GROUPS_TO_PROGRAMS_AND_WM_CLASSES
         ),
         *_get_group_move_keys(group_names),
     ]
