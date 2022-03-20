@@ -27,8 +27,58 @@ def get_groups() -> List[Group]:
 
 
 def get_keys(groups_: Iterable[Group]) -> List[Key]:
+    def _get_base_keys() -> Tuple[Key, ...]:
+        return (
+            Key([MOD], 'h', lazy.layout.left(), desc='Move focus to left'),
+            Key([MOD], 'l', lazy.layout.right(), desc='Move focus to right'),
+            Key([MOD], 'j', lazy.layout.down(), desc='Move focus down'),
+            Key([MOD], 'k', lazy.layout.up(), desc='Move focus up'),
+            Key([MOD], 'Return', lazy.layout.next(),
+                desc='Move window focus to other window'),
+
+            Key([MOD, 'shift'], 'h', lazy.layout.shuffle_left(),
+                desc='Move window to the left'),
+            Key([MOD, 'shift'], 'l', lazy.layout.shuffle_right(),
+                desc='Move window to the right'),
+            Key([MOD, 'shift'], 'j', lazy.layout.shuffle_down(),
+                desc='Move window down'),
+            Key([MOD, 'shift'], 'k', lazy.layout.shuffle_up(),
+                desc='Move window up'),
+
+            Key([MOD, 'control'], 'h', lazy.layout.decrease_ratio(),
+                desc='Decrease layout ratio'),
+            Key([MOD, 'control'], 'l', lazy.layout.increase_ratio(),
+                desc='Increase layout ratio'),
+            Key([MOD], 'n', lazy.layout.normalize(),
+                desc='Reset all window sizes'),
+            Key([MOD], 't', lazy.window.toggle_floating(),
+                desc='Toggle floating'),
+
+            Key([MOD], 'f', lazy.window.toggle_fullscreen(),
+                desc='Toggle fullscreen'),
+            Key([MOD], 'w', lazy.window.kill(), desc='Kill focused window'),
+            Key([MOD], 'r', lazy.reload_config(), desc='Reload the config'),
+            Key([MOD, 'shift'], 'r', lazy.restart(), desc='Reload the config'),
+            Key([MOD], 'q', lazy.shutdown(), desc='Shutdown Qtile'),
+
+            Key([], 'XF86AudioRaiseVolume',
+                lazy.spawn(['pamixer', '--increase', '5', '--unmute']),
+                desc='Raise volume'),
+            Key([], 'XF86AudioLowerVolume',
+                lazy.spawn(['pamixer', '--decrease', '5', '--unmute']),
+                desc='Lower volume'),
+            Key([], 'XF86AudioMute', lazy.spawn(['pamixer', '--toggle-mute']),
+                desc='Mute'),
+            Key([], 'Print', lazy.spawn(['flameshot', 'gui']),
+                desc='Screenshot'),
+            Key([MOD], 'space', lazy.spawn(guess_terminal()),
+                desc='Launch terminal'),
+            Key([MOD], 'd', lazy.spawn(['rofi', '-show', 'run']),
+                desc='Run command with Rofi'),
+        )
+
     def _get_group_keys(keys_and_groups: Iterable[Tuple[str, Group]]) \
-      -> Iterator[Key]:
+            -> Iterator[Key]:
         for key, group in keys_and_groups:
             yield Key(
                 [MOD],
@@ -44,51 +94,7 @@ def get_keys(groups_: Iterable[Group]) -> List[Key]:
             )
 
     return [
-        Key([MOD], 'h', lazy.layout.left(), desc='Move focus to left'),
-        Key([MOD], 'l', lazy.layout.right(), desc='Move focus to right'),
-        Key([MOD], 'j', lazy.layout.down(), desc='Move focus down'),
-        Key([MOD], 'k', lazy.layout.up(), desc='Move focus up'),
-        Key([MOD], 'Return', lazy.layout.next(),
-            desc='Move window focus to other window'),
-
-        Key([MOD, 'shift'], 'h', lazy.layout.shuffle_left(),
-            desc='Move window to the left'),
-        Key([MOD, 'shift'], 'l', lazy.layout.shuffle_right(),
-            desc='Move window to the right'),
-        Key([MOD, 'shift'], 'j', lazy.layout.shuffle_down(),
-            desc='Move window down'),
-        Key([MOD, 'shift'], 'k', lazy.layout.shuffle_up(),
-            desc='Move window up'),
-
-        Key([MOD, 'control'], 'h', lazy.layout.decrease_ratio(),
-            desc='Decrease layout ratio'),
-        Key([MOD, 'control'], 'l', lazy.layout.increase_ratio(),
-            desc='Increase layout ratio'),
-        Key([MOD], 'n', lazy.layout.normalize(),
-            desc='Reset all window sizes'),
-        Key([MOD], 't', lazy.window.toggle_floating(), desc='Toggle floating'),
-
-        Key([MOD], 'f', lazy.window.toggle_fullscreen(),
-            desc='Toggle fullscreen'),
-        Key([MOD], 'w', lazy.window.kill(), desc='Kill focused window'),
-        Key([MOD], 'r', lazy.reload_config(), desc='Reload the config'),
-        Key([MOD, 'shift'], 'r', lazy.restart(), desc='Reload the config'),
-        Key([MOD], 'q', lazy.shutdown(), desc='Shutdown Qtile'),
-
-        Key([], 'XF86AudioRaiseVolume',
-            lazy.spawn(['pamixer', '--increase', '5', '--unmute']),
-            desc='Raise volume'),
-        Key([], 'XF86AudioLowerVolume',
-            lazy.spawn(['pamixer', '--decrease', '5', '--unmute']),
-            desc='Lower volume'),
-        Key([], 'XF86AudioMute', lazy.spawn(['pamixer', '--toggle-mute']),
-            desc='Mute'),
-        Key([], 'Print', lazy.spawn(['flameshot', 'gui']), desc='Screenshot'),
-        Key([MOD], 'space', lazy.spawn(guess_terminal()),
-            desc='Launch terminal'),
-        Key([MOD], 'd', lazy.spawn(['rofi', '-show', 'run']),
-            desc='Run command with Rofi'),
-
+        *_get_base_keys(),
         *_get_group_keys((str(key), group)
                          for key, group in enumerate(groups_, start=1)),
     ]
