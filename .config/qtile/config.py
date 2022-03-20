@@ -186,7 +186,7 @@ def startup_once():
 
 
 groups = get_groups()
-keys = get_keys(group.name for group in groups)
+keys = get_keys([group.name for group in groups])
 layouts = [Tile(border_on_single=False, ratio=0.5)]
 screens = get_screens()
 mouse = get_mouse_actions()
