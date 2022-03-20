@@ -7,7 +7,7 @@ from libqtile.bar import Bar
 from libqtile.config import Click, Drag, Group, Key, Mouse, Screen
 from libqtile.core.manager import Qtile
 from libqtile.hook import subscribe
-from libqtile.layout import Tile
+from libqtile.layout import MonadTall
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
@@ -65,11 +65,11 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
             Key([MOD, 'shift'], 'k', lazy.layout.shuffle_up(),
                 desc='Move window up'),
 
-            Key([MOD, 'control'], 'h', lazy.layout.decrease_ratio(),
-                desc='Decrease layout ratio'),
-            Key([MOD, 'control'], 'l', lazy.layout.increase_ratio(),
-                desc='Increase layout ratio'),
-            Key([MOD], 'n', lazy.layout.normalize(),
+            Key([MOD, 'control'], 'h', lazy.layout.shrink_main(),
+                desc='Shrink main window'),
+            Key([MOD, 'control'], 'l', lazy.layout.grow_main(),
+                desc='Grow main window'),
+            Key([MOD, 'control'], 'r', lazy.layout.reset(),
                 desc='Reset all window sizes'),
             Key([MOD], 't', lazy.window.toggle_floating(),
                 desc='Toggle floating'),
@@ -195,6 +195,6 @@ def startup_once():
 
 groups = get_groups()
 keys = get_keys([group.name for group in groups])
-layouts = [Tile(border_on_single=False, ratio=0.5)]
+layouts = [MonadTall(single_border_width=0, border_focus=PURPLE)]
 screens = get_screens()
 mouse = get_mouse_actions()
