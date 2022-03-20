@@ -11,11 +11,12 @@ from libqtile.layout import Tile
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
-    Battery, Chord, Clock, CurrentLayout, GroupBox, PulseVolume, Systray,
-    TextBox, WindowName,
+    Battery, Chord, Clock, CurrentLayout, GroupBox, Pomodoro, PulseVolume,
+    Systray, TextBox, WindowName,
 )
 
 MOD = 'mod4'
+PURPLE = 'a663e6'
 
 
 class StrEnum(str, Enum):
@@ -159,6 +160,13 @@ def get_screens() -> List[Screen]:
                 name_transform=lambda name: name.upper(),
             ),
             Systray(),
+            Pomodoro(
+                length_pomodori=50,
+                length_short_break=10,
+                length_long_break=30,
+                update_interval=1,
+                color_inactive=PURPLE,
+            ),
             TextBox(text="墳"),
             PulseVolume(),
             Battery(format='{char} {percent:2.0%}', charge_char='▲',
