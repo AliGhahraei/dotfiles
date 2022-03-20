@@ -37,8 +37,8 @@ RUN_OR_FOCUS_GROUPS = {
 def get_groups() -> List[Group]:
     named_groups = (
         Group(GroupNames.home, label='home'),
-        Group(GroupNames.dev, label='dev', spawn='emacs'),
-        Group(GroupNames.www, label='www', spawn='firefox'),
+        Group(GroupNames.dev, label='dev'),
+        Group(GroupNames.www, label='www'),
     )
     non_named_groups = (Group(str(index))
                         for index in range(len(named_groups) + 1, 10))
