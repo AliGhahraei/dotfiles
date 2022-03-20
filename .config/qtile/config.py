@@ -17,7 +17,7 @@ MOD = 'mod4'
 
 def get_groups() -> List[Group]:
     named_groups = (
-        Group('main'),
+        Group('home'),
         Group('dev', spawn='emacs'),
         Group('www', spawn='firefox'),
     )
