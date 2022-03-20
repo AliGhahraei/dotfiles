@@ -17,9 +17,9 @@ MOD = 'mod4'
 
 def get_groups() -> List[Group]:
     named_groups = (
-        Group('home'),
-        Group('dev', spawn='emacs'),
-        Group('www', spawn='firefox'),
+        Group('1', label='home'),
+        Group('2', label='dev', spawn='emacs'),
+        Group('3', label='www', spawn='firefox'),
     )
     non_named_groups = (Group(str(index))
                         for index in range(len(named_groups) + 1, 10))
@@ -77,26 +77,24 @@ def get_keys(groups_: Iterable[Group]) -> List[Key]:
                 desc='Run command with Rofi'),
         )
 
-    def _get_group_keys(keys_and_groups: Iterable[Tuple[str, Group]]) \
-            -> Iterator[Key]:
-        for key, group in keys_and_groups:
+    def _get_group_keys() -> Iterator[Key]:
+        for group in groups_:
             yield Key(
                 [MOD],
-                key,
+                group.name,
                 lazy.group[group.name].toscreen(),
                 desc=f'Switch to group {group.name}',
             )
             yield Key(
                 [MOD, 'shift'],
-                key,
+                group.name,
                 lazy.window.togroup(group.name, switch_group=True),
                 desc=f'Switch to & move focused window to group {group.name}',
             )
 
     return [
         *_get_base_keys(),
-        *_get_group_keys((str(key), group)
-                         for key, group in enumerate(groups_, start=1)),
+        *_get_group_keys(),
     ]
 
 
