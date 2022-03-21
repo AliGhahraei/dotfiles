@@ -195,6 +195,7 @@ def startup_once():
 
 groups = get_groups()
 keys = get_keys([group.name for group in groups])
-layouts = [MonadTall(single_border_width=0, border_focus=PURPLE)]
+layouts = [MonadTall(single_border_width=0, border_focus=PURPLE,
+                     new_client_position='top')]
 screens = get_screens()
 mouse = get_mouse_actions()
