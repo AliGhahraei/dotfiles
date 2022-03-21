@@ -53,8 +53,8 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
             Key([MOD], 'l', lazy.layout.right(), desc='Move focus to right'),
             Key([MOD], 'j', lazy.layout.down(), desc='Move focus down'),
             Key([MOD], 'k', lazy.layout.up(), desc='Move focus up'),
-            Key([MOD], 'Return', lazy.layout.next(),
-                desc='Move window focus to other window'),
+            Key([MOD], 'Return', lazy.layout.swap_main(),
+                desc='Swap focused window with main'),
 
             Key([MOD, 'shift'], 'h', lazy.layout.shuffle_left(),
                 desc='Move window to the left'),
