@@ -91,6 +91,8 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
                 desc='Mute'),
             Key([], 'Print', lazy.spawn(['flameshot', 'gui']),
                 desc='Screenshot'),
+            Key([MOD], 'Print', lazy.spawn(['flameshot', 'full']),
+                desc='Screenshot the whole screen'),
             Key([MOD], 'space', lazy.spawn(guess_terminal()),
                 desc='Launch terminal'),
             Key([MOD], 'd', lazy.spawn(['rofi', '-show', 'run']),
