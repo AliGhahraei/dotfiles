@@ -4,8 +4,6 @@
 if test $PLATFORM_TYPE = Linux
     abbr po 'systemctl poweroff'
     abbr re 'systemctl reboot'
-    abbr mnt 'sudo mount /dev/sdb1 /mnt'
-    abbr umnt 'sudo umount /mnt'
 
     abbr es 'sudo setxkbmap latam'
     abbr en 'sudo setxkbmap -layout us -variant altgr-intl'
@@ -51,4 +49,3 @@ abbr e 'enter-dotfiles /usr/bin/fish'
 abbr n 'nvim'
 abbr pretty 'python -m json.tool'
 abbr pip-uninstall 'pip freeze | xargs pip uninstall -y'
-abbr f 'fuck'
