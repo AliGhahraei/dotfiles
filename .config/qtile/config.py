@@ -17,6 +17,7 @@ from libqtile.widget import (
 
 MOD = 'mod4'
 PURPLE = 'a663e6'
+EDITOR = 'emacs'
 
 
 class StrEnum(str, Enum):
@@ -30,7 +31,7 @@ class GroupNames(StrEnum):
 
 
 GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
-    GroupNames.dev: ('emacs', 'Emacs'),
+    GroupNames.dev: (EDITOR, 'Emacs'),
     GroupNames.www: ('firefox', 'firefox'),
 }
 

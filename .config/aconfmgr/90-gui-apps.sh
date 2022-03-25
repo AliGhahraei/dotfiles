@@ -2,7 +2,6 @@
 set -euo pipefail
 
 # Packages
-AddPackage emacs # The best OS with a half-decent editor
 AddPackage chromium # A web browser built for speed, simplicity, and security
 AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
@@ -15,26 +14,6 @@ AddPackage wine # A compatibility layer for running Windows programs
 AddPackage wine-mono # Wine's built-in replacement for Microsoft's .NET Framework
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 AddPackage --foreign ventoy-bin # A new multiboot USB solution (Binary)
-
-
-## Doom Emacs dependencies
-
-### Core
-#### Required
-AddPackage ripgrep
-#### Optional
-AddPackage fd # Improves performance for many file indexing commands in doom
-
-### Config
-AddPackage adobe-source-sans-fonts # Cool variable pitch option for doom
-
-### Modules
-AddPackage marked # A markdown parser built for speed
-AddPackage shellcheck # For shell script linting
-AddPackage cmake # vterm needs it to (re)compile the executable
-#### Python mode
-AddPackage flake8 # The modular source code checker
-AddPackage jedi-language-server # Language server for Jedi
 
 ## Route-tracker dependencies
 AddPackage graphviz # Graph visualization software

@@ -2,7 +2,7 @@
 	email = aligf94@gmail.com
 	name = Ali Ghahraei
 [core]
-	editor = nvim
+	editor = emacs-term
 	excludesFile = ~/.config/git/gitignore
 [pull]
 	rebase = false

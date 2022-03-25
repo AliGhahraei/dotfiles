@@ -14,7 +14,7 @@ export DIRENV_LOG_FORMAT=""
 export TYPER_SCRIPTS_REPOS="$SCRIPTS $GIT/typer-scripts"
 
 # Misc.
-export VISUAL="nvim"
+export VISUAL="emacs-term"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 
