@@ -10,6 +10,7 @@ AddPackage xorg-xinit # Enables startx to start Xorg
 AddPackage qtile # A full-featured, pure-Python tiling window manager
 AddPackage mypy # Check typing with qtile check
 AddPackage rofi # A window switcher, application launcher and dmenu replacement
+AddPackage xdotool # Used by screenshot script
 
 ## Desktop notifications
 AddPackage libnotify # Library for notifications, needs server
