@@ -6,7 +6,8 @@ AddPackage chromium # A web browser built for speed, simplicity, and security
 AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
-AddPackage --foreign qpdfview # A tabbed PDF viewer using the poppler library.
+AddPackage zathura # Minimalistic document viewer
+AddPackage zathura-pdf-mupdf # PDF support for Zathura (Supports PDF, ePub, and OpenXPS)
 AddPackage flameshot # Powerful yet simple to use screenshot software
 AddPackage steam # Valve's digital software delivery system
 AddPackage udiskie # Removable disk automounter using udisks
