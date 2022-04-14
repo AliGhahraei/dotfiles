@@ -15,5 +15,5 @@ AddPackage s-nail # Environment for sending and receiving mail
 
 # Files
 CopyFile /etc/shells
-CopyFile /usr/share/libalpm/hooks/dashbinsh.hook '' ali ali # Use dash as sh
+CopyFile /etc/pacman.d/hooks/dashbinsh.hook '' ali ali # Use dash as sh
 CreateLink /usr/bin/sh dash
