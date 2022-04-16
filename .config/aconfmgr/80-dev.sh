@@ -5,9 +5,11 @@ set -euo pipefail
 AddPackage git
 AddPackage pycharm-community-edition # Python IDE for Professional Developers
 
-## Hugo-related
-AddPackage hugo # Fast and Flexible Static Site Generator in Go
-AddPackage go # Core compiler tools for the Go programming language
+if is_main_platform; then
+    ## Hugo-related
+    AddPackage hugo # Fast and Flexible Static Site Generator in Go
+    AddPackage go # Core compiler tools for the Go programming language
+fi
 
 ## Python-related
 AddPackage ipython # An enhanced Interactive Python shell.
