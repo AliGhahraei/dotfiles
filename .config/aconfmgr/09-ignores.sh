@@ -35,6 +35,7 @@ IgnorePath '/etc/ca-certificates/*' # Certification authority certificates
 IgnorePath '/etc/fonts/conf.d/*' # Fontconfigs should be handled by pacman
 IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
+IgnorePath '/etc/iwd'
 IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
 IgnorePath '/etc/netctl/w*' # Netctl profiles
@@ -82,6 +83,7 @@ IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
 IgnorePath '/var/lib/tpm2-tss/*' # Trusted Platform Module Software Stack API (security)
+IgnorePath '/var/lib/iwd/*' # Networks, passwords and data for iwd
 
 ### Systemd
 IgnorePath '/var/lib/machines/*'
