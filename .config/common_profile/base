@@ -1,4 +1,5 @@
 #!/bin/sh
+. "$HOME/.local/share/dotfiles/platform_label"
 
 # shellcheck disable=SC2155
 export PLATFORM_TYPE="$(uname)"

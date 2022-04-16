@@ -7,6 +7,7 @@ IgnorePath '*.lock'
 
 
 # Boot
+IgnorePath '/boot/EFI/Dell/logs/*'
 IgnorePath '/boot/*.img' # OS images
 IgnorePath '/boot/System\ Volume\ Information' # M$ stuff for restoration
 IgnorePath '/boot/vmlinuz-linux' # Kernel executable
