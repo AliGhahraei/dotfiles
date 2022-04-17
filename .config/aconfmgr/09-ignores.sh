@@ -32,6 +32,7 @@ IgnorePath '/etc/*-' # Automatic backups for important files like passwd
 IgnorePath '/etc/.updated' # Tracks last directory modification time for systemd
 IgnorePath '/etc/adjtime' # Bookkeeping file used by hwclock
 IgnorePath '/etc/ca-certificates/*' # Certification authority certificates
+IgnorePath '/etc/docker/key.json'
 IgnorePath '/etc/fonts/conf.d/*' # Fontconfigs should be handled by pacman
 IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
@@ -57,6 +58,11 @@ IgnorePath '/etc/systemd/user/sockets.target.wants/*'
 IgnorePath '/lost+found/*'
 
 
+# /opt
+IgnorePath '/opt/containerd' # Docker-related virtualization stuff
+IgnorePath '/opt/containerd/*'
+
+
 # /usr
 ## /usr/lib
 IgnorePath '/usr/lib/graphviz/*' # Graphviz files
@@ -79,6 +85,7 @@ IgnorePath '/var/.updated' # Tracks last directory modification time for systemd
 IgnorePath '/var/lib/bluetooth/*' # Bluetooth device info, cache, settings, etc.
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
+IgnorePath '/var/lib/docker/*'
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files

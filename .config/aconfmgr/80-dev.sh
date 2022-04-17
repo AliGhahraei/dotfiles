@@ -11,6 +11,8 @@ if is_main_platform; then
     AddPackage go # Core compiler tools for the Go programming language
 else
     AddPackage code # The Open Source build of Visual Studio Code (vscode) editor
+    AddPackage docker # Pack, ship and run any application as a lightweight container
+    AddPackage docker-compose # Fast, isolated development environments using Docker
     AddPackage --foreign postman-bin # Build, test, and document your APIs faster
 fi
 
@@ -24,6 +26,8 @@ AddPackage python-typer # Build great CLIs. Easy to code. Based on type hints
 
 
 # Files
+## Docker
+CopyFile /etc/group # docker group
 ## Git
 CreatePlatformLink "$XDG_CONFIG_HOME/git/platform-config"
 ## Pycharm
