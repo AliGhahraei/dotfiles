@@ -1,5 +1,4 @@
 [user]
-	email = aligf94@gmail.com
 	name = Ali Ghahraei
 [core]
 	editor = emacs-term
@@ -7,8 +6,8 @@
 [pull]
 	rebase = false
 [credential]
-	username = AliGhahraei
+    helper = /usr/lib/git-core/git-credential-libsecret
 [alias]
 	permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 [include]
-    path = local
+    path = platform-config

@@ -46,6 +46,7 @@ pictures
 # Permanently ignore
 ## Platform links
 .fehbg
+.config/git/platform-config
 
 downloads
 

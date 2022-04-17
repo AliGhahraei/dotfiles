@@ -10,7 +10,7 @@ function CreatePlatformLink () {
     local target
 
     link_name=$1
-    target="$2.$PLATFORM_LABEL"
+    target="${2:-${link_name}}.$PLATFORM_LABEL"
 
     # CreateLink always creates parent directory and makes $HOME not writable by user
     if [ "$(readlink -f -- "$link_name")" != "$target" ]; then

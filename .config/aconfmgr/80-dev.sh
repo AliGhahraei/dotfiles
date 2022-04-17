@@ -21,6 +21,8 @@ AddPackage python-typer # Build great CLIs. Easy to code. Based on type hints
 
 
 # Files
+## Git
+CreatePlatformLink "$XDG_CONFIG_HOME/git/platform-config"
 ## Pycharm
 CreateLink /usr/lib/jvm/default java-11-openjdk
 CreateLink /usr/lib/jvm/default-runtime java-11-openjdk
