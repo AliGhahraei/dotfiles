@@ -34,7 +34,7 @@ abbr gi "git ls-files -v | grep '^[[:lower:]]'"
 
 # ls
 abbr l 'ls'
-abbr la 'ls -a'
+abbr la 'ls -lah'
 
 # route-tracker
 abbr ta 'route --save tsukihime choices add'
