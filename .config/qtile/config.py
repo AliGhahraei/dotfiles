@@ -8,11 +8,14 @@ from libqtile.core.manager import Qtile
 from libqtile.hook import subscribe
 from libqtile.layout import MonadTall
 from libqtile.lazy import lazy
+from libqtile.log_utils import logger
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
     Battery, Chord, Clock, CurrentLayout, GroupBox, Pomodoro, PulseVolume,
     Systray, TextBox, WindowName,
 )
+from Xlib.display import Display
+from Xlib.ext.randr import GetOutputInfo
 
 MOD = 'mod4'
 PURPLE = 'a663e6'
@@ -142,18 +145,12 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
 
 
 def get_screens() -> List[Screen]:
-    return [Screen(top=Bar(
-        [
-            GroupBox(),
-            CurrentLayout(),
-            WindowName(),
+    def _get_screens(number_of_monitors: int) -> List[Screen]:
+        shared_top_right_widgets = (
             Chord(
-                chords_colors={
-                    'launch': ('#ff0000', '#ffffff'),
-                },
+                chords_colors={'launch': ('#ff0000', '#ffffff')},
                 name_transform=lambda name: name.upper(),
             ),
-            Systray(),
             Pomodoro(
                 length_pomodori=50,
                 length_short_break=10,
@@ -163,12 +160,66 @@ def get_screens() -> List[Screen]:
             ),
             TextBox(text="墳"),
             PulseVolume(),
-            Battery(format='{char} {percent:2.0%}', charge_char='▲',
-                    discharge_char='▼'),
+            Battery(format='{char} {percent:2.0%}',
+                    charge_char='▲', discharge_char='▼'),
             Clock(format=' %a %Y-%m-%d   %H:%M'),
-        ],
-        24,
-    ))]
+        )
+        bar_size = 24
+
+        return [
+            Screen(top=Bar(
+                [
+                    *_create_screen_specific_widgets(),
+                    Systray(),
+                    *shared_top_right_widgets,
+                ],
+                bar_size,
+            )),
+            *(
+                Screen(top=Bar(
+                    [
+                        *_create_screen_specific_widgets(),
+                        *shared_top_right_widgets,
+                    ],
+                    bar_size,
+                ))
+                for _ in range(number_of_monitors - 1)
+            )
+        ]
+
+    def _create_screen_specific_widgets() -> Tuple:
+        return (
+            GroupBox(),
+            CurrentLayout(),
+            WindowName(),
+        )
+
+    def _get_number_of_monitors_on() -> int:
+        # Adapted from Qtile's wiki
+        # (https://github.com/qtile/qtile/wiki/screens#setup-multiple-screens-dynamically)
+        try:
+            display = Display()
+            screen = display.screen()
+            resources = screen.root.xrandr_get_screen_resources()
+            timestamp = resources.config_timestamp
+
+            on_count = len([monitor for output in resources.outputs if _is_on(
+                monitor := display.xrandr_get_output_info(output, timestamp)
+            )])
+        except Exception as e:
+            logger.exception(f'Error found while detecting monitors: {e}')
+            return 1
+        else:
+            return on_count
+
+    def _is_on(monitor: GetOutputInfo) -> bool:
+        # Couldn't find docs about attributes, but wiki uses them
+        return bool(getattr(monitor, 'preferred', False)
+                    or getattr(monitor, "num_preferred", False))
+
+    monitors_on = _get_number_of_monitors_on()
+    logger.info(f'Number of monitors detected: {monitors_on}')
+    return _get_screens(monitors_on)
 
 
 def get_mouse_actions() -> List[Mouse]:
