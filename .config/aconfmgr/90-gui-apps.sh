@@ -29,6 +29,7 @@ if is_main_platform; then
     SetFileProperty /var/lib/colord owner colord
 else
     AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
+    AddPackage --foreign realvnc-vnc-viewer # VNC remote desktop client software by RealVNC
 
     # Files
     CopyFile /etc/group # Virtualbox's group
