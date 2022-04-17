@@ -27,4 +27,9 @@ if is_main_platform; then
     CopyFile /etc/group
     SetFileProperty /var/lib/colord group colord
     SetFileProperty /var/lib/colord owner colord
+else
+    AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
+
+    # Files
+    CopyFile /etc/group # Virtualbox's group
 fi

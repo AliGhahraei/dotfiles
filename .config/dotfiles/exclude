@@ -9,9 +9,11 @@ documents
 g
 org
 pictures
+vms
 .config/JetBrains
 .config/Postman
 .config/rclone
+.config/VirtualBox
 .mozilla
 
 
