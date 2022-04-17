@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-bass source $HOME/.config/common_profile/base
+bass source $HOME/.config/profile
 source $PRIVATE_FISH/abbreviations.fish
 
 
