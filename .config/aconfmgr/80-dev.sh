@@ -9,6 +9,8 @@ if is_main_platform; then
     ## Hugo-related
     AddPackage hugo # Fast and Flexible Static Site Generator in Go
     AddPackage go # Core compiler tools for the Go programming language
+else
+    AddPackage --foreign postman-bin # Build, test, and document your APIs faster
 fi
 
 ## Python-related

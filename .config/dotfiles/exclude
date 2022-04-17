@@ -10,6 +10,7 @@ g
 org
 pictures
 .config/JetBrains
+.config/Postman
 .config/rclone
 .mozilla
 
