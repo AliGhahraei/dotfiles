@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [ -z "$PLATFORM_LABEL" ]; then
+    # shellcheck source=/dev/null
+    . "$HOME/.config/profile"
+fi
+
 function is_main_platform () {
     [ "$PLATFORM_LABEL" = 'main' ]
 }
