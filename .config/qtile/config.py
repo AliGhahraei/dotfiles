@@ -15,8 +15,8 @@ from libqtile.widget import (
     Battery, Chord, Clock, CurrentLayout, GroupBox, Pomodoro, PulseVolume,
     Systray, TextBox, WindowName,
 )
-from Xlib.display import Display
-from Xlib.ext.randr import GetOutputInfo
+from Xlib.display import Display  # type: ignore
+from Xlib.ext.randr import GetOutputInfo  # type: ignore
 
 MOD = 'mod4'
 PURPLE = 'a663e6'
