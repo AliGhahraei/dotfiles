@@ -42,6 +42,7 @@ IgnorePath '/etc/mkinitcpio.d/*'
 IgnorePath '/etc/netctl/w*' # Netctl profiles
 IgnorePath '/etc/netctl/examples/*'
 IgnorePath '/etc/netctl/interfaces/*'
+IgnorePath '/etc/odbcinst.ini' # SQL server stuff
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
@@ -89,6 +90,8 @@ IgnorePath '/var/lib/docker/*'
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
+IgnorePath '/var/lib/sss/db/config.ldb' # SQL server stuff
+IgnorePath '/var/opt/mssql/*'
 IgnorePath '/var/lib/tpm2-tss/*' # Trusted Platform Module Software Stack API (security)
 IgnorePath '/var/lib/iwd/*' # Networks, passwords and data for iwd
 

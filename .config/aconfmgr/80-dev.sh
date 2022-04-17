@@ -13,10 +13,14 @@ else
     AddPackage code # The Open Source build of Visual Studio Code (vscode) editor
     AddPackage docker # Pack, ship and run any application as a lightweight container
     AddPackage docker-compose # Fast, isolated development environments using Docker
+    AddPackage --foreign mssql-server # Microsoft SQL Server for Linux
+    AddPackage --foreign mssql-tools # Microsoft® SQL Server® Tools for Linux
     AddPackage --foreign postman-bin # Build, test, and document your APIs faster
 
     ## JS-related
     AddPackage npm # A package manager for javascript
+    ## SQL Server dependencies
+    AddPackage --foreign libldap24 # Lightweight Directory Access Protocol (LDAP) client libraries
 fi
 
 ## Python-related
@@ -30,7 +34,7 @@ AddPackage python-typer # Build great CLIs. Easy to code. Based on type hints
 
 # Files
 ## Docker
-CopyFile /etc/group # docker group
+CopyFile /etc/group # docker / SQL server group
 ## Git
 CreatePlatformLink "$XDG_CONFIG_HOME/git/platform-config"
 ## Pycharm
