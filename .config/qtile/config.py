@@ -1,4 +1,3 @@
-from enum import Enum
 from subprocess import Popen
 from typing import Iterable, Iterator, List, Tuple, Callable
 
@@ -19,28 +18,22 @@ MOD = 'mod4'
 PURPLE = 'a663e6'
 EDITOR = 'emacs'
 
-
-class StrEnum(str, Enum):
-    pass
-
-
-class GroupNames(StrEnum):
-    home = '1'
-    dev = '2'
-    www = '3'
+HOME_GROUP_NAME = '1'
+DEV_GROUP_NAME = '2'
+WWW_GROUP_NAME = '3'
 
 
 GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
-    GroupNames.dev: (EDITOR, 'Emacs'),
-    GroupNames.www: ('firefox', 'firefox'),
+    DEV_GROUP_NAME: (EDITOR, 'Emacs'),
+    WWW_GROUP_NAME: ('firefox', 'firefox'),
 }
 
 
 def get_groups() -> List[Group]:
     labelled_groups = (
-        Group(GroupNames.home, label='home'),
-        Group(GroupNames.dev, label='dev'),
-        Group(GroupNames.www, label='www'),
+        Group(HOME_GROUP_NAME, label='home'),
+        Group(DEV_GROUP_NAME, label='dev'),
+        Group(WWW_GROUP_NAME, label='www'),
     )
     non_labelled_groups = (Group(str(index))
                            for index in range(len(labelled_groups) + 1, 10))
