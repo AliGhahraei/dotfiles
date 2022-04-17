@@ -6,7 +6,8 @@ from libqtile.bar import Bar
 from libqtile.config import Click, Drag, Group, Key, Mouse, Screen
 from libqtile.core.manager import Qtile
 from libqtile.hook import subscribe
-from libqtile.layout import MonadTall
+from libqtile.layout import MonadTall, TreeTab
+from libqtile.layout.base import Layout
 from libqtile.lazy import lazy
 from libqtile.log_utils import logger
 from libqtile.utils import guess_terminal
@@ -24,6 +25,7 @@ EDITOR = 'emacs'
 HOME_GROUP_NAME = '1'
 DEV_GROUP_NAME = '2'
 WWW_GROUP_NAME = '3'
+COMM_GROUP_NAME = '4'
 
 
 GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
@@ -37,6 +39,7 @@ def get_groups() -> List[Group]:
         Group(HOME_GROUP_NAME, label='home'),
         Group(DEV_GROUP_NAME, label='dev'),
         Group(WWW_GROUP_NAME, label='www'),
+        Group(COMM_GROUP_NAME, label='comm', layout='treetab'),
     )
     non_labelled_groups = (Group(str(index))
                            for index in range(len(labelled_groups) + 1, 10))
@@ -68,6 +71,8 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
                 desc='Grow main window'),
             Key([MOD, 'control'], 'r', lazy.layout.reset(),
                 desc='Reset all window sizes'),
+            Key([MOD], 'n', lazy.next_layout(),
+                desc='Switch to next layout'),
             Key([MOD], 't', lazy.window.toggle_floating(),
                 desc='Toggle floating'),
 
@@ -141,6 +146,14 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
             if name not in GROUPS_TO_PROGRAMS_AND_WM_CLASSES
         ),
         *_get_group_move_keys(group_names),
+    ]
+
+
+def get_layouts() -> List[Layout]:
+    return [
+        MonadTall(single_border_width=0, border_focus=PURPLE,
+                  new_client_position='top'),
+        TreeTab(),
     ]
 
 
@@ -240,7 +253,6 @@ def startup_once():
 
 groups = get_groups()
 keys = get_keys([group.name for group in groups])
-layouts = [MonadTall(single_border_width=0, border_focus=PURPLE,
-                     new_client_position='top')]
+layouts = get_layouts()
 screens = get_screens()
 mouse = get_mouse_actions()
