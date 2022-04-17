@@ -30,6 +30,8 @@ if is_main_platform; then
 else
     AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
     AddPackage --foreign realvnc-vnc-viewer # VNC remote desktop client software by RealVNC
+    AddPackage --foreign slack-desktop # Slack Desktop (Beta) for Linux
+    AddPackage --foreign teams # Microsoft Teams for Linux is your chat-centered workspace in Office 365
 
     # Files
     CopyFile /etc/group # Virtualbox's group

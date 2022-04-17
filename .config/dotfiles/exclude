@@ -11,8 +11,11 @@ org
 pictures
 vms
 .config/JetBrains
+.config/Microsoft
 .config/Postman
 .config/rclone
+.config/Slack
+.config/teams
 .config/VirtualBox
 .mozilla
 .vnc
