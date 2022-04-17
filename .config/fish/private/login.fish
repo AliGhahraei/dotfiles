@@ -10,6 +10,4 @@ end
 pyenv init - | source
 
 
-if test $PLATFORM_TYPE = "Linux"
-    exec startx $XDG_CONFIG_HOME/X11/xinitrc -- -keeptty
-end
+exec startx $XDG_CONFIG_HOME/X11/xinitrc -- -keeptty

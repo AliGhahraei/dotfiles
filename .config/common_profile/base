@@ -1,38 +1,48 @@
 #!/bin/sh
-. "$HOME/.local/share/dotfiles/platform_label"
 
-# shellcheck disable=SC2155
-export PLATFORM_TYPE="$(uname)"
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+# Make stubborn apps conform to XDG
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CHROME_CONFIG_HOME="$XDG_DATA_HOME"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+
+
+# General dotfiles
+# shellcheck source=/dev/null
+. "$HOME/.local/share/dotfiles/platform_label"
+export DOTFILES_REPO="$XDG_DATA_HOME/dotfiles/repo.git"
 export GIT="$HOME/g"
 export SCRIPTS="$GIT/scripts"
+export TYPER_SCRIPTS_REPOS="$SCRIPTS $GIT/typer-scripts"
+
+
+# Backups
 export BACKUP_PATHS="\
-$HOME/g $HOME/org $HOME/documents $HOME/pictures $HOME/.config/JetBrains \
+$GIT $HOME/org $HOME/documents $HOME/pictures $HOME/.config/JetBrains \
 $HOME/.config/rclone .mozilla"
 export BACKUPDIR=/run/media/ali/backup/backup
 
-export DIRENV_LOG_FORMAT=""
-
-export TYPER_SCRIPTS_REPOS="$SCRIPTS $GIT/typer-scripts"
 
 # Misc.
+export BROWSER="firefox"
+export DIRENV_LOG_FORMAT=""
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+export LIBVA_DRIVER_NAME="iHD" # Hardware video acceleration
+export QT_QPA_PLATFORMTHEME=qt5ct
+export RCLONE_PASSWORD_COMMAND="secret-tool lookup program rclone user ali"
+export TERM="xterm-256color"
 export VISUAL="emacs-term"
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating an env
 
 
-common=$HOME/.config/common_profile
-
-if [ "$PLATFORM_TYPE" = "Linux" ]; then
-    # shellcheck source=/dev/null
-    . "$common/linux"
-elif [ "$PLATFORM_TYPE" = "Darwin" ]; then
-    # shellcheck source=/dev/null
-    . "$common/macos"
-fi
-
-# shellcheck source=/dev/null
-[ -f "$common/work" ] && . "$common/work" # Out of source control
-
-
+# PATH
 userpaths="\
 $HOME/.local/bin $SCRIPTS/miscellaneous $SCRIPTS/backup $HOME/.poetry/bin \
 $HOME/.config/emacs/bin /opt/mssql/bin ${PLATFORM_PATH:-}"
