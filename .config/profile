@@ -9,6 +9,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # Make stubborn apps conform to XDG
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CHROME_CONFIG_HOME="$XDG_DATA_HOME"
+export HISTFILE="$XDG_STATE_HOME/bash/history"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export LESSHISTFILE="$XDG_DATA_HOME/state/history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
