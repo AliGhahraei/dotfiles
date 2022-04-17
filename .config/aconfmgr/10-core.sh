@@ -31,12 +31,14 @@ CreateDir /var/lib/machines 700
 CreateDir /var/lib/portables 700
 CreateDir /var/lib/private 700
 
-
-## User management
+## User
 ### Setup Autologin
 CreateLink /etc/systemd/system/getty.target.wants/getty@tty1.service \
     /usr/lib/systemd/system/getty@.service
 CopyFile /etc/systemd/system/getty@tty1.service.d/override.conf
+### Make apps comply with XDG
+MakeUserDir "$XDG_STATE_HOME/less"
+MakeUserDir "$XDG_STATE_HOME/bash"
 
 ### Sudo
 CreateFile /var/db/sudo/lectured/ali 600 '' ali > /dev/null # stop sudo nagging
