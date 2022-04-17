@@ -36,3 +36,5 @@ AddPackage jedi-language-server # Language server for Jedi
 ## Doom Emacs
 CreateLink /usr/bin/vi $SCRIPTS/miscellaneous/emacs-term
 CreateLink /usr/bin/vim $SCRIPTS/miscellaneous/emacs-term
+## Feh
+CreatePlatformLink "$HOME/.fehbg" "$XDG_CONFIG_HOME/feh/fehbg"
