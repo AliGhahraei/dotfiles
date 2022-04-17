@@ -15,6 +15,10 @@ AddPackage xorg-xkill # Kill a client by its X resource
 AddPackage xdg-utils # Provide xdg-open so apps like Emacs can find default apps
                      # (e.g. a browser)
 
+if ! is_main_platform; then
+    AddPackage openfortivpn # An open implementation of Fortinet's proprietary PPP+SSL VPN solution
+fi
+
 ## Doom Emacs dependencies
 ### Core
 #### Required
