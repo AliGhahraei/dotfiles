@@ -10,6 +10,7 @@ if is_main_platform; then
     AddPackage hugo # Fast and Flexible Static Site Generator in Go
     AddPackage go # Core compiler tools for the Go programming language
 else
+    AddPackage code # The Open Source build of Visual Studio Code (vscode) editor
     AddPackage --foreign postman-bin # Build, test, and document your APIs faster
 fi
 
