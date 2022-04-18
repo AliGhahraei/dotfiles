@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+PLATFORM_LABEL=${PLATFORM_LABEL:-}
 if [ -z "$PLATFORM_LABEL" ]; then
     # shellcheck source=/dev/null
     . "$HOME/.config/profile"
