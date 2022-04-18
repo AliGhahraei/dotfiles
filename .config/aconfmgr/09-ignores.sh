@@ -36,7 +36,6 @@ IgnorePath '/etc/docker/key.json'
 IgnorePath '/etc/fonts/conf.d/*' # Fontconfigs should be handled by pacman
 IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
-IgnorePath '/etc/iwd'
 IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
 IgnorePath '/etc/netctl/w*' # Netctl profiles
@@ -46,7 +45,6 @@ IgnorePath '/etc/odbcinst.ini' # SQL server stuff
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
-IgnorePath '/etc/resolv.conf' # Managed by filesystem package (base dependency)
 IgnorePath '/etc/shadow'
 IgnorePath '/etc/ssl/certs/*'
 
