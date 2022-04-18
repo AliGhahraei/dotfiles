@@ -11,31 +11,18 @@ default_subcommands = [
 [[steps]]
 name = 'upgrade_fisher'
 doc = "Upgrade Fish package manager (Linux only)."
-[[steps.envs]]
-os = 'Linux'
 title = 'Upgrading fisher'
 command = ['fish', '-c', 'fisher update']
 
 [[steps]]
 name = 'upgrade_os'
 doc = "Upgrade using native package manager (Homebrew/Arch's Paru only)."
-[[steps.envs]]
-os = 'Darwin'
-title = 'Upgrading with brew'
-commands = [
-    ['brew', 'update'],
-    ['brew', 'upgrade']
-]
-[[steps.envs]]
-os = 'Linux'
 title = 'Upgrading with paru'
 command = ['paru']
 
 [[steps]]
 name = 'check_qtile_config'
 doc = "Checks if qtile config is valid."
-[[steps.envs]]
-os = 'Linux'
 title = 'Checking qtile config'
 command = ['qtile', 'check']
 
@@ -54,7 +41,5 @@ command = ['doom', 'upgrade']
 [[steps]]
 name = 'save_aconfmgr'
 doc = 'Run `aconfmgr save`.'
-[[steps.envs]]
-os = 'Linux'
 title = 'Saving aconfmgr'
 command = ['aconfmgr', 'save']
