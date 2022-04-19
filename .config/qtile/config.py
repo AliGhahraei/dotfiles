@@ -29,8 +29,9 @@ COMM_GROUP_NAME = '4'
 
 
 GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
-    DEV_GROUP_NAME: (EDITOR, 'Emacs'),
-    WWW_GROUP_NAME: ('firefox', 'firefox'),
+    DEV_GROUP_NAME: [(EDITOR, 'Emacs')],
+    WWW_GROUP_NAME: [('firefox', 'firefox')],
+    COMM_GROUP_NAME: [('slack', 'Slack'), ('teams', 'Teams')],
 }
 
 
@@ -135,9 +136,10 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
         *(
             _get_group_switch_key(
                 name,
-                lazy.function(_run_if_no_window_matches, command, wm_class),
+                *(lazy.function(_run_if_no_window_matches, command, wm_class)
+                  for (command, wm_class) in commands_and_wm_classes),
             )
-            for name, (command, wm_class)
+            for name, commands_and_wm_classes
             in GROUPS_TO_PROGRAMS_AND_WM_CLASSES.items()
         ),
         *(
