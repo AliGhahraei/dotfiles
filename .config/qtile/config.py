@@ -258,3 +258,4 @@ keys = get_keys([group.name for group in groups])
 layouts = get_layouts()
 screens = get_screens()
 mouse = get_mouse_actions()
+focus_on_window_activation = 'never'  # Microsoft Teams ALWAYS wants focus -.-
