@@ -26,8 +26,10 @@ else
     # Files
     CopyFile /etc/iwd/main.conf
 
+    ## systemd-resolved
+    ### Enable DNS
     CreateLink /etc/systemd/system/dbus-org.freedesktop.resolve1.service \
-        /usr/lib/systemd/system/systemd-resolved.service # Enable DNS
-    # Provide DNS for services that read resolv.conf directly like GnuPG
+        /usr/lib/systemd/system/systemd-resolved.service
+    ### Provide DNS for services that read resolv.conf directly like GnuPG
     CreateLink /etc/resolv.conf /run/systemd/resolve/stub-resolv.conf
 fi
