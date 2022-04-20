@@ -9,6 +9,7 @@ if is_main_platform; then
     AddPackage dhcpcd # RFC2131 compliant DHCP client daemon
     AddPackage dialog # For wifi-menu
 
+
     # Files
     CopyFile /etc/group # To add dhcpcd group
     CopyFile /etc/netctl/hooks/openntpd-dispatcher # Enable/disable when network status changes
@@ -22,6 +23,8 @@ if is_main_platform; then
 else
     # Packages
     AddPackage iwd # Network manager
+    AddPackage openfortivpn # An open implementation of Fortinet's proprietary PPP+SSL VPN solution
+
 
     # Files
     CopyFile /etc/iwd/main.conf
