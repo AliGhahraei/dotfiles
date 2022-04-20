@@ -30,14 +30,4 @@ else
         /usr/lib/systemd/system/systemd-resolved.service # Enable DNS
     # Provide DNS for services that read resolv.conf directly like GnuPG
     CreateLink /etc/resolv.conf /run/systemd/resolve/stub-resolv.conf
-
-    # Enable systemd-networkd
-    CreateLink /etc/systemd/system/dbus-org.freedesktop.network1.service \
-        /usr/lib/systemd/system/systemd-networkd.service
-    CreateLink /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service \
-        /usr/lib/systemd/system/systemd-networkd-wait-online.service
-    CreateLink /etc/systemd/system/sockets.target.wants/systemd-networkd.socket \
-        /usr/lib/systemd/system/systemd-networkd.socket
-    CreateLink /etc/systemd/system/sysinit.target.wants/systemd-network-generator.service \
-        /usr/lib/systemd/system/systemd-network-generator.service
 fi
