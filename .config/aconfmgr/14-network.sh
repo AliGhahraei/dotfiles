@@ -23,6 +23,7 @@ if is_main_platform; then
 else
     # Packages
     AddPackage iwd # Network manager
+    AddPackage systemd-resolvconf # So OpenFortiVPN can set name servers and search domains
     AddPackage openfortivpn # An open implementation of Fortinet's proprietary PPP+SSL VPN solution
 
 
