@@ -12,8 +12,10 @@ export CHROME_CONFIG_HOME="$XDG_DATA_HOME"
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export LESSHISTFILE="$XDG_DATA_HOME/state/history"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 
 
 # General dotfiles
