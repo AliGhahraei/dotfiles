@@ -218,19 +218,19 @@ def get_screens() -> List[Screen]:
             resources = screen.root.xrandr_get_screen_resources()
             timestamp = resources.config_timestamp
 
-            on_count = len([monitor for output in resources.outputs if _is_on(
-                monitor := display.xrandr_get_output_info(output, timestamp)
-            )])
+            on_count = sum(1 for monitor_id in resources.outputs if _is_on(
+                display.xrandr_get_output_info(monitor_id, timestamp)
+            ))
         except Exception as e:
             logger.exception(f'Error found while detecting monitors: {e}')
             return 1
         else:
             return on_count
 
-    def _is_on(monitor: GetOutputInfo) -> bool:
-        # Couldn't find docs about attributes, but wiki uses them
-        return bool(getattr(monitor, 'preferred', False)
-                    or getattr(monitor, "num_preferred", False))
+    def _is_on(monitor_info: GetOutputInfo) -> bool:
+        # Couldn't find docs about attributes, but Qtile's wiki uses them
+        return bool(getattr(monitor_info, 'preferred', False)
+                    or getattr(monitor_info, "num_preferred", False))
 
     monitors_on = _get_number_of_monitors_on()
     logger.info(f'Number of monitors detected: {monitors_on}')
