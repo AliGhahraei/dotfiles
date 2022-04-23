@@ -49,7 +49,6 @@ IgnorePath '/etc/shadow'
 IgnorePath '/etc/ssl/certs/*'
 
 # Systemd
-IgnorePath '/etc/systemd/system/multi-user.target.wants/*'
 IgnorePath '/etc/systemd/user/sockets.target.wants/*'
 
 
