@@ -1,3 +1,4 @@
+from os import getenv
 from subprocess import Popen
 from typing import Iterable, Iterator, List, Tuple, Callable
 
@@ -21,6 +22,7 @@ from Xlib.ext.randr import GetOutputInfo  # type: ignore
 MOD = 'mod4'
 PURPLE = 'a663e6'
 EDITOR = 'emacs'
+PLATFORM_LABEL = getenv('PLATFORM_LABEL')
 
 HOME_GROUP_NAME = '1'
 DEV_GROUP_NAME = '2'
@@ -30,7 +32,8 @@ COMM_GROUP_NAME = '4'
 
 GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
     DEV_GROUP_NAME: [(EDITOR, 'Emacs')],
-    WWW_GROUP_NAME: [('firefox', 'firefox')],
+    WWW_GROUP_NAME: [('firefox', 'firefox')
+                     if PLATFORM_LABEL=='main' else ('brave', 'Brave-browser')],
     COMM_GROUP_NAME: [('slack', 'Slack'), ('teams', 'Teams')],
 }
 

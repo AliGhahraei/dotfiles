@@ -12,11 +12,8 @@ pictures
 vms
 .config/BraveSoftware
 .config/JetBrains
-.config/Microsoft
 .config/Postman
 .config/rclone
-.config/Slack
-.config/teams
 .config/VirtualBox
 .mozilla
 .vnc
