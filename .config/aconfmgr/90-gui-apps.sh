@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Packages
 AddPackage firefox # Standalone web browser from mozilla.org
+AddPackage keepassxc # Cross-platform community-driven port of Keepass password manager
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage zathura # Minimalistic document viewer
 AddPackage zathura-pdf-mupdf # PDF support for Zathura (Supports PDF, ePub, and OpenXPS)

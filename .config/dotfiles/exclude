@@ -52,6 +52,7 @@ vms
 ## Platform links
 .fehbg
 .config/git/platform-config
+.config/QtProject.conf
 
 downloads
 
