@@ -27,7 +27,6 @@ PLATFORM_LABEL = getenv('PLATFORM_LABEL')
 HOME_GROUP_NAME = '1'
 DEV_GROUP_NAME = '2'
 WWW_GROUP_NAME = '3'
-COMM_GROUP_NAME = '4'
 
 
 GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
@@ -35,7 +34,6 @@ GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
     WWW_GROUP_NAME: [('firefox', 'firefox')
                      if PLATFORM_LABEL == 'main'
                      else ('brave', 'Brave-browser')],
-    COMM_GROUP_NAME: [('slack', 'Slack'), ('teams', 'Teams')],
 }
 
 
@@ -44,7 +42,6 @@ def get_groups() -> List[Group]:
         Group(HOME_GROUP_NAME, label='home'),
         Group(DEV_GROUP_NAME, label='dev'),
         Group(WWW_GROUP_NAME, label='www'),
-        Group(COMM_GROUP_NAME, label='comm', layout='treetab'),
     )
     non_labelled_groups = (Group(str(index))
                            for index in range(len(labelled_groups) + 1, 10))
@@ -262,4 +259,4 @@ keys = get_keys([group.name for group in groups])
 layouts = get_layouts()
 screens = get_screens()
 mouse = get_mouse_actions()
-focus_on_window_activation = 'never'  # Microsoft Teams ALWAYS wants focus -.-
+focus_on_window_activation = 'focus'
