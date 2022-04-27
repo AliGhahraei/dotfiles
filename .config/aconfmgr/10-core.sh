@@ -24,7 +24,6 @@ CopyFile /etc/pacman.conf
 CopyFile /etc/pacman.d/mirrorlist.reflector
 CopyFile /etc/xdg/reflector/reflector.conf
 CopyFile /etc/shells
-CopyFile /etc/sudoers
 
 ## Systemd
 CreateDir /var/lib/machines 700
@@ -40,5 +39,5 @@ CopyFile /etc/systemd/system/getty@tty1.service.d/override.conf
 MakeUserDir "$XDG_STATE_HOME/less"
 MakeUserDir "$XDG_STATE_HOME/bash"
 
-### Sudo
-CreateFile /var/db/sudo/lectured/ali 600 '' ali > /dev/null # stop sudo nagging
+### Configure sudo
+CopyFile /etc/sudoers.d/config

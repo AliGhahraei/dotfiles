@@ -1,0 +1,5 @@
+# Stop sudo nagging
+Defaults  lecture="never"
+
+# Allow user as sudoer
+ali ALL=(ALL) ALL
