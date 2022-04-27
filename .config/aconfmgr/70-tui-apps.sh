@@ -3,7 +3,6 @@ set -euo pipefail
 
 # Packages
 AddPackage emacs # The best OS with a half-decent editor
-AddPackage gnome-keyring # Stores passwords and encryption keys
 AddPackage mpv # a free, open source, and cross-platform media player
 AddPackage nnn # The fastest terminal file manager ever written.
 AddPackage p7zip # Command-line file archiver with high compression ratio
