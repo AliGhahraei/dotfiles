@@ -33,7 +33,8 @@ COMM_GROUP_NAME = '4'
 GROUPS_TO_PROGRAMS_AND_WM_CLASSES = {
     DEV_GROUP_NAME: [(EDITOR, 'Emacs')],
     WWW_GROUP_NAME: [('firefox', 'firefox')
-                     if PLATFORM_LABEL=='main' else ('brave', 'Brave-browser')],
+                     if PLATFORM_LABEL == 'main'
+                     else ('brave', 'Brave-browser')],
     COMM_GROUP_NAME: [('slack', 'Slack'), ('teams', 'Teams')],
 }
 
