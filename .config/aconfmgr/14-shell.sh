@@ -5,7 +5,7 @@ set -euo pipefail
 AddPackage dash # Fast alternative for /bin/sh
 AddPackage fish
 
-## "Add-ons" from shell configs
+## "Add-ons" for shell
 AddPackage direnv # manage per-directory environments
 AddPackage fisher # A package manager for the fish shell
 AddPackage fzf # Command-line fuzzy finder
