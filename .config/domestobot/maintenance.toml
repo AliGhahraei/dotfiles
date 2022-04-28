@@ -40,6 +40,6 @@ command = ['doom', 'upgrade']
 
 [[steps]]
 name = 'save_aconfmgr'
-doc = 'Run `aconfmgr save`.'
-title = 'Saving aconfmgr'
-command = ['aconfmgr', 'save']
+doc = 'Run `config-save`.'
+title = 'Saving config'
+command = ['config-save']

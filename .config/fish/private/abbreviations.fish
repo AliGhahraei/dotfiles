@@ -1,4 +1,8 @@
 #!/usr/bin/env fish
+# Config
+abbr ca config-apply
+abbr cs config-save
+
 # Dbot
 abbr d 'dbot'
 abbr db 'dbot backup'
