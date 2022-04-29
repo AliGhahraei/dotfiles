@@ -10,6 +10,7 @@ if test "$TERM" = "dumb"
 else
     set -gx PRIVATE_FISH $__fish_config_dir/private
     source $PRIVATE_FISH/variables.fish
+    source $PRIVATE_FISH/abbreviations.fish
 
     if status --is-login
         source $PRIVATE_FISH/login.fish
@@ -17,6 +18,10 @@ else
 
     if status --is-interactive
 	    direnv hook fish | source
+
+        if not set -q PYENV_SHELL
+            pyenv init --path | source
+        end
 
         function cd
             builtin cd $argv

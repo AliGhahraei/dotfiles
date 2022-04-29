@@ -2,9 +2,8 @@
 set -euo pipefail
 
 # Packages
-## Xorg
+AddPackage lightdm # A lightweight display manager
 AddPackage xorg-server # Enough to run Xorg
-AddPackage xorg-xinit # Enables startx to start Xorg
 
 ## WM
 AddPackage qtile # A full-featured, pure-Python tiling window manager
@@ -31,4 +30,11 @@ AddPackage picom # X compositor for sweet transparency
 
 
 # Files
+## Lightdm
+CopyFile /etc/group  # lightdm and autologin
+CopyFile /etc/lightdm/Xsession
+CopyFile /etc/lightdm/lightdm.conf
+CreateLink /etc/systemd/system/display-manager.service \
+    /usr/lib/systemd/system/lightdm.service
+## Xorg
 CopyFile /etc/X11/xorg.conf.d/30-touchpad.conf 755

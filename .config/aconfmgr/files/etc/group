@@ -55,3 +55,5 @@ tss:x:962:
 docker:x:968:ali
 mssql:x:961:ali
 vboxusers:x:108:
+lightdm:x:960:
+autologin:x:959:ali

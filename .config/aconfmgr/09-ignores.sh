@@ -84,6 +84,8 @@ IgnorePath '/var/lib/bluetooth/*' # Bluetooth device info, cache, settings, etc.
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/docker/*'
+IgnorePath '/var/lib/lightdm'
+IgnorePath '/var/lib/lightdm-data/*'
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files

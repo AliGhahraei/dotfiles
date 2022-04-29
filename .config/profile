@@ -48,17 +48,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating an env
 
 
 # PATH
-userpaths="\
+PATH="\
 $HOME/.local/bin $SCRIPTS/miscellaneous $SCRIPTS/backup $HOME/.poetry/bin \
-$HOME/.config/emacs/bin /opt/mssql/bin ${PLATFORM_PATH:-} $SCRIPTS/config"
+$HOME/.config/emacs/bin /opt/mssql/bin ${PLATFORM_PATH:-} $SCRIPTS/config \
+$PATH"
 
-addpath() {
-    case ":${PATH:=$1}:" in
-        *:"$1":*) ;;
-        *) PATH="$1:$PATH" ;;
-    esac
-}
-
-for path in $userpaths; do
-    addpath "$path"
-done
+pyenv init --path | .
