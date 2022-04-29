@@ -32,7 +32,8 @@ AddPackage picom # X compositor for sweet transparency
 # Files
 ## Lightdm
 CopyFile /etc/group  # lightdm and autologin
-CopyFile /etc/lightdm/Xsession
+CopyFile /etc/lightdm/Xsession-xdg
+SetFileProperty /etc/lightdm/Xsession-xdg mode 755
 CopyFile /etc/lightdm/lightdm.conf
 CreateLink /etc/systemd/system/display-manager.service \
     /usr/lib/systemd/system/lightdm.service

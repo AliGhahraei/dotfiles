@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "Running X session wrapper"
+
+script="$HOME/.config/X11/xinitrc"
+if [ -x "$script" ] && [ ! -d "$script" ]; then
+    echo "Loading xsession script $script"
+    # shellcheck source=/dev/null
+    . "$script"
+fi
+
+echo "X session wrapper complete, running session $@"
+
+exec $@
