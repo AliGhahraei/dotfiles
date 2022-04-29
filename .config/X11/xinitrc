@@ -1,3 +1,6 @@
+# shellcheck source=/dev/null
+. "$HOME/.config/profile"
+
 setxkbmap -layout us -variant altgr-intl
 
 . $HOME/.fehbg
