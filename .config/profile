@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# XDG
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
+for file in "$HOME"/.config/profile.d/*; do
+    # shellcheck source=/dev/null
+    . "$file"
+done
+
 
 # Make stubborn apps conform to XDG
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
@@ -17,15 +17,6 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export PIPX_HOME="$XDG_DATA_HOME/pipx"
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
-
-
-# General dotfiles
-# shellcheck source=/dev/null
-. "$HOME/.local/share/dotfiles/platform_label"
-export DOTFILES_REPO="$XDG_DATA_HOME/dotfiles/repo.git"
-export GIT="$HOME/g"
-export SCRIPTS="$GIT/scripts"
-export TYPER_SCRIPTS_REPOS="$SCRIPTS $GIT/typer-scripts"
 
 
 # Backups
@@ -41,7 +32,6 @@ export DIRENV_LOG_FORMAT=""
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export LIBVA_DRIVER_NAME="iHD" # Hardware video acceleration
 export QT_QPA_PLATFORMTHEME=qt5ct
-export RCLONE_PASSWORD_COMMAND="secret-tool lookup program rclone user ali"
 export TERM="xterm-256color"
 export VISUAL="emacs-term"
 export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating an env

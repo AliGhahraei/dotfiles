@@ -4,7 +4,7 @@ set -euo pipefail
 PLATFORM_LABEL=${PLATFORM_LABEL:-}
 if [ -z "$PLATFORM_LABEL" ]; then
     # shellcheck source=/dev/null
-    . "$HOME/.config/profile"
+    . "$HOME/.config/profile.d/10-base"
 fi
 
 function is_main_platform () {
