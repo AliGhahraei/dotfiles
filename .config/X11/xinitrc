@@ -13,6 +13,3 @@ keepassxc &
 
 # Udiskie
 udiskie &
-
-# exec wm
-exec qtile start
