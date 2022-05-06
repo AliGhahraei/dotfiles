@@ -6,7 +6,7 @@
 [pull]
 	rebase = false
 [credential]
-    helper = /usr/lib/git-core/git-credential-libsecret
+	helper = /usr/lib/git-core/git-credential-cache --timeout=300
 [alias]
 	permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 [include]
