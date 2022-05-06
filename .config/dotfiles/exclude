@@ -53,6 +53,7 @@ vms
 .fehbg
 .config/git/platform-config
 .config/QtProject.conf
+.config/rbw/config.json
 
 downloads
 
