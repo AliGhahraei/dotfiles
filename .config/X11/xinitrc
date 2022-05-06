@@ -11,8 +11,5 @@ sh /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 # Compositor (for transparency)
 picom &
 
-# Password manager
-keepassxc &
-
 # Udiskie
 udiskie &

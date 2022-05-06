@@ -16,5 +16,3 @@
 	pushRemote = origin
 [filter "qBittorrent"]
 	clean = "sed \"/=@/d;/LastViewedPage=.*/d;/SplitterSizes=.*/d\""
-[filter "keepassxc"]
-	clean = sed \"/Own=.*/d\"
