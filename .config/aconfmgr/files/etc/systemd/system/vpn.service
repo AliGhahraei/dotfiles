@@ -1,0 +1,5 @@
+[Unit]
+Description=VPN with password provided
+
+[Service]
+ExecStart=/usr/bin/openfortivpn

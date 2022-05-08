@@ -37,6 +37,7 @@ abbr tv 'route tsukihime view'
 # Systemd
 abbr po 'systemctl poweroff'
 abbr re 'systemctl reboot'
+abbr ov 'sudo systemctl stop vpn'
 
 # Misc.
 abbr clipboard 'xclip -selection c'
