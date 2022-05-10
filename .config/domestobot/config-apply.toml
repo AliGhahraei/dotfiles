@@ -1,0 +1,17 @@
+help_message = 'Apply system configuration'
+default_subcommands = [
+    'aconfmgr_apply',
+    'setup_emacs',
+]
+
+[[steps]]
+name = 'aconfmgr_apply'
+doc = "Run aconfmgr apply."
+title = 'Running aconfmgr apply'
+command = ['aconfmgr', 'apply']
+
+[[steps]]
+name = 'setup_emacs'
+doc = 'Setup emacs if not already installed.'
+title = 'Setting up emacs (if applicable)'
+command = ['setup-emacs']

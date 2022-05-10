@@ -42,4 +42,4 @@ command = ['doom', 'upgrade']
 name = 'save_aconfmgr'
 doc = 'Run `config-save`.'
 title = 'Saving config'
-command = ['config-save']
+command = ['aconfmgr', 'save']
