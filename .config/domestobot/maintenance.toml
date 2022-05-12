@@ -5,7 +5,7 @@ default_subcommands = [
     'check_qtile_config',
     'upgrade_python_tools',
     'upgrade_doom',
-    'save_aconfmgr',
+    'config_save',
 ]
 
 [[steps]]
@@ -39,7 +39,7 @@ title = 'Upgrading doom'
 command = ['doom', 'upgrade']
 
 [[steps]]
-name = 'save_aconfmgr'
-doc = 'Run `config-save`.'
+name = 'config_save'
+doc = 'Run `aconfmgr save`.'
 title = 'Saving config'
 command = ['aconfmgr', 'save']
