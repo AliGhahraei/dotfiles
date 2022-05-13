@@ -1,0 +1,10 @@
+help_message = 'Save system configuration'
+default_subcommands = [
+    'aconfmgr_save',
+]
+
+[[steps]]
+name = 'aconfmgr_save'
+doc = 'Run `aconfmgr save`.'
+title = 'Running aconfmgr save'
+command = ['aconfmgr', 'save']
