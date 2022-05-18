@@ -56,6 +56,10 @@ IgnorePath '/etc/systemd/user/sockets.target.wants/*'
 IgnorePath '/lost+found/*'
 
 
+# Nix
+IgnorePath '/nix/*'
+
+
 # /opt
 IgnorePath '/opt/containerd' # Docker-related virtualization stuff
 IgnorePath '/opt/containerd/*'

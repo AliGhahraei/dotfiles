@@ -7,6 +7,7 @@ AddPackage --foreign paru-bin # "Feature packed AUR helper" :)
 AddPackage gptfdisk # For cgdisk
 AddPackage htop # Interactive process viewer
 AddPackage ncdu # Disk usage analyzer with an ncurses interface
+AddPackage nix # A purely functional package manager
 AddPackage tree # Visualize dirs as tree
 
 ## Paru optional deps
@@ -15,3 +16,6 @@ AddPackage bat # For colored pkgbuild printing
 
 # Files
 CopyFile /etc/paru.conf
+CreateLink /etc/systemd/system/multi-user.target.wants/nix-daemon.service \
+    /usr/lib/systemd/system/nix-daemon.service
+CopyFile /etc/group  # Nix groups
