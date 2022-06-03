@@ -27,6 +27,7 @@ if is_main_platform; then
     SetFileProperty /var/lib/colord owner colord
 else
     AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
+    AddPackage virtualbox-guest-iso # The official VirtualBox Guest Additions ISO image
     AddPackage --foreign brave-bin # Web browser that blocks ads and trackers by default (binary release)
     AddPackage --foreign realvnc-vnc-viewer # VNC remote desktop client software by RealVNC
 
