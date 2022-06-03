@@ -38,13 +38,12 @@ IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
 IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
-IgnorePath '/etc/netctl/w*' # Netctl profiles
-IgnorePath '/etc/netctl/examples/*'
-IgnorePath '/etc/netctl/interfaces/*'
+IgnorePath '/etc/NetworkManager/system-connections/*'
 IgnorePath '/etc/odbcinst.ini' # SQL server stuff
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
+IgnorePath '/etc/resolv.conf'
 IgnorePath '/etc/shadow'
 IgnorePath '/etc/ssl/certs/*'
 
@@ -90,6 +89,7 @@ IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/docker/*'
 IgnorePath '/var/lib/lightdm'
 IgnorePath '/var/lib/lightdm-data/*'
+IgnorePath '/var/lib/NetworkManager/*'
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
