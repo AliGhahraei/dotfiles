@@ -17,6 +17,7 @@ vms
 .config/rclone
 .config/VirtualBox
 .mozilla
+.ssh
 .vnc
 
 
