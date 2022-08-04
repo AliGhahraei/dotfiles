@@ -51,6 +51,10 @@ vms
 
 
 # Permanently ignore
+## Nix
+.nix-defexpr
+.nix-profile
+
 ## Platform links
 .fehbg
 .config/git/platform-config
