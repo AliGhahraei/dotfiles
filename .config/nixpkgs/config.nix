@@ -5,6 +5,7 @@
       name = "my-packages";
       paths = [
         pgadmin4
+        jetbrains.datagrip
       ];
     };
   };
