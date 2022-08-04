@@ -10,10 +10,12 @@ documents
 g
 org
 pictures
+roobyn
 vms
 .config/BraveSoftware
 .config/JetBrains
 .config/Postman
+.config/profile.d/30-roobyn
 .config/rclone
 .config/VirtualBox
 .mozilla
