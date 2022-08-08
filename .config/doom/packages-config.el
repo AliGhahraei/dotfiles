@@ -10,32 +10,19 @@
   :hook fish-mode)
 
 
-(use-package! lsp-jedi
-  :after (python lsp-mode)
-  :config
-  (add-to-list 'lsp-disabled-clients 'mspyls)
-  (add-to-list 'lsp-enabled-clients 'jedi))
-
-
 (use-package! ox-hugo
   :after ox)
 
 
 (after! python-pytest
-  (advice-add 'python-pytest--project-root :around
-              (lambda (original-function &rest args)
-                "Return SUBPROJECT envvar if defined, otherwise apply normally."
-                (let ((subproject (or (getenv "SUBPROJECT")
-                                      (apply original-function args))))
-                  subproject)))
-
   (advice-add 'python-pytest--run :before
               (lambda (&rest args)
-                "Set pytest executable to PYTHONPATH if set"
-                (setq python-pytest-executable
-                      (if-let ((pythonpath (getenv "PYTHONPATH")))
-                          (concat "PYTHONPATH=" pythonpath " " "pytest")
-                        "pytest")))))
+                "Integrate with poetry"
+                (setq python-pytest-executable "poetry run pytest"))))
+
+
+(add-hook! python-mode
+  (lsp))
 
 
 (after! tramp

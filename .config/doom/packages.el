@@ -48,7 +48,5 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-(when (featurep! :lang python +lsp)
-    (package! lsp-jedi))
 (package! ox-hugo)
 (package! beacon)
