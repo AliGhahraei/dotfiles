@@ -63,6 +63,10 @@ vms
 .config/QtProject.conf
 .config/rbw/config.json
 
+## Pomotroid
+.config/pomotroid
+!.config/pomotroid/user-preferences.json
+
 downloads
 
 .java

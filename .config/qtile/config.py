@@ -13,7 +13,7 @@ from libqtile.lazy import lazy
 from libqtile.log_utils import logger
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
-    Battery, Chord, Clock, CurrentLayout, GroupBox, Pomodoro, PulseVolume,
+    Battery, Chord, Clock, CurrentLayout, GroupBox, PulseVolume,
     Systray, TextBox, WindowName,
 )
 from Xlib.display import Display  # type: ignore
@@ -166,13 +166,6 @@ def get_screens() -> List[Screen]:
             Chord(
                 chords_colors={'launch': ('#ff0000', '#ffffff')},
                 name_transform=lambda name: name.upper(),
-            ),
-            Pomodoro(
-                length_pomodori=50,
-                length_short_break=10,
-                length_long_break=30,
-                update_interval=1,
-                color_inactive=PURPLE,
             ),
             TextBox(text="墳"),
             PulseVolume(),
