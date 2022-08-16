@@ -14,6 +14,7 @@ else
     AddPackage docker-compose # Fast, isolated development environments using Docker
     AddPackage dotnet-sdk # The .NET Core SDK
     AddPackage openssh # Premier connectivity tool for remote login with the SSH protocol
+    AddPackage postgresql # Sophisticated object-relational DBMS
     AddPackage --foreign dotnet-sdk-5.0-bin # The .NET Core SDK version 5.0 (binary) - End of life
     AddPackage --foreign mssql-server # Microsoft SQL Server for Linux
     AddPackage --foreign mssql-tools # Microsoft® SQL Server® Tools for Linux
