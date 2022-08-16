@@ -6,6 +6,7 @@
       paths = [
         pgadmin4
         jetbrains.datagrip
+        onlyoffice-bin
       ];
     };
   };
