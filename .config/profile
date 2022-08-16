@@ -22,7 +22,7 @@ export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 # Backups
 export BACKUP_PATHS="\
 $GIT $HOME/org $HOME/documents $HOME/pictures $HOME/.config/JetBrains \
-$HOME/.config/rclone .mozilla $PIPX_HOME/venvs"
+$HOME/.config/rclone $HOME/.mozilla $PIPX_HOME/venvs"
 export BACKUPDIR=/run/media/ali/backup/backup
 
 

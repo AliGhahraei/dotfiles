@@ -8,6 +8,7 @@ AddPackage zathura # Minimalistic document viewer
 AddPackage zathura-pdf-mupdf # PDF support for Zathura (Supports PDF, ePub, and OpenXPS)
 AddPackage udiskie # Removable disk automounter using udisks
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
+AddPackage --foreign pomotroid-bin # Simple and visually-pleasing Pomodoro timer
 AddPackage --foreign ventoy-bin # A new multiboot USB solution (Binary)
 
 if is_main_platform; then
