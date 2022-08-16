@@ -7,6 +7,7 @@
         pgadmin4
         jetbrains.datagrip
         onlyoffice-bin
+        mongodb-compass
       ];
     };
   };
