@@ -13,7 +13,6 @@ AddPackage --foreign ventoy-bin # A new multiboot USB solution (Binary)
 
 if is_main_platform; then
     AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
-    AddPackage steam # Valve's digital software delivery system
     AddPackage wine # A compatibility layer for running Windows programs
     AddPackage wine-mono # Wine's built-in replacement for Microsoft's .NET Framework
 
