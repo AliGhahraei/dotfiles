@@ -73,6 +73,7 @@ IgnorePath '/usr/lib/ghc-*/package.conf.d/*' # GHC packages
 IgnorePath '/usr/lib/locale/locale-archive' # Selected locales in binary format
 IgnorePath '/usr/lib/modules/*' # Kernel modules
 IgnorePath '/usr/lib/udev/hwdb.bin' # Udev db to apply rules to devices
+IgnorePath '/usr/lib/python*'
 
 ## /usr/share
 IgnorePath '/usr/share/**/*.compiled'
