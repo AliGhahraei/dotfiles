@@ -14,10 +14,12 @@ roobyn
 vms
 .config/BraveSoftware
 .config/JetBrains
+.config/MongoDB Compass
 .config/Postman
 .config/profile.d/30-roobyn
 .config/rclone
 .config/VirtualBox
+.mongodb
 .mozilla
 .ssh
 .vnc
