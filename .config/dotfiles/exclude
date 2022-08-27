@@ -5,13 +5,19 @@
 # *.[oa]
 # *~
 # Backed up
+## General
 courses
 documents
 g
 org
 pictures
+
+##Work
+marketplace
 roobyn
 vms
+
+## Dotfiles
 .config/BraveSoftware
 .config/JetBrains
 .config/MongoDB Compass
