@@ -16,3 +16,5 @@
 	pushRemote = origin
 [filter "qBittorrent"]
 	clean = "sed \"/=@/d;/LastViewedPage=.*/d;/SplitterSizes=.*/d\""
+[filter "onlyoffice"]
+	clean = "sed \"/openPath=.*/d;/savePath=.*/d;/position=.*/d\""
