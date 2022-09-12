@@ -89,6 +89,7 @@ IgnorePath '/var/lib/bluetooth/*' # Bluetooth device info, cache, settings, etc.
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/docker/*'
+IgnorePath '/var/lib/iwd/*' # Networks, passwords and data for iwd
 IgnorePath '/var/lib/lightdm'
 IgnorePath '/var/lib/lightdm-data/*'
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
@@ -96,9 +97,8 @@ IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
 IgnorePath '/var/lib/pgadmin/*'
 IgnorePath '/var/lib/sss/db/config.ldb' # SQL server stuff
-IgnorePath '/var/opt/mssql/*'
 IgnorePath '/var/lib/tpm2-tss/*' # Trusted Platform Module Software Stack API (security)
-IgnorePath '/var/lib/iwd/*' # Networks, passwords and data for iwd
+IgnorePath '/var/opt/mssql/*'
 
 ### Systemd
 IgnorePath '/var/lib/machines/*'
