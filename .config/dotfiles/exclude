@@ -71,6 +71,7 @@ vms
 .config/git/platform-config
 .config/QtProject.conf
 .config/rbw/config.json
+.config/nixpkgs/config.nix
 
 ## Pomotroid
 .config/pomotroid

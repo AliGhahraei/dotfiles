@@ -16,6 +16,8 @@ AddPackage bat # For colored pkgbuild printing
 
 # Files
 CopyFile /etc/paru.conf
+## Nix
 CreateLink /etc/systemd/system/multi-user.target.wants/nix-daemon.service \
     /usr/lib/systemd/system/nix-daemon.service
-CopyFile /etc/group  # Nix groups
+CopyFile /etc/group
+CreatePlatformLink "$XDG_CONFIG_HOME/nixpkgs/config.nix"
