@@ -8,6 +8,7 @@
         jetbrains.datagrip
         onlyoffice-bin
         mongodb-compass
+        sioyek
       ];
     };
   };

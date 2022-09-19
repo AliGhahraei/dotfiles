@@ -4,8 +4,6 @@ set -euo pipefail
 # Packages
 AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
-AddPackage zathura # Minimalistic document viewer
-AddPackage zathura-pdf-mupdf # PDF support for Zathura (Supports PDF, ePub, and OpenXPS)
 AddPackage udiskie # Removable disk automounter using udisks
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 AddPackage --foreign pomotroid-bin # Simple and visually-pleasing Pomodoro timer
