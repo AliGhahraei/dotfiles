@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # Packages
+AddPackage blueman # GTK+ Bluetooth Manager
 AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage udiskie # Removable disk automounter using udisks
