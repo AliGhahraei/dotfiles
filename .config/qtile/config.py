@@ -1,6 +1,6 @@
 from os import getenv
 from subprocess import Popen
-from typing import Iterable, Iterator, List, Tuple, Callable
+from typing import Iterable, Iterator, List, Tuple
 
 from libqtile.backend.base import Window
 from libqtile.bar import Bar
@@ -9,7 +9,7 @@ from libqtile.core.manager import Qtile
 from libqtile.hook import subscribe
 from libqtile.layout import MonadTall, TreeTab
 from libqtile.layout.base import Layout
-from libqtile.lazy import lazy
+from libqtile.lazy import lazy, LazyCall
 from libqtile.log_utils import logger
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
@@ -101,12 +101,13 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
                 desc='Run command with Rofi'),
         )
 
-    def _get_group_switch_key(name: str, *extra_actions: Callable[[], None]) \
+    def _get_group_switch_key(name: str, *extra_actions: LazyCall) \
             -> Key:
         return Key(
             [MOD],
             name,
-            lazy.group[name].toscreen(), *extra_actions,
+            lazy.group[name].toscreen(),
+            *extra_actions,
             desc=f'Switch to group {name}'
         )
 
@@ -122,7 +123,7 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
             qtile.cmd_spawn(command)
 
     def _get_group_move_keys(names: Iterable[str]) -> Iterator[Key]:
-        return(
+        return (
             Key(
                 [MOD, 'shift'],
                 name,
