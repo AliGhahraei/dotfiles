@@ -12,7 +12,7 @@ g
 org
 pictures
 
-##Work
+## Work
 marketplace
 roobyn
 vms
@@ -55,6 +55,8 @@ vms
 
 .config/pipewire
 .config/pulse
+
+.config/unity3d
 
 .config/qBittorrent/lockfile
 .config/qBittorrent/qBittorrent-data.conf
