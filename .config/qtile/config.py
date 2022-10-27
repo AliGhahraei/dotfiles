@@ -127,8 +127,8 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
             Key(
                 [MOD, 'shift'],
                 name,
-                lazy.window.togroup(name, switch_group=True),
-                desc=f'Move focused window & switch to group {name}',
+                lazy.window.togroup(name),
+                desc=f'Move focused window to group {name}',
             )
             for name in names
         )
