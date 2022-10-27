@@ -18,7 +18,7 @@ else
 
     if status --is-interactive
         if not set -q PYENV_SHELL
-            pyenv init --path | source
+            pyenv init - | source
         end
 
         function cd

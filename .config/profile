@@ -42,4 +42,4 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating an env
 # PATH
 export PATH="$SCRIPTS/miscellaneous:$HOME/.nix-profile/bin:$HOME/.local/bin:\
 $SCRIPTS/backup:$HOME/.poetry/bin:$HOME/.config/emacs/bin:/opt/mssql/bin:\
-${PLATFORM_PATH:-}:$SCRIPTS/config:$PYENV_ROOT/shims:$PATH"
+${PLATFORM_PATH:-}:$SCRIPTS/config:$PATH"
