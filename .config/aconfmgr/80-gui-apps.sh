@@ -6,7 +6,6 @@ AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage udiskie # Removable disk automounter using udisks
 AddPackage --foreign activitywatch-bin # Log what you do on your computer.
-AddPackage --foreign ventoy-bin # A new multiboot USB solution (Binary)
 
 if is_main_platform; then
     AddPackage qbittorrent # An advanced BitTorrent client programmed in C++

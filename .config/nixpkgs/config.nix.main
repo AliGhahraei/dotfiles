@@ -9,6 +9,7 @@
       paths = [
         pomotroid
         sioyek
+        ventoy-bin
       ];
     };
   };
