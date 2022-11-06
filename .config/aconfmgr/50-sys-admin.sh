@@ -10,6 +10,8 @@ AddPackage ncdu # Disk usage analyzer with an ncurses interface
 AddPackage nix # A purely functional package manager
 AddPackage tree # Visualize dirs as tree
 
+# Missing paru dependency
+AddPackage openssl-1.1
 ## Paru optional deps
 AddPackage bat # For colored pkgbuild printing
 
