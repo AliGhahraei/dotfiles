@@ -6,6 +6,7 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
+        ferdium
         pomotroid
         sioyek
         ventoy-bin

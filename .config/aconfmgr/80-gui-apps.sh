@@ -12,7 +12,6 @@ if is_main_platform; then
     AddPackage steam # Valve's digital software delivery system
     AddPackage wine # A compatibility layer for running Windows programs
     AddPackage wine-mono # Wine's built-in replacement for Microsoft's .NET Framework
-    AddPackage --foreign ferdium-bin # A messaging browser
 
     ## Route-tracker dependencies
     AddPackage graphviz # Graph visualization software
