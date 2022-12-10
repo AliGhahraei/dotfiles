@@ -6,7 +6,6 @@ AddPackage dash # Fast alternative for /bin/sh
 AddPackage fish
 
 ## "Add-ons" for shell
-AddPackage direnv # manage per-directory environments
 AddPackage fisher # A package manager for the fish shell
 AddPackage fzf # Command-line fuzzy finder
 AddPackage s-nail # Environment for sending and receiving mail

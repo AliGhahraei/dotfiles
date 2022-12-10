@@ -17,8 +17,6 @@ else
     end
 
     if status --is-interactive
-	    direnv hook fish | source
-
         if not set -q PYENV_SHELL
             pyenv init --path | source
         end
