@@ -78,11 +78,14 @@ vms
 .config/pomotroid
 !.config/pomotroid/user-preferences.json
 
+## Network Security Services
+.pki
+
+
 downloads
 
 .java
 
-.pki
 
 .pulse-cookie
 
