@@ -25,7 +25,6 @@ vms
 .config/Postman
 .config/profile.d/30-roobyn
 .config/rclone
-.config/VirtualBox
 .mongodb
 .mozilla
 .ssh
