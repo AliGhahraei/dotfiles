@@ -28,7 +28,12 @@ export BACKUPDIR=/run/media/ali/backup/backup
 
 
 # Misc.
-export BROWSER="firefox"
+if [ "$PLATFORM_LABEL" = 'main' ]; then
+    export BROWSER='firefox'
+else
+    export BROWSER='brave'
+fi
+
 export DIRENV_LOG_FORMAT=""
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export KAFKA="$HOME/courses/kafka/kafka_2.13-3.3.1"
