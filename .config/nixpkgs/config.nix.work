@@ -4,6 +4,7 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
+        awscli
         azure-cli
         pgadmin4
         onlyoffice-bin
