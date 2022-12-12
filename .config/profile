@@ -31,6 +31,7 @@ export BACKUPDIR=/run/media/ali/backup/backup
 export BROWSER="firefox"
 export DIRENV_LOG_FORMAT=""
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+export KAFKA="$HOME/courses/kafka/kafka_2.13-3.3.1"
 export LIBVA_DRIVER_NAME="iHD" # Hardware video acceleration
 export MOZ_DISABLE_RDD_SANDBOX=1 # https://bugzilla.mozilla.org/show_bug.cgi?id=1751363
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -43,4 +44,4 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating an env
 # PATH
 export PATH="$SCRIPTS/miscellaneous:$HOME/.nix-profile/bin:$HOME/.local/bin:\
 $SCRIPTS/backup:$HOME/.poetry/bin:$HOME/.config/emacs/bin:/opt/mssql/bin:\
-${PLATFORM_PATH:-}:$SCRIPTS/config:$PATH"
+${PLATFORM_PATH:-}:$SCRIPTS/config:$PATH:$HOME/courses/kafka/kafka_2.13-3.3.1/bin"
