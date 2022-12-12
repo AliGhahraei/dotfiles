@@ -95,6 +95,7 @@ IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
 IgnorePath '/var/lib/pgadmin/*'
+IgnorePath '/var/lib/postgres/*'
 IgnorePath '/var/lib/sss/db/config.ldb' # SQL server stuff
 IgnorePath '/var/lib/tpm2-tss/*' # Trusted Platform Module Software Stack API (security)
 IgnorePath '/var/opt/mssql/*'
