@@ -19,7 +19,6 @@ else
     AddPackage --foreign mssql-server # Microsoft SQL Server for Linux
     AddPackage --foreign mssql-tools # Microsoft® SQL Server® Tools for Linux
     AddPackage --foreign postman-bin # Build, test, and document your APIs faster
-    AddPackage --foreign rider # A cross-platform .NET IDE by JetBrains.
 
     ## Kafka-related
     AddPackage jdk8-openjdk # OpenJDK Java 8 development kit
