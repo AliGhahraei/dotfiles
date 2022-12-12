@@ -6,7 +6,6 @@
       paths = [
         azure-cli
         pgadmin4
-        jetbrains.datagrip
         onlyoffice-bin
         mongodb-compass
         sioyek
