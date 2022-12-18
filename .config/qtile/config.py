@@ -251,7 +251,7 @@ def get_mouse_actions() -> List[Mouse]:
 
 @subscribe.startup_once
 def startup_once():
-    Popen('aw-qt')
+    Popen(['systemctl', '--user', 'start', 'aw'])
 
 
 groups = get_groups()
