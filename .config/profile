@@ -46,7 +46,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export SUDO_ASKPASS="$SCRIPTS/miscellaneous/rbw-askpass"
 export TERM="xterm-256color"
 export VISUAL="emacs-term"
-export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating an env
+export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating a python venv
 
 
 # PATH
