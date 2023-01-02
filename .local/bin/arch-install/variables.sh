@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+export MOUNTDIR="/mnt"
+export NEW_USER="ali"
+export NEW_HOSTNAME="$NEW_USER"
+export NEW_SHELL="fish"
+export TIMEZONE="America/Mexico_City"
+export LOCALE="en_US.UTF-8"
+export KEYBOARD="us"
+export ARCH_FILESYSTEM_LABEL=Arch
+export EFI_FILESYSTEM_LABEL=EFI

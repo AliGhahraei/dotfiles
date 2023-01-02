@@ -1,0 +1,2 @@
+#!/bin/sh
+"$HOME"/.nix-profile/bin/pomotroid --no-sandbox

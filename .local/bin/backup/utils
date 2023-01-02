@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+set -eu
+
+export BORG_PASSCOMMAND="rbw get borg"
+RESTIC_PASSCOMMAND="rbw get restic"
+
+
+restic_repo ()
+{
+    restic -r rclone:box_remote:backup \
+        --password-command="$RESTIC_PASSCOMMAND" "$@"
+}

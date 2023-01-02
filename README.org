@@ -1,7 +1,17 @@
 * dotfiles
-My personal configuration files
+My personal dotfiles (configuration files, [[file:.local/bin/README.md][scripts]], etc.)
+
+** Disclaimer
+You probably don't want the exact same system I use, but you could use
+this repository to get some new ideas while building your own.
+I wouldn't recommend following any instruction, using any config or
+running any script without reading and understanding it first. It could
+require modifications for your system and you should always read things
+from the internet before using them to avoid compromising your computer.
 
 ** Installation
-Just run =git clone --bare https://github.com/AliGhahraei/dotfiles $XDG_DATA_HOME/dotfiles/repo.git=
-and optionally =git --git-dir=$XDG_DATA_HOME/dotfiles/repo.git --work-tree=$HOME checkout= if you
-don't have the files locally
+If you want to install Arch Linux and configure it, check [[file:.local/bin/arch-install/README.md][arch-install]].
+If you just want the files, run
+=git clone --bare https://github.com/AliGhahraei/dotfiles $XDG_DATA_HOME/dotfiles/repo.git=
+and optionally =git --git-dir=$XDG_DATA_HOME/dotfiles/repo.git --work-tree=$HOME checkout=
+if you don't have the files locally.

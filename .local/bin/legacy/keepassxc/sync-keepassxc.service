@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync Keepassxc dbs to a remote
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=sh -c ". %E/profile.d/20-rclone; %h/g/scripts/miscellaneous/sync-keepassxc"
+Restart=on-failure
+RestartSec=3

@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+set -eu
+
+DIR=$(dirname "$0")
+. "$DIR/utils"
+
+
+for repo in $BACKUP_PATHS; do
+    borg create -v --stats --progress --pattern "- **/.direnv" \
+        --pattern "- **/*cache*" --pattern "- **/storage" \
+        "$BACKUPDIR::$(basename "$repo")-{now}" "$repo"
+done
+
+for repo in $BACKUP_PATHS; do
+    borg prune -v --list $BACKUPDIR --glob-archives="$(basename "$repo")-*" \
+        --keep-daily=7 --keep-weekly=4 --keep-monthly=12 --keep-yearly=2
+done

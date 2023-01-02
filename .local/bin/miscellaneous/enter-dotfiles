@@ -1,0 +1,6 @@
+#!/bin/sh
+export GIT_DIR="$DOTFILES_REPO"
+
+echo "Entering dotfiles"
+"$1"
+echo "Leaving dotfiles"

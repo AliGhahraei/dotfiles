@@ -1,0 +1,4 @@
+#!/bin/sh
+export SSH_ASKPASS='kraken-askpass'
+export SSH_ASKPASS_REQUIRE='force'
+ssh k-dev

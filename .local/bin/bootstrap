@@ -1,0 +1,23 @@
+#!/bin/sh
+set -eu
+
+config="$HOME/.config/dotfiles"
+XDG_DATA_HOME="$HOME/.local/share"
+repo="$XDG_DATA_HOME/dotfiles/repo.git"
+
+if [ $# -eq 0 ]; then
+    >&2 echo "platform type must be passed as argument"
+    exit 1
+fi
+printf "#!/bin/sh\nexport PLATFORM_LABEL=%s" "$1" > \
+    "$XDG_DATA_HOME/dotfiles/platform_label"
+
+if [ ! -d "$repo" ] ; then
+    echo "Setting up dotfiles repo"
+    git clone --bare https://github.com/AliGhahraei/dotfiles "$repo"
+    git -C "$HOME" --git-dir="$repo" --work-tree="$HOME" checkout
+
+    ln -sf "$config/config" "$repo/config"
+    ln -sf "$config/exclude" "$repo/info/exclude"
+    ln -sf "$config/attributes" "$repo/info/attributes"
+fi

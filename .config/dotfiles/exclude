@@ -100,4 +100,5 @@ cef_user_data
 .wine
 
 .cache
-.local
+.local/*
+!.local/bin

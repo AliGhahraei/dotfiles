@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+
+dbs_dir="${XDG_DATA_HOME:-$HOME/.local/share}/keepassxc/dbs"
+while true; do
+    inotifywait -e modify "$dbs_dir"
+    rclone bisync dropbox_remote:passwords "$dbs_dir"
+done
