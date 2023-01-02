@@ -37,7 +37,6 @@ else
     export BROWSER='brave'
 fi
 
-export DIRENV_LOG_FORMAT=""
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export KAFKA="$HOME/courses/kafka/kafka_2.13-3.3.1"
 export LIBVA_DRIVER_NAME="iHD" # Hardware video acceleration
