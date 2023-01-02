@@ -19,6 +19,7 @@ export LESSHISTFILE="$XDG_DATA_HOME/state/history"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export PIPX_HOME="$XDG_DATA_HOME/pipx"
+export PIPX_BIN_DIR="$PIPX_HOME/bin"
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 
@@ -50,5 +51,5 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating an env
 
 # PATH
 export PATH="$SCRIPTS/miscellaneous:$HOME/.nix-profile/bin:$HOME/.local/bin:\
-$SCRIPTS/backup:$HOME/.poetry/bin:$HOME/.config/emacs/bin:/opt/mssql/bin:\
+$PIPX_BIN_DIR:$SCRIPTS/backup:$HOME/.poetry/bin:$HOME/.config/emacs/bin:/opt/mssql/bin:\
 ${PLATFORM_PATH:-}:$SCRIPTS/config:$PATH:$HOME/courses/kafka/kafka_2.13-3.3.1/bin"
