@@ -2,4 +2,4 @@
 Description=Check battery
 
 [Service]
-ExecStart=/home/ali/g/scripts/miscellaneous/check-battery
+ExecStart=/home/ali/.local/bin/miscellaneous/check-battery
