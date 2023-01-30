@@ -46,3 +46,7 @@ abbr nn 'nnn -e'
 abbr pretty 'python -m json.tool'
 abbr pip-uninstall 'pip freeze | xargs pip uninstall -y'
 abbr vpn 'sudo systemctl start vpn'
+
+# Work
+abbr zookeeper 'zookeeper-server-start.sh $KAFKA/config/zookeeper.properties'
+abbr kafka 'kafka-server-start.sh $KAFKA/config/server.properties'
