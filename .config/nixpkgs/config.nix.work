@@ -4,6 +4,7 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
+        dbeaver
         awscli
         azure-cli
         pgadmin4
