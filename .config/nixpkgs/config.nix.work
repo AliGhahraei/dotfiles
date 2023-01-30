@@ -1,4 +1,7 @@
 {
+  permittedInsecurePackages = [
+    "electron-9.4.4"
+  ];
   allowUnfree = true;
   packageOverrides = pkgs: with pkgs; {
     myPackages = pkgs.buildEnv {
@@ -10,6 +13,7 @@
         pgadmin4
         onlyoffice-bin
         mongodb-compass
+        pomotroid
         sioyek
       ];
     };
