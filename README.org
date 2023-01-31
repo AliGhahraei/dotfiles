@@ -12,6 +12,6 @@ from the internet before using them to avoid compromising your computer.
 ** Installation
 If you want to install Arch Linux and configure it, check [[file:.local/bin/arch-install/README.md][arch-install]].
 If you just want the files, run
-=git clone --bare https://github.com/AliGhahraei/dotfiles $XDG_DATA_HOME/dotfiles/repo.git=
+=git clone --bare https://github.com/AliGhahraei/dotfiles $XDG_DATA_HOME/dotfiles/repo.git= (/Library/Application Support/dotfiles/repo.git for macOS)
 and optionally =git --git-dir=$XDG_DATA_HOME/dotfiles/repo.git --work-tree=$HOME checkout=
 if you don't have the files locally.
