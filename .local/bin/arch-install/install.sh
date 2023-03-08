@@ -8,7 +8,7 @@ absolute_scripts_location="$MOUNTDIR/$installation_scripts_mountdir_location"
 
 
 msg "Installing essential packages. This will take a while"
-pacstrap "$MOUNTDIR" base base-devel linux linux-firmware grub efibootmgr os-prober "$NEW_SHELL"
+pacstrap "$MOUNTDIR" base base-devel linux linux-firmware grub efibootmgr os-prober iwd "$NEW_SHELL"
 
 
 msg "Generating fstab"
