@@ -11,7 +11,6 @@ so you can clone this repo:
 Then you should modify `variables.sh` as it contains several environment
 variables you should modify before running the first script.
 
-After modifying the variables, run `pre-install.sh`. It automates Arch's
-Installation Guide up until before the Installation phase.
+After modifying the variables, run `entrypoint.sh`. It automates Arch's
+Installation Guide and does a few extra tasks like setting up a user.
 
-After that finishes, run `install.sh` to continue with the process.
