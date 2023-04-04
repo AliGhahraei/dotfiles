@@ -34,20 +34,21 @@ msg "Re-listing devices"
 lsblk
 
 
+msg "Setting up EFI. Enter your relative EFI partition (e.g. sda1).\
+ WARNING! This partition will be formatted."
+read -r relative_efi
+efi_partition="/dev/$relative_efi"
+mkfs.fat -F32 "$efi_partition" -n "$EFI_FILESYSTEM_LABEL"
+mkdir -p "$MOUNTDIR/boot"
+mount "$efi_partition" "$MOUNTDIR/boot"
+
+
 msg "Setting up root. Enter your root's relative partition name (e.g. nvme0n1p2).\
  WARNING! This partition will be formatted."
 read -r relative_root
 root_partition="/dev/$relative_root"
 mkfs.ext4 "$root_partition" -L "$ARCH_FILESYSTEM_LABEL"
 mount "$root_partition" "$MOUNTDIR"
-
-
-msg "Setting up EFI. Enter your relative EFI partition (e.g. sda1)"
-read -r relative_efi
-efi_partition="/dev/$relative_efi"
-fatlabel "$efi_partition" "$EFI_FILESYSTEM_LABEL"
-mkdir "$MOUNTDIR"/efi
-mount "$efi_partition" "$MOUNTDIR/efi"
 
 
 msg "Listing available devices after changes"
