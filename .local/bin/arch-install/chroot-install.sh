@@ -29,10 +29,7 @@ msg "Setting root password"
 passwd
 
 
-msg "Installing GRUB"
-sed -i "/GRUB_DISABLE_OS_PROBER=false/s/^#//" /etc/locale.gen
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
+./setup_bootloader.sh
 
 
 ./create-user.sh
