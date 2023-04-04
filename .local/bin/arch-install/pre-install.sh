@@ -34,7 +34,7 @@ msg "Re-listing devices"
 lsblk
 
 
-msg "Setting up EFI. Enter your relative EFI partition (e.g. sda1).\
+msg "Setting up EFI. Enter your relative EFI partition (e.g. nvme0n1p1).\
  WARNING! This partition will be formatted."
 read -r relative_efi
 efi_partition="/dev/$relative_efi"
