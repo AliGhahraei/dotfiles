@@ -24,7 +24,8 @@ cp -R ../../.. "$ABSOLUTE_SCRIPTS_LOCATION"
 
 msg "Entering chroot"
 arch-chroot "$MOUNTDIR" sh -c \
-  "cd /$INSTALLATION_SCRIPTS_MOUNTDIR_LOCATION/.local/bin/arch-install \
+  "cd /$INSTALLATION_SCRIPTS_MOUNTDIR_LOCATION\
+  /$RELATIVE_INSTALLATION_SOURCE_PATH \
   && ./chroot-install.sh"
 
 

@@ -36,7 +36,7 @@ passwd
 
 
 msg "Moving scripts to the new user's home"
-user_projects_location=/home/$NEW_USER/g
+user_projects_location="$NEW_USER_HOME/g"
 mkdir -p $user_projects_location
 mv "/$INSTALLATION_SCRIPTS_MOUNTDIR_LOCATION" "$user_projects_location"
 chown -R $NEW_USER $user_projects_location
