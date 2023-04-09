@@ -1,8 +1,0 @@
-#!/bin/sh
-# shellcheck source=/dev/null
-emacs_dir="$HOME/.config/emacs"
-
-if [ ! -d "$emacs_dir" ]; then
-    git clone --depth 1 https://github.com/hlissner/doom-emacs "$emacs_dir"
-    "$emacs_dir/bin/doom" install
-fi
