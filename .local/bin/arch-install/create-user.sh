@@ -5,7 +5,12 @@
 
 
 msg 'Creating user'
-useradd -m -G wheel -s /usr/bin/"$NEW_SHELL" "$NEW_USER"
+useradd -m -s /usr/bin/"$NEW_SHELL" "$NEW_USER"
+
+
+msg 'Copying sudoers config'
+mkdir -p /etc/sudoers.d
+cp ../../../.config/aconfmgr/files/etc/sudoers.d/config /etc/sudoers.d
 
 
 msg "Setting user password"
