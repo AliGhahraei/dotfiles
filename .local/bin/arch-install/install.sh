@@ -29,4 +29,5 @@ arch-chroot "$MOUNTDIR" sh -c \
   && ./chroot-install.sh"
 
 
-msg "DONE!"
+msg "You should now restart into the new system, login and follow \
+  the instructions that will be shown"

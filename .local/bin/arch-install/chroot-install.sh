@@ -40,3 +40,9 @@ user_projects_location="$NEW_USER_HOME/g"
 mkdir -p $user_projects_location
 mv "/$INSTALLATION_SCRIPTS_MOUNTDIR_LOCATION" "$user_projects_location"
 chown -R $NEW_USER $user_projects_location
+
+
+msg "Preparing greeting"
+su - ali
+fish -U fish_greeting "Navigate to $user_projects_location/dotfiles\
+    /$RELATIVE_INSTALLATION_SOURCE_PATH and run post-install.sh"

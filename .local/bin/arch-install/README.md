@@ -14,3 +14,5 @@ variables you should modify before running the first script.
 After modifying the variables, run `entrypoint.sh`. It automates Arch's
 Installation Guide and does a few extra tasks like setting up a user.
 
+After that finishes, follow the instructions that will be shown stating
+how to run the post-install process to fully customize the system.
