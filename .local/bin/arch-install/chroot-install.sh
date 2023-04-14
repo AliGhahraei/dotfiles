@@ -43,6 +43,6 @@ chown -R $NEW_USER $user_projects_location
 
 
 msg "Preparing greeting"
-su - ali
-fish -U fish_greeting "Navigate to $user_projects_location/dotfiles\
-    /$RELATIVE_INSTALLATION_SOURCE_PATH and run post-install.sh"
+message="'Navigate to $user_projects_location/dotfiles\
+/$RELATIVE_INSTALLATION_SOURCE_PATH and run post-install.sh'"
+sudo -i -u ali set -U fish_greeting "$message"
