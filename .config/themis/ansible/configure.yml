@@ -21,9 +21,3 @@
         - -si
     args:
       chdir: '{{ git_projects }}/aconfmgr'
-
-  - name: "Apply aconfmgr config"
-    ansible.builtin.command:
-      argv:
-        - /usr/bin/aconfmgr
-        - apply
