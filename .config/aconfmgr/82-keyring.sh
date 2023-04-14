@@ -5,4 +5,4 @@ AddPackage rbw # Unofficial Bitwarden CLI
 
 
 # Files
-CreatePlatformLink "$XDG_CONFIG_HOME/rbw/config.json"
+CreatePlatformLink "${XDG_CONFIG_HOME:-$HOME/.config}/rbw/config.json"
