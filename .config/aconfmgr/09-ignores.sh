@@ -7,24 +7,19 @@ IgnorePath '*.lock'
 
 
 # Boot
-IgnorePath '/boot/EFI/Dell/logs/*'
 IgnorePath '/boot/*.img' # OS images
-IgnorePath '/boot/System\ Volume\ Information' # M$ stuff for restoration
-IgnorePath '/boot/vmlinuz-linux' # Kernel executable
-
-## /boot/EFI
+IgnorePath '/boot/vmlinuz-linux*' # Kernel executable
 IgnorePath '/boot/EFI/Boot/*'
+IgnorePath '/boot/EFI/BOOT/*'
 IgnorePath '/boot/EFI/HP/*'
+IgnorePath '/boot/EFI/Linux'
 IgnorePath '/boot/EFI/Microsoft/*'
 IgnorePath '/boot/EFI/tools/*'
 
-### Refind boot manager
-IgnorePath '/boot/EFI/refind/*.efi'
-IgnorePath '/boot/EFI/refind/BOOT.CSV'
-IgnorePath '/boot/EFI/refind/icons/*'
-IgnorePath '/boot/EFI/refind/icons-backup/*'
-IgnorePath '/boot/EFI/refind/keys'
-IgnorePath '/boot/EFI/refind/vars/*'
+## Systemd-boot
+IgnorePath '/boot/EFI/systemd/*'
+IgnorePath '/boot/loader/entries.srel'
+IgnorePath '/boot/loader/random-seed'
 
 
 # /etc
@@ -32,6 +27,7 @@ IgnorePath '/etc/*-' # Automatic backups for important files like passwd
 IgnorePath '/etc/.updated' # Tracks last directory modification time for systemd
 IgnorePath '/etc/adjtime' # Bookkeeping file used by hwclock
 IgnorePath '/etc/ca-certificates/*' # Certification authority certificates
+IgnorePath '/etc/credstore*' # Credential store (looks like it's used by systemd)
 IgnorePath '/etc/docker/key.json'
 IgnorePath '/etc/fonts/conf.d/*' # Fontconfigs should be handled by pacman
 IgnorePath '/etc/gshadow' # Group passwords
