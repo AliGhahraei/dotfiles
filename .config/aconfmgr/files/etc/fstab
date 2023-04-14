@@ -2,8 +2,9 @@
 # See fstab(5) for details.
 
 # <file system> <dir> <type> <options> <dump> <pass>
-LABEL=Arch  /   ext4    rw,relatime 0 1
+# /dev/nvme0n1p2 UUID=d5db698a-eb79-4315-84d0-60ba0b598cdd
+LABEL=Arch          	/         	ext4      	rw,relatime	0 1
 
-LABEL=EFI   /boot   vfat    rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro   0 2
+# /dev/nvme0n1p1 UUID=9283-7C7C
+LABEL=EFI           	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
-LABEL=Swap  none    swap    defaults    0 0
