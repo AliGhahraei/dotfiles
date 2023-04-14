@@ -55,9 +55,9 @@ msg "Listing available devices after changes"
 lsblk
 
 
-msg "You should now format any extra partitions and mount them. When finished, \
-  exit your shell (Ctrl + D) and the script will automatically continue to the \
-  actual installation process."
+msg "You should now format any extra partitions and mount them. When finished,\
+ exit your shell (Ctrl + D) and the script will automatically continue to the\
+ actual installation process."
 zsh
 
 
