@@ -1,0 +1,2 @@
+#!/bin/sh
+ansible-playbook -i localhost, $HOME/.config/themis/ansible/configure.yml
