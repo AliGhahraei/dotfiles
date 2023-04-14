@@ -17,14 +17,15 @@
   - name: "Create dotfiles attributes symlink"
     ansible.builtin.file:
       src: '{{ dotfiles_config_dir }}/attributes'
-      dest: '{{ dotfiles_repo }}/attributes'
+      dest: '{{ dotfiles_repo }}/info/attributes'
       state: link
 
   - name: "Create dotfiles exclude symlink"
     ansible.builtin.file:
       src: '{{ dotfiles_config_dir }}/exclude'
-      dest: '{{ dotfiles_repo }}/exclude'
+      dest: '{{ dotfiles_repo }}/info/exclude'
       state: link
+      force: true
 
   - name: "Update aconfmgr"
     ansible.builtin.git:
