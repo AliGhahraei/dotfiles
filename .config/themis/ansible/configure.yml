@@ -27,7 +27,7 @@
       state: link
       force: true
 
-  - name: "Update aconfmgr"
+  - name: "Update aconfmgr repo"
     ansible.builtin.git:
       repo: 'https://aur.archlinux.org/aconfmgr-git.git'
       dest: '{{ git_projects }}/aconfmgr'
