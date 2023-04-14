@@ -3,6 +3,7 @@
 
 /bin/sh
 /bin/bash
+/bin/rbash
 /usr/bin/fish
 /bin/fish
 /usr/bin/git-shell
