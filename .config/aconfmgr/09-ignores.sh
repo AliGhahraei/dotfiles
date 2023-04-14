@@ -53,6 +53,7 @@ IgnorePath '/etc/systemd/user/sockets.target.wants/*'
 
 
 # Lost + found
+IgnorePath '/lost+found'
 IgnorePath '/lost+found/*'
 
 
