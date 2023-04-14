@@ -50,6 +50,8 @@ IgnorePath '/etc/subuid'
 
 ## Systemd
 IgnorePath '/etc/systemd/user/sockets.target.wants/*'
+IgnorePath '/etc/systemd/system/getty.target.wants/getty@tty1.service'
+IgnorePath '/etc/systemd/system/multi-user.target.wants/remote-fs.target'
 
 
 # Lost + found
