@@ -52,6 +52,7 @@ vms
 
 .config/pipewire
 .config/pulse
+.config/spotify
 
 .config/unity3d
 
