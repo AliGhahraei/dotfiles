@@ -4,7 +4,7 @@
 set -euo pipefail
 
 function is_main_platform () {
-    [ "$THEMIS_PLATFORM_LABEL_PATH" = 'main' ]
+    [ "$THEMIS_PLATFORM_LABEL" = 'main' ]
 }
 
 function CreatePlatformLink () {
