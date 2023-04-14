@@ -5,11 +5,11 @@
 
 
 msg "Installing essential packages. This will take a while"
-pacstrap "$MOUNTDIR" base base-devel linux-lts linux-firmware ansible iwd vim "$NEW_SHELL"
+#pacstrap "$MOUNTDIR" base base-devel linux-lts linux-firmware ansible iwd vim "$NEW_SHELL"
 
 
 msg "Generating fstab"
-genfstab -L "$MOUNTDIR" >> "$MOUNTDIR"/etc/fstab
+#genfstab -L "$MOUNTDIR" >> "$MOUNTDIR"/etc/fstab
 
 
 msg "About to open /etc/fstab so you can verify it. Press enter to continue"
@@ -30,4 +30,4 @@ arch-chroot "$MOUNTDIR" sh -c \
 
 
 msg "You should now restart into the new system, login and follow\
- the instructions that will be shown"
+ the instructions that will be shown in the greeting"
