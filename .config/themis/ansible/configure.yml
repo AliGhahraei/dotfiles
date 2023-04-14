@@ -1,0 +1,8 @@
+- name: "Configure"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: "Test Echo"
+    ansible.builtin.debug:
+      msg: Test message
