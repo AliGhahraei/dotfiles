@@ -15,13 +15,6 @@ if is_main_platform; then
 
     ## Route-tracker dependencies
     AddPackage graphviz # Graph visualization software
-
-    # Files
-    ## Some unknown gtk3 app(s) use(s) colord
-    CreateDir /var/lib/colord/icc '' colord colord
-    CopyFile /etc/group
-    SetFileProperty /var/lib/colord group colord
-    SetFileProperty /var/lib/colord owner colord
 else
     AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
     AddPackage virtualbox-guest-iso # The official VirtualBox Guest Additions ISO image

@@ -85,6 +85,7 @@ IgnorePath '/usr/share/mime/*' # Libnotify files
 IgnorePath '/var/.updated' # Tracks last directory modification time for systemd
 
 ## /var/lib
+IgnorePath '/var/lib/colord' # Color lib used by some unknown gtk3 app(s)
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/docker/*'
