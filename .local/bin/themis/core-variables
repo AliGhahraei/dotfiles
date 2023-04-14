@@ -1,0 +1,6 @@
+#!/bin/sh
+export THEMIS_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/themis"
+export THEMIS_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/themis"
+export THEMIS_ANSIBLE_CONFIG_DIR="$THEMIS_CONFIG_DIR/ansible"
+export THEMIS_PLATFORM_LABEL_PATH="$THEMIS_DATA_DIR/platform_label"
+
