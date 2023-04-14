@@ -44,7 +44,7 @@ chown -R $NEW_USER $GIT_PROJECTS
 
 msg "Preparing post-install abbreviation"
 cmd="abbr --add post-install 'git --git-dir=$DOTFILES_REPO\
- --work-tree=$NEW_USER_HOME checkout && ansible-playbook\
+ --work-tree=$NEW_USER_HOME restore . && ansible-playbook\
  $NEW_USER_HOME/.config/themis/ansible/configure.yml'"
 sudo -i -u ali  echo "$cmd" > "$NEW_USER_HOME/.config/fish/config.fish"
 
