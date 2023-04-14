@@ -36,10 +36,10 @@ passwd
 
 
 msg "Copying scripts to the new user's home"
-mkdir -p "$DOTFILES_REPO"
+mkdir -p "$GIT_PROJECTS"
 cp -r "/$INSTALLATION_SCRIPTS_MOUNTDIR_LOCATION/.git" "$DOTFILES_REPO"
 git -C $DOTFILES_REPO config --bool core.bare true
-chown -R $NEW_USER $DOTFILES_REPO
+chown -R $NEW_USER $GIT_PROJECTS
 
 
 msg "Preparing post-install abbreviation"
