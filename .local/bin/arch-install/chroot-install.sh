@@ -35,14 +35,18 @@ passwd
 ./create-user.sh
 
 
-msg "Moving scripts to the new user's home"
-user_projects_location="$NEW_USER_HOME/g"
-mkdir -p $user_projects_location
-mv "/$INSTALLATION_SCRIPTS_MOUNTDIR_LOCATION" "$user_projects_location"
-chown -R $NEW_USER $user_projects_location
+msg "Copying scripts to the new user's home"
+mkdir -p "$DOTFILES_DESTINATION"
+cp -r "/$INSTALLATION_SCRIPTS_MOUNTDIR_LOCATION/.git" "$DOTFILES_DESTINATION"
+git --git-dir=$DOTFILES_DESTINATION config --bool core.bare true
+chown -R $NEW_USER $DOTFILES_DESTINATION
+
+
+msg "Preparing post-install abbreviation"
+cmd="abbr --add post-install ansible-playbook $user_projects_location/dotfiles\
+/.config/themis/ansible/configure.yml"
+sudo -i -u ali  echo "$cmd" > "$NEW_USER_HOME/.config/fish/config.fish"
 
 
 msg "Preparing greeting"
-message="Navigate to $user_projects_location/dotfiles\
-/$RELATIVE_INSTALLATION_SOURCE_PATH and run post-install.sh"
-sudo -i -u ali set -U fish_greeting "$message"
+sudo -i -u ali set -U fish_greeting "Run post-install to configure the system"
