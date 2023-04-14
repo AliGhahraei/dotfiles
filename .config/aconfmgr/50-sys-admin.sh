@@ -4,6 +4,7 @@ set -euo pipefail
 # Packages
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
 AddPackage --foreign paru-bin # "Feature packed AUR helper" :)
+AddPackage ansible # Official assortment of Ansible collections
 AddPackage gptfdisk # For cgdisk
 AddPackage htop # Interactive process viewer
 AddPackage ncdu # Disk usage analyzer with an ncurses interface
