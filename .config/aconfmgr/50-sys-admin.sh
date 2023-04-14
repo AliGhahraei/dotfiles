@@ -22,4 +22,4 @@ CopyFile /etc/paru.conf
 CreateLink /etc/systemd/system/multi-user.target.wants/nix-daemon.service \
     /usr/lib/systemd/system/nix-daemon.service
 CopyFile /etc/group
-CreatePlatformLink "$XDG_CONFIG_HOME/nixpkgs/config.nix"
+CreatePlatformLink "${XDG_CONFIG_HOME:-$HOME/.config}/nixpkgs/config.nix"

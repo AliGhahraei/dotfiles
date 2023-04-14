@@ -11,4 +11,4 @@ AddPackage feh # Fast and light imlib2-based image viewer
 
 #Files
 ## Feh
-CreatePlatformLink "$HOME/.fehbg" "$XDG_CONFIG_HOME/feh/fehbg"
+CreatePlatformLink "$HOME/.fehbg" "${XDG_CONFIG_HOME:-$HOME/.config}/feh/fehbg"

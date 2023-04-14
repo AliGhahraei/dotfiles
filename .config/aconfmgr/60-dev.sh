@@ -37,4 +37,4 @@ fi
 CreateLink /etc/systemd/system/multi-user.target.wants/docker.service \
     /usr/lib/systemd/system/docker.service
 ## Git
-CreatePlatformLink "$XDG_CONFIG_HOME/git/platform-config"
+CreatePlatformLink "${XDG_CONFIG_HOME:-$HOME/.config}/git/platform-config"

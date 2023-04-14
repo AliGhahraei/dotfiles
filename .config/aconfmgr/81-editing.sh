@@ -23,5 +23,5 @@ AddPackage jedi-language-server # Language server for Jedi
 
 # Files
 ## Doom Emacs
-CreateLink /usr/bin/vi $SCRIPTS/miscellaneous/emacs-term
-CreateLink /usr/bin/vim $SCRIPTS/miscellaneous/emacs-term
+CreateLink /usr/bin/vi $THEMIS_USER_BIN_DIR/miscellaneous/emacs-term
+CreateLink /usr/bin/vim $THEMIS_USER_BIN_DIR/miscellaneous/emacs-term
