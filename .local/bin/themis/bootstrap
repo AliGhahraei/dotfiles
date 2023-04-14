@@ -1,2 +1,12 @@
 #!/bin/sh
-ansible-playbook -i localhost, $HOME/.config/themis/ansible/configure.yml
+. "./core-variables"
+
+if [ -f "$PLATFORM_LABEL_PATH" ]; then
+   echo "Enter the plattform label (e.g. main)"
+   read platform_label
+   echo "EXPORT PLATFORM_LABEL=$platform_label" > "$PLATFORM_LABEL_PATH"
+fi
+
+ansible-playbook -i localhost, "$HOME/.config/themis/ansible/configure.yml"
+
+aconfmgr apply
