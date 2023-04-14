@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
+. "$HOME/.local/bin/themis/core-variables"
+
 set -euo pipefail
 
-PLATFORM_LABEL=${PLATFORM_LABEL:-}
-if [ -z "$PLATFORM_LABEL" ]; then
-    # shellcheck source=/dev/null
-    . "$HOME/.config/profile.d/10-base"
-fi
-
 function is_main_platform () {
-    [ "$PLATFORM_LABEL" = 'main' ]
+    [ "$THEMIS_PLATFORM_LABEL_PATH" = 'main' ]
 }
 
 function CreatePlatformLink () {
@@ -16,7 +12,7 @@ function CreatePlatformLink () {
     local target
 
     link_name=$1
-    target="${2:-${link_name}}.$PLATFORM_LABEL"
+    target="${2:-${link_name}}.$THEMIS_PLATFORM_LABEL_PATH"
 
     # CreateLink always creates parent directory and makes $HOME not writable by user
     if [ "$(readlink -f -- "$link_name")" != "$target" ]; then
