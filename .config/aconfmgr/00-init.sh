@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 . "$HOME/.local/bin/themis/core-variables"
+. "$THEMIS_PLATFORM_LABEL_PATH"
 
 set -euo pipefail
 
