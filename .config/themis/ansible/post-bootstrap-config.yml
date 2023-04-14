@@ -1,0 +1,15 @@
+- name: "Configure"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars_files:
+  - autogen_variables.yml
+
+  tasks:
+  - name: "Update Doom Emacs repo"
+    ansible.builtin.git:
+      repo: 'https://github.com/doomemacs/doomemacs'
+      dest: '{{ emacs_config_dir }}'
+      depth: 1
+      force: true

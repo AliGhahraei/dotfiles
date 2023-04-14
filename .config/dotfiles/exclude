@@ -41,8 +41,6 @@ vms
 
 .config/dconf
 
-.config/emacs
-
 .config/fish/completions/tide.fish
 .config/fish/conf.d
 .config/fish/fishd.tmp.*
@@ -83,6 +81,8 @@ vms
 
 
 downloads
+
+.emacs.d
 
 .java
 

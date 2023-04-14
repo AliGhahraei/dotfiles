@@ -1,0 +1,7 @@
+#!/bin/sh
+. $(dirname "$0")/core-variables
+
+ansible-playbook -i localhost, "$THEMIS_ANSIBLE_CONFIG_DIR/post-bootstrap-config.yml"
+
+$THEMIS_DOOM_BIN_DIR/./doom install
+fisher update

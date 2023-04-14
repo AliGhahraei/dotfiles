@@ -52,5 +52,5 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1  # Disable message when activating a python 
 
 # PATH
 export PATH="$SCRIPTS/miscellaneous:$HOME/.nix-profile/bin:$HOME/.local/bin:\
-$PIPX_BIN_DIR:$SCRIPTS/backup:$HOME/.poetry/bin:$HOME/.config/emacs/bin:/opt/mssql/bin:\
+$PIPX_BIN_DIR:$SCRIPTS/backup:$HOME/.poetry/bin:$HOME/.emacs.d/bin:/opt/mssql/bin:\
 ${PLATFORM_PATH:-}:$SCRIPTS/config:$PATH:$HOME/documents/courses/kafka/kafka_2.13-3.3.1/bin"
