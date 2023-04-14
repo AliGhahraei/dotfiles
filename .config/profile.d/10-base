@@ -9,7 +9,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # General dotfiles
 # shellcheck source=/dev/null
-. "$XDG_DATA_HOME/dotfiles/platform_label"
 export DOTFILES_REPO="$XDG_DATA_HOME/dotfiles/repo.git"
 export GIT="$HOME/g"
 export SCRIPTS="$HOME/.local/bin"
