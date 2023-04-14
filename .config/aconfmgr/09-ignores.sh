@@ -30,7 +30,6 @@ IgnorePath '/etc/ca-certificates/*' # Certification authority certificates
 IgnorePath '/etc/credstore*' # Credential store (looks like it's used by systemd)
 IgnorePath '/etc/docker/key.json'
 IgnorePath '/etc/fonts/conf.d/*' # Fontconfigs should be handled by pacman
-IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/hostname'
 IgnorePath '/etc/machine-id' # Random identifier generated at install/boot time
 IgnorePath '/etc/mkinitcpio.d/*'
@@ -41,8 +40,13 @@ IgnorePath '/etc/odbcinst.ini' # SQL server stuff
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/etc/passwd'
-IgnorePath '/etc/shadow'
 IgnorePath '/etc/ssl/certs/*'
+
+## Shadow
+IgnorePath '/etc/gshadow' # Group passwords
+IgnorePath '/etc/shadow'
+IgnorePath '/etc/subgid' # Subordinate group ids
+IgnorePath '/etc/subuid'
 
 # Systemd
 IgnorePath '/etc/systemd/user/sockets.target.wants/*'
