@@ -48,7 +48,7 @@ IgnorePath '/etc/shadow'
 IgnorePath '/etc/subgid' # Subordinate group ids
 IgnorePath '/etc/subuid'
 
-# Systemd
+## Systemd
 IgnorePath '/etc/systemd/user/sockets.target.wants/*'
 
 
