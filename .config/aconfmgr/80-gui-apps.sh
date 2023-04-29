@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # Packages
+AddPackage bitwarden # A secure and free password manager for all of your devices
 AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage udiskie # Removable disk automounter using udisks

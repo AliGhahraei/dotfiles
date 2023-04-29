@@ -35,6 +35,8 @@ vms
 
 
 # Mostly data, not config
+.config/Bitwarden
+
 .config/borg
 
 .config/dconf
