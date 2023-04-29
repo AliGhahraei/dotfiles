@@ -7,7 +7,6 @@ AddPackage base-devel
 AddPackage linux-lts
 AddPackage linux-firmware
 AddPackage reflector # Retrieve and filter the latest Pacman mirror list.
-AddPackageGroup base-devel
 
 ## Reflector optional dependencies
 AddPackage rsync # Rate rsync mirrors
