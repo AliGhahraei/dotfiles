@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Packages
 AddPackage bitwarden # A secure and free password manager for all of your devices
+AddPackage chromium # A web browser built for speed, simplicity, and security
 AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage udiskie # Removable disk automounter using udisks
@@ -21,7 +22,6 @@ else
     AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
     AddPackage virtualbox-guest-iso # The official VirtualBox Guest Additions ISO image
     AddPackage virtualbox-host-modules-arch # Host modules for default kernel
-    AddPackage --foreign brave-bin # Web browser that blocks ads and trackers by default (binary release)
     AddPackage --foreign realvnc-vnc-viewer # VNC remote desktop client software by RealVNC
 
     # Files
