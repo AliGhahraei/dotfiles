@@ -5,6 +5,8 @@ for file in "$HOME"/.config/profile.d/*; do
     . "$file"
 done
 
+. "$XDG_DATA_HOME"/themis/platform_label
+
 
 # Make stubborn apps conform to XDG
 export ANSIBLE_HOME="$XDG_CONFIG_HOME/ansible"
@@ -36,7 +38,7 @@ export BACKUPDIR=/run/media/ali/backup/backup
 
 
 # Misc.
-if [ "$PLATFORM_LABEL" = 'main' ]; then
+if [ "$THEMIS_PLATFORM_LABEL" = 'main' ]; then
     export BROWSER='firefox'
 else
     export BROWSER='brave'

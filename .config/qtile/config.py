@@ -22,7 +22,7 @@ from Xlib.ext.randr import GetOutputInfo  # type: ignore
 MOD = 'mod4'
 PURPLE = 'a663e6'
 EDITOR = 'emacs'
-PLATFORM_LABEL = getenv('PLATFORM_LABEL')
+PLATFORM_LABEL = getenv('THEMIS_PLATFORM_LABEL')
 
 HOME_GROUP_NAME = '1'
 DEV_GROUP_NAME = '2'
