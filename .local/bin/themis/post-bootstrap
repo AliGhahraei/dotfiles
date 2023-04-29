@@ -4,4 +4,6 @@
 ansible-playbook -i localhost, "$THEMIS_ANSIBLE_CONFIG_DIR/post-bootstrap-config.yml"
 
 $THEMIS_DOOM_BIN_DIR/./doom install
+
 fish -c 'fisher update'
+echo 2 1 2 2 1 1 2 1 1 2 y | fish -c 'tide configure' > /dev/null
