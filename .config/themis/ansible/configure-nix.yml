@@ -1,0 +1,14 @@
+- name: "Configure nix"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars_files:
+  - autogen_variables.yml
+
+  tasks:
+  - name: "Add channel"
+    ansible.builtin.command: nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+
+  - name: "Update channels"
+    ansible.builtin.command: nix-channel --update
