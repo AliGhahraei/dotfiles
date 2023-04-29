@@ -46,8 +46,8 @@ msg "Preparing post-install abbreviation"
 cmd="abbr --add post-install 'git --git-dir=$DOTFILES_REPO\
  --work-tree=$NEW_USER_HOME restore . && $NEW_USER_HOME/.local/bin\
 /themis/./bootstrap'"
-sudo -i -u ali  echo "$cmd" > "$NEW_USER_HOME/.config/fish/config.fish"
+sudo -i -u $NEW_USER  echo "$cmd" > "$NEW_USER_HOME/.config/fish/config.fish"
 
 
 msg "Preparing greeting"
-sudo -i -u ali set -U fish_greeting "Run post-install to configure the system"
+sudo -i -u $NEW_USER set -U fish_greeting "Run post-install to configure the system"
