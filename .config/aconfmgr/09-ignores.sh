@@ -36,6 +36,7 @@ IgnorePath '/etc/mkinitcpio.d/*'
 IgnorePath '/etc/netctl/w*' # Netctl profiles
 IgnorePath '/etc/netctl/examples/*'
 IgnorePath '/etc/netctl/interfaces/*'
+IgnorePath '/etc/NetworkManager/*'
 IgnorePath '/etc/odbcinst.ini' # SQL server stuff
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/pacman.d/gnupg/*'
@@ -92,9 +93,9 @@ IgnorePath '/var/lib/colord' # Color lib used by some unknown gtk3 app(s)
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/docker/*'
-IgnorePath '/var/lib/iwd/*' # Networks, passwords and data for iwd
 IgnorePath '/var/lib/lightdm'
 IgnorePath '/var/lib/lightdm-data/*'
+IgnorePath '/var/lib/NetworkManager/*'
 IgnorePath '/var/lib/pacman/local/*' # Pacman's local DB
 IgnorePath '/var/lib/pacman/sync/*.db' # Pacman's repository DBs
 IgnorePath '/var/lib/pacman/sync/*.files' # Pacman's repository files
