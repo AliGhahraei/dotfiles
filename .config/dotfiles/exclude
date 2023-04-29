@@ -94,6 +94,7 @@ downloads
 __pycache__
 
 cef_user_data
+.minecraft
 .steam
 .steampath
 .steampid
