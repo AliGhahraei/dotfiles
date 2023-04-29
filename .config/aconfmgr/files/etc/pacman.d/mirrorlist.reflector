@@ -3,23 +3,23 @@
 ################################################################################
 
 # With:       reflector @/etc/xdg/reflector/reflector.conf
-# When:       2022-03-05 08:18:35 UTC
+# When:       2023-04-27 04:52:48 UTC
 # From:       https://archlinux.org/mirrors/status/json/
-# Retrieved:  2022-03-05 08:17:56 UTC
-# Last Check: 2022-03-05 07:54:20 UTC
+# Retrieved:  2023-04-27 04:50:24 UTC
+# Last Check: 2023-04-27 04:45:43 UTC
 
-Server = https://mirror.hackingand.coffee/arch/$repo/os/$arch
-Server = https://arch.hu.fo/archlinux/$repo/os/$arch
-Server = https://arlm.tyzoid.com/$repo/os/$arch
-Server = https://mirror.arizona.edu/archlinux/$repo/os/$arch
 Server = https://america.mirror.pkgbuild.com/$repo/os/$arch
 Server = https://mirror.lty.me/archlinux/$repo/os/$arch
 Server = rsync://mirror.lty.me/archlinux/$repo/os/$arch
+Server = https://arch.mirror.constant.com/$repo/os/$arch
+Server = rsync://arch.mirror.constant.com/archlinux/$repo/os/$arch
+Server = https://arch.hu.fo/archlinux/$repo/os/$arch
 Server = rsync://arch.hu.fo/archlinux/$repo/os/$arch
-Server = https://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch
-Server = rsync://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch
-Server = rsync://mirror.hackingand.coffee/arch/$repo/os/$arch
+Server = https://mirror.tmmworkshop.com/archlinux/$repo/os/$arch
+Server = https://arlm.tyzoid.com/$repo/os/$arch
 Server = rsync://arlm.tyzoid.com/archlinux/$repo/os/$arch
-Server = rsync://mirror.arizona.edu/archlinux/$repo/os/$arch
-Server = rsync://arch.mirror.square-r00t.net/arch/$repo/os/$arch
+Server = https://mirror.hackingand.coffee/arch/$repo/os/$arch
 Server = https://mirror.theash.xyz/arch/$repo/os/$arch
+Server = https://arch.jsc.mx/$repo/os/$arch
+Server = https://mirror.arizona.edu/archlinux/$repo/os/$arch
+Server = rsync://mirror.arizona.edu/archlinux/$repo/os/$arch
