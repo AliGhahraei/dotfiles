@@ -13,7 +13,7 @@ function CreatePlatformLink () {
     local target
 
     link_name=$1
-    target="${2:-${link_name}}.$THEMIS_PLATFORM_LABEL_PATH"
+    target="${2:-${link_name}}.$THEMIS_PLATFORM_LABEL"
 
     # CreateLink always creates parent directory and makes $HOME not writable by user
     if [ "$(readlink -f -- "$link_name")" != "$target" ]; then
