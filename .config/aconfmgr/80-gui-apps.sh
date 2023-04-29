@@ -18,12 +18,4 @@ if is_main_platform; then
 
     ## Route-tracker dependencies
     AddPackage graphviz # Graph visualization software
-else
-    AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
-    AddPackage virtualbox-guest-iso # The official VirtualBox Guest Additions ISO image
-    AddPackage virtualbox-host-modules-arch # Host modules for default kernel
-    AddPackage --foreign realvnc-vnc-viewer # VNC remote desktop client software by RealVNC
-
-    # Files
-    CopyFile /etc/group # Virtualbox's group
 fi
