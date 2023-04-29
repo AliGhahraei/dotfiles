@@ -10,7 +10,7 @@
         ferdium
         pomotroid
         sioyek
-        ventoy-bin
+        ventoy
       ];
     };
   };
