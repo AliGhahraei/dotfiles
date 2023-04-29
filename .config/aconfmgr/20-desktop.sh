@@ -24,10 +24,6 @@ AddPackage kvantum # SVG-based theme engine for Qt5/6 (including config tool and
 AddPackage qt5ct # Qt5 Configuration Utility
 AddPackage qt6ct # Qt 6 Configuration Utility
 
-## Misc
-AddPackage picom # X compositor for sweet transparency
-
-
 
 # Files
 ## Lightdm
