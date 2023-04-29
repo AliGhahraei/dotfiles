@@ -99,7 +99,7 @@ def get_keys(group_names: Iterable[str]) -> List[Key]:
                 desc='Lower volume a little'),
             Key([], 'XF86AudioMute', lazy.spawn(['pamixer', '--toggle-mute']),
                 desc='Mute'),
-            Key([], 'Print', lazy.spawn('screenshot'),
+            Key([MOD], 's', lazy.spawn('screenshot'),
                 desc='Screenshot'),
             Key([MOD], 'space', lazy.spawn(guess_terminal()),
                 desc='Launch terminal'),
