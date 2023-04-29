@@ -93,6 +93,7 @@ IgnorePath '/var/lib/colord' # Color lib used by some unknown gtk3 app(s)
 IgnorePath '/var/lib/dbus/machine-id'
 IgnorePath '/var/lib/dhcpcd/*.lease' # DHCP leases
 IgnorePath '/var/lib/docker/*'
+IgnorePath '/var/lib/flatpak/*'
 IgnorePath '/var/lib/lightdm'
 IgnorePath '/var/lib/lightdm-data/*'
 IgnorePath '/var/lib/NetworkManager/*'
