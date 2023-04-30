@@ -6,7 +6,6 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
-        pomotroid
         ventoy
       ];
     };
