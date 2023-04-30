@@ -6,7 +6,7 @@ AddPackage lightdm # A lightweight display manager
 AddPackage xorg-server # Enough to run Xorg
 
 ## WM
-AddPackage qtile # A full-featured, pure-Python tiling window manager
+AddPackage --foreign qtile-git # A full-featured, pure-Python tiling window manager - X11. (git version)
 
 ### Add-ons for qtile
 AddPackage flameshot # Powerful yet simple to use screenshot software
