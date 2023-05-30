@@ -37,6 +37,8 @@ vms
 # Mostly data, not config
 .config/Bitwarden
 
+.config/rustdesk
+
 .config/borg
 
 .config/dconf
