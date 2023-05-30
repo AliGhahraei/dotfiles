@@ -12,9 +12,6 @@ AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 
 if is_main_platform; then
     AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
-    AddPackage steam # Valve's digital software delivery system
-    AddPackage wine # A compatibility layer for running Windows programs
-    AddPackage wine-mono # Wine's built-in replacement for Microsoft's .NET Framework
 
     ## Route-tracker dependencies
     AddPackage graphviz # Graph visualization software
