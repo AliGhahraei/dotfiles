@@ -13,7 +13,7 @@ from libqtile.lazy import lazy, LazyCall
 from libqtile.log_utils import logger
 from libqtile.utils import guess_terminal
 from libqtile.widget import (
-    Battery, Chord, Clock, CurrentLayout, GroupBox, PulseVolume,
+    Battery, Chord, Clock, CurrentLayout, GroupBox,
     Systray, TextBox, WindowName,
 )
 from Xlib.display import Display  # type: ignore
@@ -175,7 +175,6 @@ def get_screens() -> List[Screen]:
                 name_transform=lambda name: name.upper(),
             ),
             TextBox(text="墳"),
-            PulseVolume(),
             Battery(format='{char} {percent:2.0%}',
                     charge_char='▲', discharge_char='▼'),
             Clock(format=' %a %Y-%m-%d   %H:%M'),
