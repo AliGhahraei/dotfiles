@@ -23,6 +23,7 @@ CopyFile /etc/pacman.conf
 CopyFile /etc/pacman.d/mirrorlist.reflector
 CopyFile /etc/xdg/reflector/reflector.conf
 CopyFile /etc/shells
+CopyFile /etc/systemd/logind.conf.d/power-button.conf
 
 ## Systemd
 CreateDir /var/lib/machines 700
