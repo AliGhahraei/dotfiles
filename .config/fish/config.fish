@@ -19,6 +19,7 @@ else
     if status --is-interactive
         if not set -q PYENV_SHELL
             pyenv init - | source
+            set -x PIPX_DEFAULT_PYTHON (pyenv which python)
         end
 
         function cd
