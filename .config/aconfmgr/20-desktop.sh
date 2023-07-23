@@ -34,4 +34,5 @@ CopyFile /etc/lightdm/lightdm.conf
 CreateLink /etc/systemd/system/display-manager.service \
     /usr/lib/systemd/system/lightdm.service
 ## Xorg
+CopyFile /etc/X11/xorg.conf.d/10-monitor.conf
 CopyFile /etc/X11/xorg.conf.d/30-touchpad.conf 755
