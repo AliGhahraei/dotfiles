@@ -48,6 +48,7 @@ IgnorePath '/etc/gshadow' # Group passwords
 IgnorePath '/etc/shadow'
 IgnorePath '/etc/subgid' # Subordinate group ids
 IgnorePath '/etc/subuid'
+IgnorePath '/etc/vconsole.conf'  # Fallback systemd vconsole
 
 ## Systemd
 IgnorePath '/etc/systemd/user/sockets.target.wants/*'
