@@ -78,6 +78,7 @@ IgnorePath '/usr/lib/ghc-*/package.conf.d/*' # GHC packages
 IgnorePath '/usr/lib/locale/locale-archive' # Selected locales in binary format
 IgnorePath '/usr/lib/modules/*' # Kernel modules
 IgnorePath '/usr/lib/udev/hwdb.bin' # Udev db to apply rules to devices
+IgnorePath '/usr/lib/utempter/*'
 IgnorePath '/usr/lib/python*'
 
 ## /usr/share
@@ -109,6 +110,7 @@ IgnorePath '/var/lib/tpm2-tss/*' # Trusted Platform Module Software Stack API (s
 IgnorePath '/var/opt/mssql/*'
 
 ### Systemd
+IgnorePath '/var/lib/geoclue'
 IgnorePath '/var/lib/machines/*'
 IgnorePath '/var/lib/portables/*'
 IgnorePath '/var/lib/private/*'
