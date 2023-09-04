@@ -26,6 +26,7 @@ IgnorePath '/boot/loader/random-seed'
 IgnorePath '/etc/*-' # Automatic backups for important files like passwd
 IgnorePath '/etc/.updated' # Tracks last directory modification time for systemd
 IgnorePath '/etc/adjtime' # Bookkeeping file used by hwclock
+IgnorePath '/etc/bluetooth' # Only the directory permissions, not contents
 IgnorePath '/etc/ca-certificates/*' # Certification authority certificates
 IgnorePath '/etc/credstore*' # Credential store (looks like it's used by systemd)
 IgnorePath '/etc/docker/key.json'
