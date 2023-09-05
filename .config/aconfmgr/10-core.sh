@@ -4,7 +4,7 @@ set -euo pipefail
 # Packages
 AddPackage base
 AddPackage base-devel
-AddPackage linux-lts
+AddPackage linux
 AddPackage linux-firmware
 AddPackage reflector # Retrieve and filter the latest Pacman mirror list.
 
