@@ -15,6 +15,7 @@ IgnorePath '/boot/EFI/HP/*'
 IgnorePath '/boot/EFI/Linux'
 IgnorePath '/boot/EFI/Microsoft/*'
 IgnorePath '/boot/EFI/tools/*'
+IgnorePath '/boot/System Volume Information'
 
 ## Systemd-boot
 IgnorePath '/boot/EFI/systemd/*'
