@@ -23,6 +23,12 @@ title = 'Invoking Box backup backend'
 command = ['box-mgmt']
 
 [[steps]]
+name = 'disk_init'
+doc = "Initialize disk repository."
+title = 'Initializing disk repo'
+command = ['disk-init']
+
+[[steps]]
 name = 'disk_backup'
 doc = "Backup to disk."
 title = 'Backing up to disk'
