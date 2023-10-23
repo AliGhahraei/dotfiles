@@ -6,7 +6,6 @@ from libqtile.backend.base import Window
 from libqtile.bar import Bar
 from libqtile.config import Click, Drag, Group, Key, Mouse, Screen
 from libqtile.core.manager import Qtile
-from libqtile.hook import subscribe
 from libqtile.layout import MonadTall, TreeTab
 from libqtile.layout.base import Layout
 from libqtile.lazy import lazy, LazyCall
@@ -246,11 +245,6 @@ def get_mouse_actions() -> List[Mouse]:
         Click([MOD], 'Button2',
               lazy.window.bring_to_front()),
     ]
-
-
-@subscribe.startup_once
-def startup_once():
-    Popen(['systemctl', '--user', 'start', 'aw'])
 
 
 groups = get_groups()

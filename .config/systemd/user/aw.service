@@ -1,8 +1,0 @@
-[Unit]
-Description=ActivityWatch
-
-[Service]
-ExecStart=/usr/bin/aw-qt
-
-[Install]
-WantedBy=default.target

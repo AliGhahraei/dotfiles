@@ -8,7 +8,6 @@ AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage kitty # A modern, hackable, featureful, OpenGL-based terminal
 AddPackage spotify-launcher # Client for spotify's apt repository in Rust for Arch Linux
 AddPackage udiskie # Removable disk automounter using udisks
-AddPackage --foreign activitywatch-bin # Log what you do on your computer.
 
 if is_main_platform; then
     AddPackage qbittorrent # An advanced BitTorrent client programmed in C++
