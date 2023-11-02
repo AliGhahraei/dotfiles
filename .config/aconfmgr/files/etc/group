@@ -63,3 +63,4 @@ postgres:x:945:
 flatpak:x:970:
 geoclue:x:948:
 usbmux:x:938:
+chrony:x:1001:
