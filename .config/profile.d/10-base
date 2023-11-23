@@ -10,6 +10,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # General dotfiles
 # shellcheck source=/dev/null
 export GIT="$HOME/g"
-export DOTFILES_REPO="$GIT/dotfiles.git"
+export DOTFILES_REPO="$GIT/dotfiles/repo.git"
 export SCRIPTS="$HOME/.local/bin"
 export TYPER_SCRIPTS_REPOS="$GIT/typer-scripts"
