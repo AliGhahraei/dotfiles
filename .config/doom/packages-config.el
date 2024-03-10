@@ -62,7 +62,8 @@
 
 
 (after! org
-  (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled))
+  (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled)
+  (add-to-list 'org-modules 'org-habit))
 
 
 (use-package! beacon
