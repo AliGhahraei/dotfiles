@@ -3,23 +3,23 @@
 ################################################################################
 
 # With:       reflector @/etc/xdg/reflector/reflector.conf
-# When:       2023-11-08 22:48:32 UTC
+# When:       2024-03-10 00:10:16 UTC
 # From:       https://archlinux.org/mirrors/status/json/
-# Retrieved:  2023-11-08 22:47:29 UTC
-# Last Check: 2023-11-08 22:42:39 UTC
+# Retrieved:  2024-03-10 00:09:11 UTC
+# Last Check: 2024-03-10 00:09:15 UTC
 
-Server = https://mirror.hackingand.coffee/arch/$repo/os/$arch
-Server = https://america.mirror.pkgbuild.com/$repo/os/$arch
 Server = https://mirror.lty.me/archlinux/$repo/os/$arch
-Server = https://codingflyboy.mm.fcix.net/archlinux/$repo/os/$arch
-Server = https://mirrors.rit.edu/archlinux/$repo/os/$arch
-Server = https://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch
-Server = rsync://mirror.hackingand.coffee/arch/$repo/os/$arch
 Server = rsync://mirror.lty.me/archlinux/$repo/os/$arch
-Server = https://dfw.mirror.rackspace.com/archlinux/$repo/os/$arch
-Server = rsync://mirrors.rit.edu/archlinux/$repo/os/$arch
-Server = https://mirror.arizona.edu/archlinux/$repo/os/$arch
-Server = https://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch
-Server = rsync://mirror.arizona.edu/archlinux/$repo/os/$arch
-Server = rsync://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch
-Server = rsync://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch
+Server = https://arch.mirror.constant.com/$repo/os/$arch
+Server = rsync://arch.mirror.constant.com/archlinux/$repo/os/$arch
+Server = rsync://mirrors.kernel.org/archlinux/$repo/os/$arch
+Server = https://m.lqy.me/arch/$repo/os/$arch
+Server = https://mirror.tmmworkshop.com/archlinux/$repo/os/$arch
+Server = https://mirror.clarkson.edu/archlinux/$repo/os/$arch
+Server = https://arlm.tyzoid.com/$repo/os/$arch
+Server = rsync://arlm.tyzoid.com/archlinux/$repo/os/$arch
+Server = https://iad.mirrors.misaka.one/archlinux/$repo/os/$arch
+Server = rsync://iad.mirrors.misaka.one/archlinux/$repo/os/$arch
+Server = rsync://mirrors.liquidweb.com/archlinux/$repo/os/$arch
+Server = https://mirrors.vectair.net/archlinux/$repo/os/$arch
+Server = https://arch.jsc.mx/$repo/os/$arch
